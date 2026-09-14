@@ -1,0 +1,420 @@
+@import "tailwindcss";
+
+html {
+  background-color: #ffffff;
+  overflow-x: clip;
+
+  scroll-behavior: smooth;
+
+  
+  max-width: 100%;
+}
+
+@theme {
+  --color-primary: #e77127;
+  --color-primary-hover: #c55916;
+
+  --font-jakarta: var(--font-jakarta-sans);
+  --font-bricolage: var(--font-bricolage-grotesque);
+  --font-geist-mono: var(--font-geist-mono);
+  --color-secondary: #eacd09;
+  --color-cta-dark: #000000;
+  --color-complementary: #072b24;
+  --color-dark: #112420;
+  --color-gray: #626262;
+  --color-emerald: #106655;
+}
+
+body {
+  font-family: var(--font-jakarta-sans), sans-serif;
+
+  background-color: #ffffff;
+  overflow-x: clip;
+  max-width: 100%;
+  min-width: 0;
+}
+
+@keyframes banner-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-banner {
+    animation: none !important;
+  }
+}
+.banner-container {
+  max-width: 1392px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+/* Lenis official CSS integration */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+.container {
+  max-width: 1312px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+/* title  */
+.h6-medium {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 135%;
+  letter-spacing: 0;
+}
+
+.h6-regular {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 135%;
+}
+
+.title-regular {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+}
+.title-semibold {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.title-large-medium {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+  letter-spacing: 0;
+}
+
+.caption-regular {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+/* body text  */
+.body-regular {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+}
+.regular {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 120%;
+}
+
+.body-medium {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+.body-small-regular {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+.body-small-medium {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 160%;
+  letter-spacing: 0;
+}
+
+@media (max-width: 640px) {
+  /* title  */
+  .title-semibold {
+    font-size: 16px;
+  }
+
+  .h6-medium {
+    font-size: 20px;
+  }
+  .title-large-medium {
+    font-size: 18px;
+  }
+
+  /* body  */
+
+  .title-regular {
+    font-size: 16px;
+  }
+
+  .body-small-regular {
+    font-size: 13px;
+  }
+
+  .body-medium {
+    font-size: 14px;
+  }
+  .body-small-medium {
+    font-size: 13px;
+  }
+}
+
+.h1 {
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 120%;
+}
+
+.h2 {
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 120%;
+  letter-spacing: 0;
+}
+
+.h3 {
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 125%;
+  letter-spacing: 0%;
+}
+
+.h4 {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 130%;
+  letter-spacing: 0;
+}
+
+.h5 {
+  font-weight: 500;
+  font-size: 32px;
+  line-height: 130%;
+  letter-spacing: 0;
+}
+@media (max-width: 1024px) {
+  .h1 {
+    font-size: 40px;
+  }
+  .h2 {
+    font-size: 36px;
+  }
+  .h3 {
+    font-size: 38px;
+  }
+  .h4 {
+    font-size: 32px;
+  }
+  .h5 {
+    font-size: 26px;
+  }
+}
+@media (max-width: 640px) {
+  .h1 {
+    font-size: 36px;
+  }
+  .h2 {
+    font-size: 32px;
+  }
+
+  .h3 {
+    font-size: 34px;
+  }
+
+  .h4 {
+    font-size: 28px;
+  }
+  .h5 {
+    font-size: 22px;
+  }
+}
+
+@keyframes flowDown {
+  0% {
+    transform: translateY(-60%);
+  }
+  100% {
+    transform: translateY(60%);
+  }
+}
+
+.animate-flow {
+  animation: flowDown 1.8s linear infinite;
+}
+
+/* featuers line svg icon  */
+.feature-connector.is-active svg {
+  color: var(--color-primary) !important;
+}
+
+.feature-connector.is-active {
+  border-color: var(--color-primary);
+}
+
+/* input with lable  */
+
+.label {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0;
+  color: #112420;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 640px) {
+  .label {
+    font-size: 14px;
+  }
+}
+
+.input {
+  width: 293.5px;
+  height: 50px;
+  padding: 12px 16px;
+  gap: 8px;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 160%;
+  letter-spacing: 0;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+}
+
+@media (max-width: 640px) {
+  .input {
+    width: 100%;
+  }
+}
+
+.auth-radio {
+  border-radius: 50% !important;
+  background-color: var(--color-primary);
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e9e9e9;
+  background-color: #ffffff;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.checkbox:checked {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary);
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.table-header-bg {
+  background: #f3f1f0;
+}
+
+/* react-phone-number-input overrides */
+.phone-input-wrapper .PhoneInput {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+}
+
+.phone-input-wrapper .PhoneInputCountry {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  margin-right: 8px;
+}
+
+.phone-input-wrapper .PhoneInputCountryIcon {
+  width: 20px;
+  height: 14px;
+  box-shadow: none;
+}
+
+.phone-input-wrapper .PhoneInputCountrySelectArrow {
+  opacity: 0.6;
+  width: 8px;
+  height: 8px;
+  margin-left: 4px;
+  border-color: #626262;
+}
+
+.phone-input-wrapper .PhoneInputInput {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #112420;
+  height: 100%;
+  padding: 0;
+}
+
+.phone-input-wrapper .PhoneInputInput::placeholder {
+  color: #626262;
+}
+.section-padding {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+@media (min-width: 1024px) {
+  .section-padding {
+    padding-top: 100px;
+    padding-bottom: 100px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
