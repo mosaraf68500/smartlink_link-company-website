@@ -476,7 +476,7 @@ export default function TalkToExperts({
               <div className="relative h-[320px] w-full overflow-hidden rounded-[4px] sm:h-[250px] sm:w-[250px]">
                 <Image
                   src="/images/work/fayshal.png"
-                  alt="Md Mizanur Rahman"
+                  alt="Md Fayej Ahmed"
                   fill
                   className="object-cover"
                   sizes="(max-width: 640px) 100vw, 250px"
@@ -484,8 +484,7 @@ export default function TalkToExperts({
               </div>
 
               <div>
-                <p className="h6-medium text-dark">Md Mizanur Rahman</p>
-                <p className="body-regular text-gray">Assistant Manager</p>
+                <p className="h6-medium text-dark">Md Fayej Ahmed</p> <p className="body-regular text-gray">Assistant Manager</p>
               </div>
             </div>
 
