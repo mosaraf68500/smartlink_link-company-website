@@ -475,7 +475,7 @@ export default function TalkToExperts({
             <div className="flex w-full flex-shrink-0 flex-col gap-3 sm:w-auto">
               <div className="relative h-[320px] w-full overflow-hidden rounded-[4px] sm:h-[250px] sm:w-[250px]">
                 <Image
-                  src="/images/work/Mizan-Bhai.png"
+                  src="/images/work/fayshal.png"
                   alt="Md Mizanur Rahman"
                   fill
                   className="object-cover"

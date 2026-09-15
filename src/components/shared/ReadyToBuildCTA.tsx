@@ -278,24 +278,20 @@ export default function ReadyToBuildCTA({
               </div>
             </div>
             <div className="flex w-[266px] gap-[14px] sm:w-[380px] sm:gap-5">
-              {/* TODO: placeholder Adsfixter staff photo (shows code on a
-                  monitor) — pending real Smartlink Systems photography */}
               <div className="relative h-[161px] w-[155px] flex-shrink-0 overflow-hidden sm:h-[200px] sm:w-[190px]">
                 <Image
-                  src="/images/cta/bai.png"
-                  alt="Team working at desks"
+                  src="/images/cta/ship-01.png"
+                  alt="Bulk cargo vessel at sea"
                   fill
                   className="object-cover"
                   sizes="180px"
                 />
               </div>
 
-              {/* TODO: placeholder Adsfixter staff photo — pending real
-                  Smartlink Systems photography */}
               <div className="relative h-[161px] w-[155px] flex-shrink-0 overflow-hidden sm:h-[200px] sm:w-[190px]">
                 <Image
-                  src="/images/cta/imam.png"
-                  alt="Team collaborating in office"
+                  src="/images/cta/ship-02.png"
+                  alt="Cargo ship being loaded at port"
                   fill
                   className="object-cover"
                   sizes="180px"
@@ -304,12 +300,10 @@ export default function ReadyToBuildCTA({
             </div>
 
             {/* Bottom image */}
-            {/* TODO: placeholder Adsfixter staff photo — pending real
-                Smartlink Systems photography */}
             <div className="relative h-[113px] w-[320px] overflow-hidden sm:h-[161px] sm:w-[400px]">
               <Image
-                src="/images/cta/mosa.png"
-                alt="Team member at desk"
+                src="/images/cta/ship-03.png"
+                alt="Aerial view of a cargo ship docked at port"
                 fill
                 className="object-cover"
                 sizes="380px"

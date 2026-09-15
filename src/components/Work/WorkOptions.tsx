@@ -189,10 +189,9 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence, type Variants } from "framer-motion";
-import workImage from "../../../public/images/work/rafi.png";
-import workImage1 from "../../../public/images/work/faruk.png";
-import workImage2 from "../../../public/images/work/tariqul.png";
-import workImage3 from "../../../public/images/work/sohan.png";
+import workImage from "../../../public/images/work/ship-01.png";
+import workImage1 from "../../../public/images/work/ship-02.png";
+import workImage2 from "../../../public/images/work/ship-03.png";
 import { UpperArrow } from "../ui/Icon";
 import { Boxes, Ship, ClipboardList, CalendarClock, Route } from "lucide-react";
 
@@ -333,7 +332,7 @@ function Card({ card }: { card: WorkCard }) {
 // Same tile, same size/position/border/rounded corners as before —
 // only difference is the single static <Image> is now replaced with
 // an auto-rotating slider through all 4 work images.
-const workImages = [workImage, workImage1, workImage2, workImage3];
+const workImages = [workImage, workImage1, workImage2];
 const SLIDE_INTERVAL_MS = 3000;
 
 function WorkImageSlider() {
@@ -363,7 +362,7 @@ function WorkImageSlider() {
         >
           <Image
             src={workImages[index]}
-            alt="A team member reviewing documents at a desk"
+            alt="A bulk cargo vessel at sea"
             fill
             className="object-cover"
             sizes="(min-width: 768px) 421px, (min-width: 640px) 50vw, 100vw"

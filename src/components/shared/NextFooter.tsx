@@ -106,14 +106,10 @@ const companyLinks = [
 ];
 
 const productLinks = [
-  { label: "SyncBari", href: "https://syncbari.com/" },
-  { label: "MetaBari", href: "https://metabari.com/" },
-  { label: "SiteBari", href: "https://sitebari.com/" },
-  { label: "MailBari", href: "https://mailbari.com/" },
-];
-
-const resourceLinks = [
-  { label: "Global Office", href: "/contact#global-offices" },
+  { label: "Cementious & RMC Raw Item", href: "/clinker" },
+  { label: "Grain Commodities", href: "/wheat-supplier-importer-bangladesh" },
+  { label: "Animal Feed Additives", href: "/wheat-bran" },
+  { label: "Season Crops", href: "/cotton" },
 ];
 
 const quickLinks = [
@@ -493,7 +489,7 @@ const NextFooter = () => {
 
           {/* Right: Link columns (Width: Max 705px, Auto-space fill) */}
           <div className="w-full lg:max-w-[705px] lg:ml-auto">
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
               <div>
                 <h4 className="body-medium mb-4 text-[#112420]">Company</h4>
                 <ul className="space-y-[10px] ">
@@ -514,24 +510,6 @@ const NextFooter = () => {
                 <h4 className="body-medium mb-4 text-[#112420]">Product</h4>
                 <ul className="space-y-[10px] text-[#626262]">
                   {productLinks.map((item) => (
-                    <li key={item.label}>
-                      <Link 
-                        href={item.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="body-regular text-[#626262] hover:text-primary transition-colors"
-                      >
-                        {item.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div>
-                <h4 className="body-medium mb-4 text-[#112420]">Resources</h4>
-                <ul className="space-y-[10px] text-[#626262]">
-                  {resourceLinks.map((item) => (
                     <li key={item.label}>
                       <Link
                         href={item.href}

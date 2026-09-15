@@ -58,7 +58,7 @@ const serviceGroups: NavLinkGroup[] = [
 const navItems: NavItem[] = [
   { label: "Products", type: "product" },
   { label: "Services", type: "service" },
-  { label: "About Us", href: "/about-us" },
+  { label: "About Us", href: "/" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -66,8 +66,7 @@ export default function Navbar() {
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
+  useEffect(() => { const handleScroll = () => {
       const currentScrollY = window.scrollY;
 
       if (currentScrollY > lastScrollY && currentScrollY > 50) {
@@ -75,8 +74,7 @@ export default function Navbar() {
       } else {
         setShowNavbar(true);
       }
-
-      setLastScrollY(currentScrollY);
+setLastScrollY(currentScrollY);
     };
 
     window.addEventListener("scroll", handleScroll);
