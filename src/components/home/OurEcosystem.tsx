@@ -3,38 +3,38 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import SyncBariIcon from "../icons/SyncBariIcon";
-import SiteBariIcon from "../icons/SiteBariIcon";
-import MetaBariIcon from "../icons/MetaBariIcon";
-import MailBariIcon from "../icons/MailBariIcon";
+import { Globe2, Anchor, Warehouse, ShieldCheck } from "lucide-react";
 import ProductCard from "../shared/ProductCard";
 import ProductCardCompact from "../shared/ProductCardCompact";
 import SectionHeader from "../shared/SectionHeader";
 
 const fullWidthProducts = [
   {
-    badgeLabel: "Agency CRM",
-    icon: <SyncBariIcon size={32} />,
-    title: "SyncBari",
+    badgeLabel: "Global Sourcing Network",
+    icon: <Globe2 size={32} color="#B23FA0" />,
+    title: "Bulk Sourcing & Trading",
     description:
-      " Keep all your customers, orders and payments in one place. No more Excel files and paper notebooks.",
-    linkText: "For development, design and marketing studios.",
-    linkHref: "https://syncbari.com/",
-    image: "/products/syncbari.png",
-    accentColor: "#7947cd",
-    panelColor: "#DFCCFF",
-    imageBorderColor: "#F4ECFF",
-    showArrow: true,
+      "We connect you with trusted suppliers and quarries worldwide, sourcing construction materials, grains, and feed ingredients to your exact specification.",
+    linkText: "Explore our products",
+    linkHref: "/clinker",
+    image:
+      "https://images.unsplash.com/photo-1774946103680-3d34a461a581?q=80&w=1600&auto=format&fit=crop",
+    imageAlt: "Stacks of sacks and containers in a bulk sourcing warehouse",
+    accentColor: "#B23FA0",
+    panelColor: "#F7BFE4",
+    imageBorderColor: "#FDE9F7",
   },
   {
-    badgeLabel: "No-Code Website Builder",
-    icon: <SiteBariIcon size={32} />,
-    title: "SiteBari",
+    badgeLabel: "Shipping & Logistics",
+    icon: <Anchor size={32} color="#2455AA" />,
+    title: "Vessel Chartering & Ocean Freight",
     description:
-      "Make your business website without any coding. We manage the hosting and updates for you.",
-    linkText: "For Small Businesses & Client Management.",
-    linkHref: "https://sitebari.com/",
-    image: "/products/sitebari.png",
+      "From Handysize to Panamax, we arrange the right vessel for your cargo — covering major trade routes worldwide.",
+    linkText: "See our shipping services",
+    linkHref: "/vessel-chartering",
+    image:
+      "https://images.unsplash.com/photo-1585713181935-d5f622cc2415?q=80&w=1600&auto=format&fit=crop",
+    imageAlt: "Aerial view of a cargo ship crossing the ocean",
     accentColor: "#2455AA",
     panelColor: "#A4C4FA",
     imageBorderColor: "#DEE9FF",
@@ -43,28 +43,31 @@ const fullWidthProducts = [
 
 const compactProducts = [
   {
-    badgeLabel: "Ad Management Platform",
-    icon: <MetaBariIcon size={32} />,
-    title: "MetaBari",
+    badgeLabel: "Port Operations",
+    icon: <Warehouse size={32} color="#5B4FCF" />,
+    title: "Port Handling & Cargo Management",
     description:
-      "Manage ad accounts, client payments and billing in one place. Made for agencies who run ads for other businesses.",
-    linkText:
-      "For agencies renting ad accounts on Meta, Google TikTok & LinkedIn.",
-    linkHref: "https://metabari.com/",
-    image: "/products/metabari.png",
-    accentColor: "#C93798",
-    panelColor: "#FBD4EE",
-    imageBorderColor: "#FBE2F3",
+      "We manage loading, discharging, and inland transport, moving your cargo efficiently from port to final destination.",
+    linkText: "Talk to our logistics team",
+    linkHref: "/contact",
+    image:
+      "https://images.unsplash.com/photo-1597334948330-38795f25d05d?q=80&w=1400&auto=format&fit=crop",
+    imageAlt: "Container ship being loaded at a busy port with cranes",
+    accentColor: "#5B4FCF",
+    panelColor: "#D9D3FF",
+    imageBorderColor: "#F0EDFF",
   },
   {
-    badgeLabel: "Business Mail",
-    icon: <MailBariIcon size={32} />,
-    title: "MailBari",
+    badgeLabel: "Certified Quality",
+    icon: <ShieldCheck size={32} color="#A67C23" />,
+    title: "Quality Assurance & Documentation",
     description:
-      "Get email with your own business name, like you@yourshop.com. Your emails reach the inbox, not the spam folder.",
-    linkText: "For any business running email on its own domain.",
-    linkHref: "https://mailbari.com/",
-    image: "/products/mailbari.png",
+      "Every shipment can be backed by a Certificate of Analysis (COA) and full documentation, so you know exactly what you're getting.",
+    linkText: "Request a sample COA",
+    linkHref: "/contact",
+    image:
+      "https://images.unsplash.com/photo-1754039985008-a15410211b67?q=80&w=1400&auto=format&fit=crop",
+    imageAlt: "Close-up of a hand marking a quality checklist on a notebook",
     accentColor: "#A67C23",
     panelColor: "#FDF0D5",
     imageBorderColor: "#FDF5E4",
@@ -137,14 +140,14 @@ export default function OurEcosystem() {
       <div className="mt-20 md:mt-25">
         <div className="px-4 md:px-0">
           <SectionHeader
-            title="One Ecosystem. Infinite Opportunities."
-            description="From business communication to customer management, websites, and advertising—our products work together to power every stage of your growth."
+            title="How We Serve You"
+            description="From sourcing to final delivery, we handle every step of your supply chain."
           />
         </div>
       </div>
 
       <div className="container section-padding !pt-15 flex flex-col gap-6 sm:gap-8 lg:gap-10">
-        {/* Full-width cards: SyncBari, SiteBari */}
+        {/* Full-width cards: Bulk Sourcing & Trading, Vessel Chartering & Ocean Freight */}
         {fullWidthProducts.map((product, index) => (
           <StackCard key={product.title} index={index}>
             <ProductCard
@@ -155,6 +158,7 @@ export default function OurEcosystem() {
               linkText={product.linkText}
               linkHref={product.linkHref}
               image={product.image}
+              imageAlt={product.imageAlt}
               accentColor={product.accentColor}
               panelColor={product.panelColor}
               imageBorderColor={product.imageBorderColor}
@@ -162,7 +166,7 @@ export default function OurEcosystem() {
           </StackCard>
         ))}
 
-        {/* Compact 2-up row: MetaBari, MailBari */}
+        {/* Compact 2-up row: Port Handling & Cargo Management, Quality Assurance & Documentation */}
         <StackCard index={fullWidthProducts.length}>
           <div className=" sm:gap-8 lg:gap-10 md:px-14 ">
             <div className="grid grid-cols-1  gap-6 sm:grid-cols-2 bg-white" >
@@ -176,6 +180,7 @@ export default function OurEcosystem() {
                 linkText={product.linkText}
                 linkHref={product.linkHref}
                 image={product.image}
+                imageAlt={product.imageAlt}
                 accentColor={product.accentColor}
                 panelColor={product.panelColor}
                 imageBorderColor={product.imageBorderColor}

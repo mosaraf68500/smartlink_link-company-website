@@ -15,7 +15,7 @@ const productGroups: NavLinkGroup[] = [
     items: [
       { label: "Clinker", href: "/clinker" },
       { label: "Limestone", href: "/limestone" },
-      { label: "Aggregates", href: "/aggregates" },
+      { label: "Gabbro Aggregate", href: "/gabbro-aggregate" },
       { label: "Coal", href: "/coal" },
     ],
   },

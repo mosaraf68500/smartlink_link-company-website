@@ -1,16 +1,13 @@
-import ContentHero from "@/src/components/shared/ContentHero";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { limestoneData } from "@/src/components/products/data/limestone";
+
+export const metadata: Metadata = {
+  title: "Limestone Supplier & Importer in Bangladesh | Smartlink Systems",
+  description:
+    "Smartlink Systems supplies bulk limestone from UAE, Oman, Thailand, China & India to RMC plants, cement industries and infrastructure projects in Bangladesh.",
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Limestone"
-        description="Content for this page is being finalized."
-      />
-      <div className="container py-16">
-        {/* TODO: content pending — Limestone */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={limestoneData} />;
 }

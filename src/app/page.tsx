@@ -5,7 +5,6 @@ import Work from "../components/home/work/Work";
 import FAQ from "../components/shared/FAQ";
 import ToolMain from "../components/home/tools/ToolMain";
 import TalkToExperts from "../components/shared/TalkToExperts";
-import ServiceMain from "../components/home/services/ServiceMain";
 import ReadyToBuildCTA from "../components/shared/ReadyToBuildCTA";
 import OurEcosystem from "../components/home/OurEcosystem";
 function home() {
@@ -16,8 +15,7 @@ function home() {
       <Work></Work>
       
 
-      {/* <OurEcosystem /> */}
-      <ServiceMain></ServiceMain>
+      <OurEcosystem />
       <ToolMain></ToolMain>
       <FAQ></FAQ>
       <TalkToExperts></TalkToExperts>
