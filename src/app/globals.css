@@ -78,10 +78,54 @@ html.lenis body {
   pointer-events: none;
 }
 .container {
-  max-width: 1312px;
+  max-width: 1240px;
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+/* Container margins from 640px up.
+   - Left: 0 until 1024px, then a 20px gutter (below 1024 the container's own
+     px-4/px-6 padding provides the inset).
+   - Right: at least --contact-rail, the column reserved for the fixed
+     StickyContactBar (24px from the edge + 48px wide + clearance), so the bar
+     never sits over page content. Once the viewport is wide enough that
+     centering the 1240px box leaves more than the rail on each side (~1416px),
+     both margins are just the plain centered ones and nothing is reserved.
+   A container nested inside another just fills its parent, so the margins
+   aren't applied twice. */
+:root {
+  --contact-rail: 88px;
+}
+
+@media (min-width: 640px) {
+  .container {
+    width: auto;
+    max-width: 1240px;
+    margin-left: max(0px, calc((100% - 1240px) / 2));
+    margin-right: max(var(--contact-rail), calc((100% - 1240px) / 2));
+  }
+  .container .container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    margin-left: max(20px, calc((100% - 1240px) / 2));
+  }
+}
+
+/* Same rail reservation for a centered, max-width block that isn't a
+   .container (e.g. the home hero). Set --rail-max to the block's max width. */
+@media (min-width: 640px) {
+  .contact-rail-safe {
+    max-width: var(--rail-max);
+    margin-left: max(0px, calc((100% - var(--rail-max)) / 2));
+    margin-right: max(var(--contact-rail), calc((100% - var(--rail-max)) / 2));
+  }
 }
 
 /* title  */

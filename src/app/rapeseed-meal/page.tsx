@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { rapeseedMealData } from "@/src/components/products/data/animalFeed";
+
+const title = "Rapeseed Meal (RSM) Supplier | Smartlink Systems";
+const description =
+  "Smartlink Systems supplies rapeseed meal (RSM) — crude protein 34–38% min, moisture 12% max — as a cost-effective plant-based protein for livestock and feed formulations.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/rapeseed-meal" },
+  openGraph: { title, description, url: "/rapeseed-meal", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Rapeseed Meal"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["rapeseed-meal"]}
-          alt="Rapeseed Meal"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Rapeseed Meal */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={rapeseedMealData} />;
 }

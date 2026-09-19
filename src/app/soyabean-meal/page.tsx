@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { soyabeanMealData } from "@/src/components/products/data/animalFeed";
+
+const title = "Soybean Meal (SBM) Supplier | Smartlink Systems";
+const description =
+  "Smartlink Systems supplies high-protein soybean meal (crude protein 46–48% min, moisture 12% max) to poultry, aquaculture, dairy and livestock feed manufacturers.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/soyabean-meal" },
+  openGraph: { title, description, url: "/soyabean-meal", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Soyabean Meal"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["soyabean-meal"]}
-          alt="Soyabean Meal"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Soyabean Meal */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={soyabeanMealData} />;
 }

@@ -31,6 +31,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  // Needed so per-page relative canonical / Open Graph URLs resolve.
+  metadataBase: new URL("https://smartlinksystemsbd.com"),
   title: "Smartlink Systems",
   description: "Smartlink Systems - Shipping, Logistics & Commercial Trading",
 };

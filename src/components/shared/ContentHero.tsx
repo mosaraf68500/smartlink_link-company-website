@@ -6,6 +6,8 @@ import StartingPriceLine from "../ui/StartingPriceLine";
 interface ContentHeroProps {
   breadcrumb: string;
   title: string;
+  /** Optional line shown between the title and the description. */
+  subtitle?: string;
   description: string;
   startingPrice?: string;
   children?: ReactNode;
@@ -15,6 +17,7 @@ interface ContentHeroProps {
 const ContentHero = ({
   breadcrumb,
   title,
+  subtitle,
   description,
   startingPrice,
   children,
@@ -103,6 +106,10 @@ const ContentHero = ({
           <h1 className="h1 max-w-4xl whitespace-pre-line text-dark font-bricolage">
             {title}
           </h1>
+
+          {subtitle && (
+            <p className="title-regular max-w-3xl text-primary">{subtitle}</p>
+          )}
 
           <p className="body-small-regular max-w-3xl whitespace-pre-line text-gray">
             {description}

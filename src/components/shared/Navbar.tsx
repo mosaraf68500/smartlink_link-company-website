@@ -58,7 +58,7 @@ const serviceGroups: NavLinkGroup[] = [
 const navItems: NavItem[] = [
   { label: "Products", type: "product" },
   { label: "Services", type: "service" },
-  { label: "About Us", href: "/" },
+  { label: "About Us", href: "/about-us" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -95,6 +95,8 @@ setLastScrollY(currentScrollY);
           <Image
             src={logo}
             alt="Smartlink Systems"
+            width={441}
+            height={98}
             priority
             className="h-6 w-auto sm:h-7"
           />

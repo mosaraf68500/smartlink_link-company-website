@@ -1,24 +1,27 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import ServicePage from "@/src/components/services/ServicePage";
+import { vesselCharteringData } from "@/src/components/services/data/vesselChartering";
+
+const title =
+  "International Bulk Vessel Chartering & Ocean Freight | Smartlink Systems";
+const description =
+  "Smartlink Systems arranges dry bulk shipping and international bulk vessel chartering — Handysize to Panamax, voyage and time charter, freight negotiation, and maritime logistics for cargo moving to Bangladesh and South Asia.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  keywords: [
+    "bulk vessel chartering",
+    "dry bulk shipping",
+    "ocean freight",
+    "maritime logistics",
+    "voyage charter",
+    "time charter",
+  ],
+  alternates: { canonical: "/vessel-chartering" },
+  openGraph: { title, description, url: "/vessel-chartering", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Services"
-        title="International Bulk Vessel Chartering"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["vessel-chartering"]}
-          alt="International Bulk Vessel Chartering"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — International Bulk Vessel Chartering */}
-      </div>
-    </div>
-  );
+  return <ServicePage data={vesselCharteringData} />;
 }

@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { coalData } from "@/src/components/products/data/coal";
+
+const title = "Coal Supplier & Importer in Bangladesh | Smartlink Systems";
+const description =
+  "Smartlink Systems sources and supplies thermal, steam and industrial coal from Indonesia, South Africa and Australia to power, steel, brick, cement and boiler industries in Bangladesh, with bulk vessel chartering and full supply chain support.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/coal" },
+  openGraph: { title, description, url: "/coal", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Coal"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["coal"]}
-          alt="Coal"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Coal */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={coalData} />;
 }

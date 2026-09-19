@@ -65,7 +65,7 @@ export default function StillHaveQuestion() {
       style={{ borderColor: "#00000014" }}
     >
       {/* Left Copy */}
-      <div className="flex w-full flex-col gap-4 lg:w-[582px] lg:flex-shrink-0">
+      <div className="flex w-full flex-col gap-4 lg:w-[42%] lg:flex-shrink-0 xl:w-[582px]">
         <h3 className="font-bricolage text-dark h4">Still have a question?</h3>
         <p className="text-gray title-regular font-jakarta">
           If you couldn&apos;t find the answer you were looking for just ask us
@@ -75,7 +75,7 @@ export default function StillHaveQuestion() {
       </div>
 
       {/* Right Form */}
-      <form onSubmit={handleSubmit} className="flex-1 flex flex-col gap-4">
+      <form onSubmit={handleSubmit} className="min-w-0 flex-1 flex flex-col gap-4">
         <div className="flex flex-col gap-4 sm:flex-row">
           <div className="relative w-full sm:w-[293.5px] flex-shrink-0">
             <User

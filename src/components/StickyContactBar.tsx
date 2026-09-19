@@ -110,7 +110,14 @@ export default function StickyContactBar() {
         }
       `}</style>
 
-      <div className="fixed right-4 top-1/2 z-50 flex -translate-y-1/2 flex-col-reverse items-end gap-4 sm:right-6 sm:flex-col">
+      {/* sm+: a vertical column centered on the right edge; page containers
+          reserve --contact-rail (globals.css) so it never covers content.
+          Below sm there's no room for a rail, so the toggle sits in the
+          bottom-right corner, stacked above the Back-to-top button. */}
+      <div
+        data-sticky-contact-bar
+        className="fixed bottom-[88px] right-4 z-50 flex flex-col-reverse items-end gap-4 sm:bottom-auto sm:right-6 sm:top-1/2 sm:-translate-y-1/2 sm:flex-col"
+      >
         {/* Mobile-only toggle button — opens/closes the 3 options below.
             Hidden entirely on sm+ where options are always visible. */}
         <button

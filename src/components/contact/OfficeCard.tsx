@@ -24,8 +24,8 @@ export default function OfficeCard({ office, size }: OfficeCardProps) {
       <div
         className={`relative w-full flex-shrink-0 overflow-hidden rounded-lg ${
           isLarge
-            ? "h-[220px] sm:h-[260px] lg:h-[320px] lg:w-[620px]"
-            : "h-[200px] sm:h-full lg:h-[320px] lg:w-[220px]"
+            ? "h-[220px] sm:h-[260px] sm:w-1/2 lg:h-[320px] xl:w-[620px]"
+            : "h-[200px] sm:h-full sm:w-2/5 lg:h-[320px] lg:w-[220px]"
         }`}
       >
         <Image
@@ -42,7 +42,7 @@ export default function OfficeCard({ office, size }: OfficeCardProps) {
       </div>
 
       {/* Details */}
-      <div className="flex w-full flex-col justify-start gap-4 sm:gap-10 lg:h-[320px]">
+      <div className="flex w-full min-w-0 flex-col justify-start gap-4 sm:gap-10 lg:h-[320px]">
         <div className="flex items-center gap-2.5">
           <span className="relative h-7 w-7 flex-shrink-0 overflow-hidden rounded-full sm:h-14 sm:w-14">
             <Image
@@ -67,7 +67,7 @@ export default function OfficeCard({ office, size }: OfficeCardProps) {
           <InfoRow icon={<MapPin size={24} />}>{office.address}</InfoRow>
           <InfoRow icon={<Mail size={24} />}>
             {office.emails.map((email) => (
-              <a key={email} href={`mailto:${email}`} className="block hover:underline">
+              <a key={email} href={`mailto:${email}`} className="block hover:underline [overflow-wrap:anywhere]">
                 {email}
               </a>
             ))}

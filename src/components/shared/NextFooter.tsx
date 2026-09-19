@@ -480,7 +480,13 @@ const NextFooter = () => {
         <div className="grid grid-cols-1 lg:grid-cols-[355px_1fr] justify-between items-start gap-10 lg:gap-16">
           {/* Left: Logo + description + CTA (Width: 355px) */}
           <div className="w-full max-w-[355px]">
-            <Image src={logo} alt="Smartlink Systems" width={273} height={61} />
+            <Image
+              src={logo}
+              alt="Smartlink Systems"
+              width={441}
+              height={98}
+              className="h-auto w-[273px]"
+            />
             {/* TODO: content pending — footer tagline */}
             <Link href="/contact" className="mt-6 inline-block">
               <PrimaryButton>Contact Us</PrimaryButton>

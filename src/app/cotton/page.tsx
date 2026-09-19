@@ -1,24 +1,26 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { cottonData } from "@/src/components/products/data/placeholderProducts";
+
+// PLACEHOLDER metadata — replace after keyword research (SMARTLINK_PROJECT.md §4).
+const title = "Cotton Supplier in Bangladesh | Smartlink Systems";
+const description =
+  "Smartlink Systems supplies cotton to industrial and commercial buyers in Bangladesh. Full specifications and sourcing details coming soon.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  // PLACEHOLDER page: keep out of search indexes. Remove this once real content replaces placeholderPage(...).
+  robots: { index: false },
+  alternates: { canonical: "/cotton" },
+  openGraph: { title, description, url: "/cotton", type: "website" },
+};
 
 export default function Page() {
   return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Cotton"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["cotton"]}
-          alt="Cotton"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Cotton */}
-      </div>
-    </div>
+    <>
+      {/* PLACEHOLDER CONTENT — pending final copy from client, see SMARTLINK_PROJECT.md */}
+      <CommodityPage data={cottonData} />
+    </>
   );
 }

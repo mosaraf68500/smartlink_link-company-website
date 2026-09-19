@@ -43,7 +43,10 @@ const HeroContent = () => {
       - Tablet: pt-[130px] (Navbar ~70px + 60px Gap)
       - Desktop (md+): pt-[150px] (Navbar ~80px + 70px Gap)
     */
-    <div className="mx-auto flex max-w-5xl flex-col items-center px-4 pt-[110px] sm:pt-[130px] md:pt-[170px] text-center">
+    <div
+      className="contact-rail-safe mx-auto flex max-w-5xl flex-col items-center px-4 pt-[110px] sm:pt-[130px] md:pt-[170px] text-center"
+      style={{ "--rail-max": "64rem" } as React.CSSProperties}
+    >
       <h1 className="font-bricolage h1 text-[#112420]">
         Global Sourcing. Reliable Delivery. Every Time.
       </h1>

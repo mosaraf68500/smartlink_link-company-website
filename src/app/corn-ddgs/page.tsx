@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { cornDdgsData } from "@/src/components/products/data/animalFeed";
+
+const title = "DDGS – Distillers Dried Grains with Solubles Supplier | Smartlink Systems";
+const description =
+  "Smartlink Systems sources DDGS (crude protein 26–30% min, moisture 12% max) as a protein- and energy-rich ingredient for poultry, cattle, dairy and livestock feed.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/corn-ddgs" },
+  openGraph: { title, description, url: "/corn-ddgs", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Corn DDGS"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["corn-ddgs"]}
-          alt="Corn DDGS"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Corn DDGS */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={cornDdgsData} />;
 }

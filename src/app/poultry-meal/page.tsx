@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { poultryMealData } from "@/src/components/products/data/animalFeed";
+
+const title = "Feed Grade Poultry Meal Supplier | Smartlink Systems";
+const description =
+  "Smartlink Systems supplies feed grade poultry meal (crude protein 60–65% min) sourced from Saudi Arabia, Egypt and China for poultry and livestock feed formulations.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/poultry-meal" },
+  openGraph: { title, description, url: "/poultry-meal", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Poultry Meal"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["poultry-meal"]}
-          alt="Poultry Meal"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Poultry Meal */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={poultryMealData} />;
 }

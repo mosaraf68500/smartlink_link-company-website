@@ -1,24 +1,18 @@
-import ContentHero from "@/src/components/shared/ContentHero";
-import ImageGallery from "@/src/components/products/ImageGallery";
-import { productImages } from "@/src/components/products/data/productImages";
+import type { Metadata } from "next";
+import CommodityPage from "@/src/components/products/CommodityPage";
+import { wheatBranData } from "@/src/components/products/data/animalFeed";
+
+const title = "Feed Grade Wheat Bran Supplier | Smartlink Systems";
+const description =
+  "Smartlink Systems supplies feed grade wheat bran (protein 14% min, moisture 14% max) for poultry, dairy, cattle and livestock feed. Contact us for pricing and bulk supply.";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: "/wheat-bran" },
+  openGraph: { title, description, url: "/wheat-bran", type: "website" },
+};
 
 export default function Page() {
-  return (
-    <div className="mt-20 md:mt-10">
-      <ContentHero
-        breadcrumb="Products"
-        title="Wheat Bran"
-        description="Content for this page is being finalized."
-      >
-        <ImageGallery
-          images={productImages["wheat-bran"]}
-          alt="Wheat Bran"
-          className="max-w-2xl"
-        />
-      </ContentHero>
-      <div className="container py-16">
-        {/* TODO: content pending — Wheat Bran */}
-      </div>
-    </div>
-  );
+  return <CommodityPage data={wheatBranData} />;
 }
