@@ -262,12 +262,12 @@ export default function ReadyToBuildCTA({
                   zIndex: 1000,
                 }}
               >
-                <div
+                {/* <div
                   className="absolute left-1/2 -top-0"
                   style={{ transform: "translateX(-50%) rotate(-19.29deg)" }}
                 >
                   <PinIcon size={40} />
-                </div>
+                </div> */}
 
                 <div className="flex justify-center items-center flex-col">
                   <p className="font-bricolage h2 text-dark">10+</p>

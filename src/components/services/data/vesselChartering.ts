@@ -4,22 +4,19 @@ import { productImages } from "../../products/data/productImages";
 export const vesselCharteringData: ServicePageData = {
   slug: "vessel-chartering",
   category: "Services",
-  name: "International Bulk Vessel Chartering",
-  tagline:
-    "Connecting Global Cargo with the Right Vessel, Route & Freight Solution",
-  intro:
-    "Smartlink Systems delivers professional International Bulk Vessel Chartering & Maritime Logistics Solutions, connecting cargo owners, traders, importers and exporters with reliable vessel owners and operators across major shipping routes worldwide.\n\nBacked by practical experience in international bulk shipping and an extensive global network, we arrange suitable vessels for the safe, efficient and commercially competitive transportation of dry bulk and breakbulk commodities from origin to destination.",
+  name: "International Bulk Chartering & Maritime Logistics",
+  tagline: "Connecting Cargo, Vessels & Global Markets",
   images: productImages["vessel-chartering"],
 
   sections: [
     {
-      icon: "ship",
-      heading: "Our Chartering Expertise",
+      heading: "Dry Bulk Chartering",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "We provide chartering solutions for Handysize, Handymax, Supramax, Ultramax and Panamax vessels, carefully selected according to cargo quantity, loading and discharge port restrictions, draft limitations, laycan requirements and overall voyage economics.",
+            "We arrange suitable vessels according to cargo type, quantity, loading and discharge ports, draft restrictions, laycan, loading/discharging rates, and other operational requirements.",
+            "Our chartering coverage includes:",
           ],
         },
         {
@@ -27,115 +24,203 @@ export const vesselCharteringData: ServicePageData = {
           items: [
             { label: "Handysize" },
             { label: "Handymax" },
-            { label: "Supramax" },
-            { label: "Ultramax" },
-            { label: "Panamax" },
+            { label: "Supramax / Ultramax" },
+            { label: "Panamax / Kamsarmax" },
+            { label: "Larger bulk carriers (subject to cargo & route)" },
           ],
         },
         {
           type: "paragraphs",
           paragraphs: [
-            "Our chartering support covers Voyage Charter, Time Charter, Vessel Nomination, Freight Negotiation, Laycan Planning, Fixture Coordination, Port & Agent Coordination, Loading/Discharging Arrangements, Shipping Documentation and Voyage Monitoring.",
+            "Chartering can be arranged on Voyage Charter, Time Charter, COA (Contract of Affreightment), or other mutually agreed structures.",
           ],
         },
         {
-          type: "checklist",
+          type: "chips",
           items: [
-            "Voyage Charter",
-            "Time Charter",
-            "Vessel Nomination",
-            "Freight Negotiation",
-            "Laycan Planning",
-            "Fixture Coordination",
-            "Port & Agent Coordination",
-            "Loading/Discharging Arrangements",
-            "Shipping Documentation",
-            "Voyage Monitoring",
+            { label: "Voyage Charter" },
+            { label: "Time Charter" },
+            { label: "COA (Contract of Affreightment)" },
           ],
         },
       ],
     },
     {
-      icon: "globe",
-      heading: "Global Trade Routes",
+      heading: "Commodities We Handle",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "Through our network of shipowners, operators, chartering brokers, commodity exporters, importers, port agents and logistics partners, Smartlink Systems facilitates bulk cargo movements across major trade corridors connecting:",
+            "Our bulk chartering solutions are suitable for a broad range of dry bulk cargoes, including:",
+            "Agricultural Commodities",
+          ],
+        },
+        {
+          type: "chips",
+          items: [
+            { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
+            { label: "Corn / Maize" },
+            { label: "Soybeans", href: "/soyabean-seeds" },
+            { label: "Pulses & other grains", href: "/lentils-pulses" },
+            { label: "Animal Feed Ingredients", href: "/wheat-bran" },
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: ["Construction & Industrial Materials"],
+        },
+        {
+          type: "chips",
+          items: [
+            { label: "Limestone", href: "/limestone" },
+            { label: "Gabbro / Aggregates", href: "/gabbro-aggregate" },
+            { label: "Clinker", href: "/clinker" },
+            { label: "Gypsum" },
+            { label: "Slag" },
+            { label: "Silica Sand" },
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: ["Energy & Raw Materials"],
+        },
+        {
+          type: "chips",
+          items: [
+            { label: "Coal", href: "/coal" },
+            { label: "Petcoke" },
+            { label: "Minerals and other dry bulk commodities" },
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Chartering & Freight Solutions",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Smartlink Systems assists clients throughout the chartering process, including:",
+          ],
+        },
+        {
+          type: "checklist",
+          items: [
+            "Vessel sourcing and tonnage identification",
+            "Freight indications and market enquiries",
+            "Cargo and vessel matching",
+            "Laycan coordination",
+            "Charter-party negotiation support",
+            "Loading and discharge rate coordination",
+            "Demurrage and despatch term coordination",
+            "Port and draft requirement review",
+            "Voyage and shipment follow-up",
+            "Documentation coordination",
+            "Shipowner, charterer and agent communication",
+            "Discharge and inland logistics planning",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "International Trade Routes",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Through our international business network, we support bulk cargo movements across major trading regions, including Asia, Middle East, Africa, Black Sea, Europe, North America, and South America, subject to vessel availability, sanctions/compliance requirements, port restrictions, and prevailing market conditions.",
+            "We can support both single-voyage requirements and regular shipment programs, including long-term cargo movements where COA or dedicated freight arrangements are commercially suitable.",
           ],
         },
         {
           type: "chips",
           variant: "region",
           items: [
+            { label: "Asia" },
             { label: "Middle East" },
-            { label: "South Asia" },
-            { label: "Southeast Asia" },
-            { label: "China" },
             { label: "Africa" },
+            { label: "Black Sea" },
             { label: "Europe" },
-            { label: "Black Sea Region" },
-            { label: "North & South America" },
-          ],
-        },
-        {
-          type: "paragraphs",
-          paragraphs: [
-            "We particularly support international shipments connecting global supply origins with Bangladesh and other South Asian markets.",
+            { label: "North America" },
+            { label: "South America" },
           ],
         },
       ],
     },
     {
-      icon: "package",
-      heading: "Commodities We Handle",
+      heading: "Commodity-to-Destination Logistics",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "Our chartering and shipping solutions are suitable for a broad range of commodities, including:",
+            "Our capabilities extend beyond ocean freight. Where required, Smartlink Systems can coordinate the cargo movement from load port to discharge port and onward to the buyer’s project, warehouse, factory, or processing facility.",
+            "Depending on the location and cargo, logistics coordination may include:",
           ],
         },
         {
-          type: "chips",
-          // Linked only where a route exists in the app. Wheat and Clinker
-          // routes currently hold placeholder content.
+          type: "checklist",
           items: [
-            { label: "Limestone", href: "/limestone" },
-            { label: "Gabbro Aggregate", href: "/gabbro-aggregate" },
-            { label: "Clinker", href: "/clinker" },
-            { label: "Gypsum" },
-            { label: "Coal", href: "/coal" },
-            { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
-            { label: "Corn/Maize" },
-            { label: "Grains" },
-            { label: "Fertilizers" },
-            { label: "Minerals" },
-            { label: "Construction Materials" },
-            { label: "Other Dry Bulk Cargoes" },
+            "Ocean Freight",
+            "Port Handling",
+            "Stevedoring",
+            "Lighterage / Inland Water Transport",
+            "Truck Transportation",
+            "Final Delivery",
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "This integrated approach is particularly valuable for bulk commodities where freight, discharge productivity, port conditions, storage, and inland transportation can materially affect the final landed cost.",
           ],
         },
       ],
     },
     {
-      icon: "anchor",
-      heading: "SMART CHARTERING • COMPETITIVE FREIGHT • GLOBAL REACH",
+      heading: "Commercial & Operational Focus",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "At Smartlink Systems, our objective is simple — the right vessel, the right route, the right freight and the right schedule.",
-            "From initial freight inquiry and vessel selection to final discharge, our team focuses on commercial efficiency, operational reliability, timely coordination and transparent communication throughout every stage of the shipment.",
+            "Every chartering requirement is evaluated based on key commercial and operational factors such as:",
+          ],
+        },
+        {
+          type: "checklist",
+          items: [
+            "Cargo quantity and specification",
+            "Load and discharge ports",
+            "Laycan / shipment window",
+            "Vessel size and suitability",
+            "Port draft and dimensional restrictions",
+            "Loading and discharging productivity",
+            "Freight basis",
+            "Demurrage / Despatch",
+            "Weather and congestion exposure",
+            "Bunker and voyage considerations",
+            "Cargo handling requirements",
+            "Applicable maritime and trade compliance",
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Our objective is to develop a commercially efficient shipping solution while maintaining clear coordination among cargo interests, shipowners, operators, port agents, surveyors, stevedores, and inland logistics partners.",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "Our Approach",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "At Smartlink Systems, bulk chartering is treated as an integral part of the commodity supply chain—not simply as vessel booking. By combining commodity trading knowledge, freight coordination, port operations, and inland logistics experience, we work to provide practical shipping solutions from origin to final destination.",
+            "Whether the requirement involves a single bulk shipment, recurring monthly cargoes, or a long-term commodity supply program, our focus remains on competitive freight, suitable tonnage, operational efficiency, transparent communication, and dependable execution.",
           ],
         },
       ],
     },
   ],
-
-  cta: {
-    text: "Smartlink Systems — Your Reliable Partner for International Bulk Chartering, Ocean Freight & Maritime Logistics.",
-    buttonLabel: "Contact Us",
-    buttonHref: "/contact",
-  },
 };

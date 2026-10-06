@@ -1,13 +1,11 @@
-// 
-
-
-
 "use client";
 
 import { useState } from "react";
 import { User, Mail, Lock, Loader2 } from "lucide-react";
 import { toast } from "react-toastify";
 import PrimaryButton from "@/src/components/ui/PrimaryButton";
+
+const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function StillHaveQuestion() {
   const [name, setName] = useState("");
@@ -17,41 +15,34 @@ export default function StillHaveQuestion() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!email.trim() || !EMAIL_PATTERN.test(email.trim())) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+    if (!question.trim()) {
+      toast.error("Please type your question.");
+      return;
+    }
+
     setLoading(true);
 
     try {
-      // 1. Postman environment এ যে port/baseUrl দেওয়া আছে (যেমন 5000), ঠিক সেটাই নিশ্চিত করুন
-      const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL ;
+      const { sendQuestion } = await import("@/src/lib/emailjs");
 
-      // 2. Exact JSON payload তৈরি (Postman format অনুযায়ী)
-      const payload = {
-        name: name.trim() || "Anonymous", // Backend Schema তে string required হলে empty না রেখে fallback দিন
+      await sendQuestion({
+        name: name.trim() || "Anonymous",
         email: email.trim(),
         question: question.trim(),
-      };
-
-      const response = await fetch(`${baseUrl}/contact-questions`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
-
-      if (response.ok && data.success) {
-        toast.success("Thank you! Your question has been submitted.");
-        setName("");
-        setEmail("");
-        setQuestion("");
-      } else {
-        console.error("API Error Response:", data);
-        toast.error(data.message || "Failed to submit your question.");
-      }
+      toast.success("Thank you! Your question has been submitted.");
+      setName("");
+      setEmail("");
+      setQuestion("");
     } catch (error) {
-      console.error("Network Error:", error);
-      toast.error("Something went wrong. Please check your connection.");
+      console.error("EmailJS question error:", error);
+      toast.error("Something went wrong. Please try again or contact us directly.");
     } finally {
       setLoading(false);
     }

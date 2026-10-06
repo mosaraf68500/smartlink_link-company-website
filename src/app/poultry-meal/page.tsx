@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
-import { poultryMealData } from "@/src/components/products/data/animalFeed";
+import { poultryMealData } from "@/src/components/products/data/poultryMeal";
 
-const title = "Feed Grade Poultry Meal Supplier | Smartlink Systems";
+const title = "Poultry Meal – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems supplies feed grade poultry meal (crude protein 60–65% min) sourced from Saudi Arabia, Egypt and China for poultry and livestock feed formulations.";
+  "Smartlink Systems sources and supplies Poultry Meal from Saudi Arabia, Nigeria, India and Egypt — 55%–65%+ crude protein — for aquaculture, pet food, poultry, livestock and compound-feed manufacturers.";
 
 export const metadata: Metadata = {
   title,

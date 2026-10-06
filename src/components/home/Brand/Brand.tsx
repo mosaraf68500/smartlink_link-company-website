@@ -9,7 +9,7 @@ const Brand = () => {
       <div className="">
         <SectionHeader
           title="Trusted by Leading Businesses"
-          description="We're proud to work with RMC plants, cement industries, and construction companies across Bangladesh — supplying the raw materials that power their projects."
+          description="Buyers who trust us with their supply needs, and suppliers who help us deliver — across RMC, cement, trading, and logistics."
         />
       </div>
 

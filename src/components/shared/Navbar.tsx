@@ -23,8 +23,7 @@ const productGroups: NavLinkGroup[] = [
     title: "Grain Commodities",
     items: [
       { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
-      { label: "Lentils", href: "/lentils" },
-      { label: "Pulses", href: "/pulses" },
+      { label: "Lentils & Pulses", href: "/lentils-pulses" },
       { label: "Soyabean Seeds", href: "/soyabean-seeds" },
       { label: "Canola Seeds", href: "/canola-seeds" },
       { label: "Green Mung", href: "/green-mung" },
@@ -50,7 +49,7 @@ const serviceGroups: NavLinkGroup[] = [
   {
     title: "Shipping & Logistics",
     items: [
-      { label: "International Bulk Vessel Chartering", href: "/vessel-chartering" },
+      { label: "International Bulk Chartering & Maritime Logistics", href: "/vessel-chartering" },
     ],
   },
 ];
@@ -98,7 +97,7 @@ setLastScrollY(currentScrollY);
             width={441}
             height={98}
             priority
-            className="h-6 w-auto sm:h-7"
+            className="h-6 w-auto sm:h-7 lg:h-auto lg:w-[240px]"
           />
         </Link>
 

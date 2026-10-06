@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
-import { rapeseedMealData } from "@/src/components/products/data/animalFeed";
+import { rapeseedMealData } from "@/src/components/products/data/rapeseedMeal";
 
-const title = "Rapeseed Meal (RSM) Supplier | Smartlink Systems";
+const title = "Rapeseed Meal (RSM) – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems supplies rapeseed meal (RSM) — crude protein 34–38% min, moisture 12% max — as a cost-effective plant-based protein for livestock and feed formulations.";
+  "Smartlink Systems sources and supplies Rapeseed Meal (RSM) — approx. 34%–38%+ crude protein — for feed mills, dairy, livestock and poultry-feed manufacturers under FOB, CFR and CIF terms.";
 
 export const metadata: Metadata = {
   title,

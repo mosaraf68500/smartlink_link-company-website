@@ -8,7 +8,8 @@ interface ContentHeroProps {
   title: string;
   /** Optional line shown between the title and the description. */
   subtitle?: string;
-  description: string;
+  /** Optional — product pages omit this so body copy starts in ordered sections. */
+  description?: string;
   startingPrice?: string;
   children?: ReactNode;
   className?: string;
@@ -111,9 +112,11 @@ const ContentHero = ({
             <p className="title-regular max-w-3xl text-primary">{subtitle}</p>
           )}
 
-          <p className="body-small-regular max-w-3xl whitespace-pre-line text-gray">
-            {description}
-          </p>
+          {description && (
+            <p className="body-small-regular max-w-3xl whitespace-pre-line text-gray">
+              {description}
+            </p>
+          )}
 
           {startingPrice && <StartingPriceLine text={startingPrice} className="mt-3" />}
 

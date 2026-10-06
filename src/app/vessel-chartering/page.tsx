@@ -3,9 +3,9 @@ import ServicePage from "@/src/components/services/ServicePage";
 import { vesselCharteringData } from "@/src/components/services/data/vesselChartering";
 
 const title =
-  "International Bulk Vessel Chartering & Ocean Freight | Smartlink Systems";
+  "International Bulk Chartering & Maritime Logistics | Smartlink Systems";
 const description =
-  "Smartlink Systems arranges dry bulk shipping and international bulk vessel chartering — Handysize to Panamax, voyage and time charter, freight negotiation, and maritime logistics for cargo moving to Bangladesh and South Asia.";
+  "Smartlink Systems provides international bulk vessel chartering and maritime logistics for dry bulk commodities — Handysize to Panamax/Kamsarmax, voyage charter, time charter, COA, and cargo-to-destination logistics.";
 
 export const metadata: Metadata = {
   title,

@@ -64,7 +64,7 @@ const cards: WhatWeDoCard[] = [
 export default function WhatWeDo() {
   return (
     <section className={`${PAGE_CONTAINER} py-16 md:py-20`}>
-      <h2 className="h1 font-bricolage text-[#112420]">What We Do</h2>
+      <h2 className="h1 font-bricolage text-[#112420]">Business We Do</h2>
 
       {/* 6-column grid: first row of three cards (2 cols each), second row of two (3 cols each). */}
       <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-6 lg:gap-8">

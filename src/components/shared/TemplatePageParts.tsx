@@ -44,9 +44,17 @@ export function SectionHeading({ children }: { children: ReactNode }) {
   );
 }
 
-export function ProseParagraphs({ paragraphs }: { paragraphs: string[] }) {
+export function ProseParagraphs({
+  paragraphs,
+  className,
+}: {
+  paragraphs: string[];
+  className?: string;
+}) {
   return (
-    <div className="mt-5 flex flex-col gap-4 body-regular text-gray">
+    <div
+      className={`flex flex-col gap-4 body-regular text-gray ${className ?? "mt-5"}`}
+    >
       {paragraphs.map((paragraph, index) => (
         <p key={index}>{paragraph}</p>
       ))}
@@ -67,9 +75,22 @@ export function ImageTextRow({
   imagePosition: "left" | "right";
   children: ReactNode;
 }) {
+  const prefersReducedMotion = useReducedMotion();
+
   if (!image) {
-    return <div>{children}</div>;
+    return (
+      <motion.div
+        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
+        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
+        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.div>
+    );
   }
+
+  const fromX = imagePosition === "left" ? -28 : 28;
 
   return (
     <div
@@ -77,7 +98,17 @@ export function ImageTextRow({
         imagePosition === "right" ? "md:flex-row-reverse" : ""
       }`}
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F7F7F5] md:w-1/2">
+      <motion.div
+        className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F7F7F5] md:w-1/2"
+        initial={
+          prefersReducedMotion ? undefined : { opacity: 0, x: fromX, scale: 0.98 }
+        }
+        whileInView={
+          prefersReducedMotion ? undefined : { opacity: 1, x: 0, scale: 1 }
+        }
+        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      >
         <Image
           src={image}
           alt={imageAlt}
@@ -85,8 +116,16 @@ export function ImageTextRow({
           sizes="(max-width: 768px) 100vw, 50vw"
           className="object-cover"
         />
-      </div>
-      <div className="min-w-0 w-full md:w-1/2">{children}</div>
+      </motion.div>
+      <motion.div
+        className="min-w-0 w-full md:w-1/2"
+        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
+        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
+        transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+      >
+        {children}
+      </motion.div>
     </div>
   );
 }

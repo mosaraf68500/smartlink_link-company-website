@@ -1,77 +1,69 @@
 "use client";
 
-import { MapPin, Ruler, CheckCircle2 } from "lucide-react";
+import { MapPin, CheckCircle2 } from "lucide-react";
 import ContentHero from "../shared/ContentHero";
 import {
   ClosingCTA,
   ImageTextRow,
   PAGE_CONTAINER,
   ProseParagraphs,
-  Reveal,
   SectionHeading,
   type PageCTA,
 } from "../shared/TemplatePageParts";
 
 export interface CommoditySpec {
   label: string;
-  /** Omit for a plain parameter list where no fixed value applies (e.g. Coal). */
+  /** Omit for a plain parameter list where no fixed value applies. */
   value?: string;
 }
 
-export interface CommodityTextSection {
-  heading: string;
-  paragraphs: string[];
-}
+/**
+ * One content block in client-provided order. Headings and body are rendered
+ * exactly as authored — nothing is merged or reordered by the template.
+ *
+ * Prefer flat fields when the default order (countries → paragraphs → specs →
+ * bullets → note) matches the copy. Use `blocks` when the client nests
+ * sub-headings that need a custom order (e.g. bullets then specs).
+ */
+export type CommodityBlock =
+  | { type: "paragraphs"; paragraphs: string[] }
+  | { type: "countries"; countries: string[] }
+  | { type: "specs"; label?: string; specs: CommoditySpec[] }
+  | { type: "bullets"; bullets: string[] }
+  | { type: "subheading"; text: string }
+  | { type: "note"; note: string };
 
-export interface CommoditySpecificationsSection {
-  heading: string;
-  intro?: string;
-  specs: CommoditySpec[];
-  followUp?: string;
-  sizesLabel?: string;
-  sizes?: string[];
-  sizesNote?: string;
-}
-
-export interface CommodityCapabilitySection extends CommodityTextSection {
-  targetIndustries: string[];
+export interface CommoditySection {
+  /** Client ### heading. Omit for opening prose that has no heading. */
+  heading?: string;
+  /** Ordered body pieces — takes precedence over flat fields when present. */
+  blocks?: CommodityBlock[];
+  paragraphs?: string[];
+  /** Origin / market chips with map pin. */
+  countries?: string[];
+  /** Spec / parameter table. */
+  specs?: CommoditySpec[];
+  /** Bullet list (portfolio grades, supply options, benefits, etc.). */
+  bullets?: string[];
+  /** Small follow-up note under the section body. */
+  note?: string;
 }
 
 export type CommodityCTA = PageCTA;
 
 export interface CommodityPageData {
   slug: string;
-  /** Short parent-section label shown in the hero breadcrumb, e.g. "Products". */
+  /** Short parent-section label shown in the hero badge, e.g. "Products". */
   category: string;
-  /** H1 */
+  /** H1 — hero shows title only (no description under it). */
   name: string;
-  tagline?: string;
-  /** Hero intro paragraph. */
-  intro: string;
   /**
-   * Gallery images, minimum 3 expected. The hero is text-only (no image);
-   * all entries here are cycled round-robin across the 4 alternating
-   * image+text content sections (sourcing, specifications, capability,
-   * closing), reused once there are more sections than images. Currently
-   * populated with verified Unsplash demo URLs — swap in
-   * `/images/<slug>/...` local paths once real product photos are
-   * supplied, no component changes required.
+   * One unique image per section, assigned in order. Never reused within the
+   * same product page; extra sections beyond the image count render text-only.
    */
   images: string[];
-  /** Every content section is optional; whichever are present render in this
-   * order, alternating image sides and taking images in sequence. */
-  sourcing?: {
-    heading: string;
-    countries: string[];
-    paragraphs: string[];
-    /** Optional spec/parameter table rendered inside the sourcing section,
-     * for commodities whose specs share a section with sourcing (Coal). */
-    specs?: CommoditySpec[];
-  };
-  /** Omit when specs live inside the sourcing section. */
-  specifications?: CommoditySpecificationsSection;
-  capability?: CommodityCapabilitySection;
-  closing?: CommodityTextSection;
+  /** Content blocks in the exact sequence provided by the client. */
+  sections: CommoditySection[];
   cta: CommodityCTA;
 }
 
@@ -95,146 +87,156 @@ function SpecTable({ specs }: { specs: CommoditySpec[] }) {
   );
 }
 
-export default function CommodityPage({ data }: { data: CommodityPageData }) {
-  const { specifications, sourcing, capability, closing, cta, images } = data;
+function BulletList({ items }: { items: string[] }) {
+  if (items.length === 0) return null;
 
-  // Hero is text-only — every image is cycled round-robin across the 4
-  // alternating content sections below, reused once we run out.
-  let sectionIndex = 0;
-  const nextSectionImage = (): string | undefined =>
-    images.length > 0 ? images[sectionIndex % images.length] : undefined;
-  // Called once per rendered section, after its image was picked, so the image
-  // and the alternating side stay in step.
-  const nextSectionSide = (): "left" | "right" =>
-    sectionIndex++ % 2 === 0 ? "left" : "right";
+  return (
+    <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
+      {items.map((item) => (
+        <div key={item} className="flex items-start gap-2.5">
+          <CheckCircle2
+            className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+            strokeWidth={2}
+          />
+          <span className="body-regular text-dark">{item}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function SubHeading({ children }: { children: string }) {
+  return <p className="mt-6 body-medium text-dark">{children}</p>;
+}
+
+function SectionContent({ section }: { section: CommoditySection }) {
+  const hasHeading = Boolean(section.heading);
+
+  if (section.blocks && section.blocks.length > 0) {
+    return (
+      <>
+        {section.heading && <SectionHeading>{section.heading}</SectionHeading>}
+        {section.blocks.map((block, index) => {
+          const key = `${block.type}-${index}`;
+          switch (block.type) {
+            case "countries":
+              return (
+                <div
+                  key={key}
+                  className={`flex flex-wrap gap-2 ${hasHeading || index > 0 ? "mt-5" : ""}`}
+                >
+                  {block.countries.map((country) => (
+                    <span
+                      key={country}
+                      className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 body-small-medium text-primary"
+                    >
+                      <MapPin className="h-3.5 w-3.5" strokeWidth={2} />
+                      {country}
+                    </span>
+                  ))}
+                </div>
+              );
+            case "paragraphs":
+              return (
+                <ProseParagraphs
+                  key={key}
+                  paragraphs={block.paragraphs}
+                  className={hasHeading || index > 0 ? undefined : "mt-0"}
+                />
+              );
+            case "bullets":
+              return <BulletList key={key} items={block.bullets} />;
+            case "subheading":
+              return <SubHeading key={key}>{block.text}</SubHeading>;
+            case "specs":
+              return (
+                <div key={key}>
+                  {block.label && <SubHeading>{block.label}</SubHeading>}
+                  <SpecTable specs={block.specs} />
+                </div>
+              );
+            case "note":
+              return (
+                <p key={key} className="mt-4 body-small-regular text-gray">
+                  {block.note}
+                </p>
+              );
+            default:
+              return null;
+          }
+        })}
+      </>
+    );
+  }
+
+  return (
+    <>
+      {section.heading && <SectionHeading>{section.heading}</SectionHeading>}
+
+      {section.countries && section.countries.length > 0 && (
+        <div className={`flex flex-wrap gap-2 ${hasHeading ? "mt-5" : ""}`}>
+          {section.countries.map((country) => (
+            <span
+              key={country}
+              className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 body-small-medium text-primary"
+            >
+              <MapPin className="h-3.5 w-3.5" strokeWidth={2} />
+              {country}
+            </span>
+          ))}
+        </div>
+      )}
+
+      {section.paragraphs && section.paragraphs.length > 0 && (
+        <ProseParagraphs
+          paragraphs={section.paragraphs}
+          className={
+            hasHeading || (section.countries && section.countries.length > 0)
+              ? undefined
+              : "mt-0"
+          }
+        />
+      )}
+
+      {section.specs && <SpecTable specs={section.specs} />}
+      {section.bullets && <BulletList items={section.bullets} />}
+
+      {section.note && (
+        <p className="mt-4 body-small-regular text-gray">{section.note}</p>
+      )}
+    </>
+  );
+}
+
+export default function CommodityPage({ data }: { data: CommodityPageData }) {
+  const { sections, cta, images, name, category } = data;
 
   return (
     <div className="mt-20 md:mt-10">
-      {/* Same container as Navbar and the sections below, so the hero's edges
-          line up with them. Wraps (rather than overrides) ContentHero's own
-          max-w-[1392px] default, which stays untouched for other pages. */}
       <div className={PAGE_CONTAINER}>
-        <ContentHero breadcrumb={data.category} title={data.name} description={data.intro} />
+        {/* Title-only hero — product body copy lives in `sections` below. */}
+        <ContentHero breadcrumb={category} title={name} />
       </div>
 
       <div className={`${PAGE_CONTAINER} py-16 md:py-20`}>
         <div className="flex flex-col gap-16 md:gap-20">
-          {/* Sourcing & supply chain scope */}
-          {sourcing && (
-            <Reveal>
+          {sections.map((section, index) => {
+            const image = index < images.length ? images[index] : undefined;
+            const imagePosition: "left" | "right" =
+              index % 2 === 0 ? "left" : "right";
+            const altLabel = section.heading ?? name;
+
+            return (
               <ImageTextRow
-                image={nextSectionImage()}
-                imageAlt={`${sourcing.heading} — ${data.name}`}
-                imagePosition={nextSectionSide()}
+                key={`${section.heading ?? "intro"}-${index}`}
+                image={image}
+                imageAlt={`${altLabel} — ${name}`}
+                imagePosition={imagePosition}
               >
-                <SectionHeading>{sourcing.heading}</SectionHeading>
-
-                {sourcing.countries.length > 0 && (
-                  <div className="mt-5 flex flex-wrap gap-2">
-                    {sourcing.countries.map((country) => (
-                      <span
-                        key={country}
-                        className="inline-flex items-center gap-1.5 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 body-small-medium text-primary"
-                      >
-                        <MapPin className="h-3.5 w-3.5" strokeWidth={2} />
-                        {country}
-                      </span>
-                    ))}
-                  </div>
-                )}
-
-                <ProseParagraphs paragraphs={sourcing.paragraphs} />
-                {sourcing.specs && <SpecTable specs={sourcing.specs} />}
+                <SectionContent section={section} />
               </ImageTextRow>
-            </Reveal>
-          )}
-
-          {/* Specs & sizes */}
-          {specifications && (
-            <Reveal>
-              <ImageTextRow
-                image={nextSectionImage()}
-                imageAlt={`${specifications.heading} — ${data.name}`}
-                imagePosition={nextSectionSide()}
-              >
-                <SectionHeading>{specifications.heading}</SectionHeading>
-                {specifications.intro && (
-                  <p className="mt-5 body-regular text-gray">{specifications.intro}</p>
-                )}
-
-                <SpecTable specs={specifications.specs} />
-
-                {specifications.followUp && (
-                  <p className="mt-5 body-regular text-gray">{specifications.followUp}</p>
-                )}
-
-                {specifications.sizes && specifications.sizes.length > 0 && (
-                  <div className="mt-8">
-                    <p className="body-medium text-dark">
-                      {specifications.sizesLabel ?? "Available sizes:"}
-                    </p>
-                    <div className="mt-3 flex flex-wrap gap-2">
-                      {specifications.sizes.map((size) => (
-                        <span
-                          key={size}
-                          className="inline-flex items-center gap-1.5 rounded-full border border-black/10 bg-white px-4 py-1.5 body-small-medium text-dark"
-                        >
-                          <Ruler className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
-                          {size}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {specifications.sizesNote && (
-                  <p className="mt-4 body-small-regular text-gray">{specifications.sizesNote}</p>
-                )}
-              </ImageTextRow>
-            </Reveal>
-          )}
-
-          {/* Supply capability & target industries */}
-          {capability && (
-            <Reveal>
-              <ImageTextRow
-                image={nextSectionImage()}
-                imageAlt={`${capability.heading} — ${data.name}`}
-                imagePosition={nextSectionSide()}
-              >
-                <SectionHeading>{capability.heading}</SectionHeading>
-                <ProseParagraphs paragraphs={capability.paragraphs} />
-
-                {capability.targetIndustries.length > 0 && (
-                  <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
-                    {capability.targetIndustries.map((industry) => (
-                      <div key={industry} className="flex items-start gap-2.5">
-                        <CheckCircle2
-                          className="mt-0.5 h-5 w-5 shrink-0 text-primary"
-                          strokeWidth={2}
-                        />
-                        <span className="body-regular text-dark">{industry}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </ImageTextRow>
-            </Reveal>
-          )}
-
-          {/* Closing positioning */}
-          {closing && (
-            <Reveal>
-              <ImageTextRow
-                image={nextSectionImage()}
-                imageAlt={`${closing.heading} — ${data.name}`}
-                imagePosition={nextSectionSide()}
-              >
-                <SectionHeading>{closing.heading}</SectionHeading>
-                <ProseParagraphs paragraphs={closing.paragraphs} />
-              </ImageTextRow>
-            </Reveal>
-          )}
+            );
+          })}
         </div>
       </div>
 

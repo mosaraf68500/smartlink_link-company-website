@@ -30,13 +30,10 @@ import logo29 from "../../../../public/images/brand/Logo/Logo 29.png";
 import logo30 from "../../../../public/images/brand/Logo/Logo 30.png";
 import logo31 from "../../../../public/images/brand/Logo/Logo 31.png";
 import logo32 from "../../../../public/images/brand/Logo/Logo 32.png";
-import Image, { StaticImageData } from "next/image";
+import type { StaticImageData } from "next/image";
 
-export type BrandCategory =
-  | "Digital Marketing"
-  | "Web Development"
-  | "Graphics Design"
-  | "UI/UX Design";
+/** Home / Our Clients logo groups for Smartlink. */
+export type BrandCategory = "Buyer" | "Supplier";
 
 export interface Brand {
   id: number;
@@ -45,71 +42,49 @@ export interface Brand {
   category: BrandCategory;
 }
 
+/**
+ * Temporary logo assets (from the previous site). Reassign `category` or swap
+ * `image` paths when real Smartlink buyer / supplier logos arrive.
+ */
 export const brandsData: Brand[] = [
-  { id: 7, name: "Bijik", image: logo7, category: "Digital Marketing" },
+  // —— Buyers ——
+  { id: 1, name: "Khatibari", image: logo1, category: "Buyer" },
+  { id: 2, name: "Organic Ghor BD", image: logo2, category: "Buyer" },
+  { id: 3, name: "eitrok", image: logo3, category: "Buyer" },
+  { id: 4, name: "Chotto Khati Bazar", image: logo4, category: "Buyer" },
+  { id: 5, name: "Follow", image: logo5, category: "Buyer" },
+  { id: 6, name: "Kids Palace", image: logo6, category: "Buyer" },
+  { id: 7, name: "Bijik", image: logo7, category: "Buyer" },
+  { id: 8, name: "Novital", image: logo8, category: "Buyer" },
+  { id: 9, name: "Jamima Mart", image: logo9, category: "Buyer" },
+  { id: 10, name: "Rayhan Shop", image: logo10, category: "Buyer" },
+  { id: 11, name: "Tongsa Bazar", image: logo11, category: "Buyer" },
+  { id: 12, name: "Babycare", image: logo12, category: "Buyer" },
+  { id: 13, name: "Tarunno Food", image: logo13, category: "Buyer" },
+  { id: 14, name: "Molla IT Firm", image: logo14, category: "Buyer" },
+  { id: 15, name: "Dighal", image: logo15, category: "Buyer" },
+  { id: 16, name: "Brand 16", image: logo16, category: "Buyer" },
 
-  { id: 30, name: "Brand 30", image: logo30, category: "Graphics Design" },
-  { id: 27, name: "Brand 27", image: logo27, category: "Digital Marketing" },
-
-  { id: 3, name: "eitrok", image: logo3, category: "Digital Marketing" },
-
-  { id: 1, name: "Khatibari", image: logo1, category: "Digital Marketing" },
-
-  { id: 23, name: "Brand 23", image: logo23, category: "Graphics Design" },
-  {
-    id: 14,
-    name: "Molla IT Firm",
-    image: logo14,
-    category: "Graphics Design",
-  },
-  { id: 6, name: "Kids Palace", image: logo6, category: "Digital Marketing" },
-
-  { id: 15, name: "Dighal", image: logo15, category: "Graphics Design" },
-  { id: 5, name: "Follow", image: logo5, category: "Digital Marketing" },
-  { id: 22, name: "Brand 22", image: logo22, category: "Graphics Design" },
-  { id: 8, name: "Novital", image: logo8, category: "Digital Marketing" },
-
-  { id: 28, name: "Brand 28", image: logo28, category: "Graphics Design" },
-
-  {
-    id: 4,
-    name: "Chotto Khati Bazar",
-    image: logo4,
-    category: "Digital Marketing",
-  },
-  { id: 29, name: "Brand 29", image: logo29, category: "Graphics Design" },
-
-  {
-    id: 2,
-    name: "Organic Ghor BD",
-    image: logo2,
-    category: "Digital Marketing",
-  },
-
-  { id: 9, name: "Jamima Mart", image: logo9, category: "Digital Marketing" },
-  { id: 10, name: "Rayhan Shop", image: logo10, category: "Digital Marketing" },
-  {
-    id: 11,
-    name: "Tongsa Bazar",
-    image: logo11,
-    category: "Graphics Design",
-  },
-  { id: 12, name: "Babycare", image: logo12, category: "Digital Marketing" },
-  {
-    id: 13,
-    name: "Tarunno Food",
-    image: logo13,
-    category: "Graphics Design",
-  },
-  { id: 16, name: "Brand 16", image: logo16, category: "Graphics Design" },
-  { id: 17, name: "Brand 17", image: logo17, category: "Graphics Design" },
-  { id: 18, name: "Brand 18", image: logo18, category: "Digital Marketing" },
-  { id: 19, name: "Brand 19", image: logo19, category: "Digital Marketing" },
-  { id: 20, name: "Brand 20", image: logo20, category: "Digital Marketing" },
-  { id: 21, name: "Brand 21", image: logo21, category: "Digital Marketing" },
-  { id: 24, name: "Brand 24", image: logo24, category: "Graphics Design" },
-  { id: 25, name: "Brand 25", image: logo25, category: "Graphics Design" },
-  { id: 26, name: "Brand 26", image: logo26, category: "Graphics Design" },
-  { id: 31, name: "Brand 31", image: logo31, category: "Graphics Design" },
-  { id: 32, name: "Brand 32", image: logo32, category: "Graphics Design" },
+  // —— Suppliers ——
+  { id: 17, name: "Brand 17", image: logo17, category: "Supplier" },
+  { id: 18, name: "Brand 18", image: logo18, category: "Supplier" },
+  { id: 19, name: "Brand 19", image: logo19, category: "Supplier" },
+  { id: 20, name: "Brand 20", image: logo20, category: "Supplier" },
+  { id: 21, name: "Brand 21", image: logo21, category: "Supplier" },
+  { id: 22, name: "Brand 22", image: logo22, category: "Supplier" },
+  { id: 23, name: "Brand 23", image: logo23, category: "Supplier" },
+  { id: 24, name: "Brand 24", image: logo24, category: "Supplier" },
+  { id: 25, name: "Brand 25", image: logo25, category: "Supplier" },
+  { id: 26, name: "Brand 26", image: logo26, category: "Supplier" },
+  { id: 27, name: "Brand 27", image: logo27, category: "Supplier" },
+  { id: 28, name: "Brand 28", image: logo28, category: "Supplier" },
+  { id: 29, name: "Brand 29", image: logo29, category: "Supplier" },
+  { id: 30, name: "Brand 30", image: logo30, category: "Supplier" },
+  { id: 31, name: "Brand 31", image: logo31, category: "Supplier" },
+  { id: 32, name: "Brand 32", image: logo32, category: "Supplier" },
 ];
+
+export const buyerBrands = brandsData.filter((b) => b.category === "Buyer");
+export const supplierBrands = brandsData.filter(
+  (b) => b.category === "Supplier",
+);

@@ -3,30 +3,37 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { brandsData } from "@/src/app/our-clients/_compo/Data";
+import {
+  Brand,
+  buyerBrands,
+  supplierBrands,
+} from "@/src/app/our-clients/_compo/Data";
 import Image from "next/image";
 
+const PREVIEW_COUNT = 8;
 
-const NewBrand = () => {
+function LogoGrid({ brands, label }: { brands: Brand[]; label: string }) {
   return (
-    <div className="container mx-auto  sm:px-0 mt-15 sm:mt-10">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-4">
-        {brandsData.slice(0, 15).map((brand, index) => (
+    <div>
+      <h3 className="mb-4 font-bricolage text-lg font-semibold text-[#112420] sm:text-xl">
+        {label}
+      </h3>
+      <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4 lg:grid-cols-4">
+        {brands.map((brand, index) => (
           <motion.div
             key={brand.id}
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            whileHover={{ 
-              scale: 1.04, 
-              y: -4, 
+            whileHover={{
+              scale: 1.04,
+              y: -4,
             }}
             whileTap={{ scale: 0.98 }}
-            transition={{ 
-              duration: 0.3, 
+            transition={{
+              duration: 0.3,
               delay: index * 0.03,
-          
             }}
-            className="flex items-center justify-center bg-white p-4 w-full h-[100px] sm:h-[120px] rounded-[9px] border border-[#E5E7EB] "
+            className="flex h-[100px] w-full items-center justify-center rounded-[9px] border border-[#E5E7EB] bg-white p-4 sm:h-[120px]"
           >
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -35,18 +42,32 @@ const NewBrand = () => {
               <Image
                 src={brand.image}
                 alt={brand.name}
-                className="max-h-12 sm:max-h-16 w-auto object-contain"
+                className="max-h-12 w-auto object-contain sm:max-h-16"
               />
             </motion.div>
           </motion.div>
         ))}
       </div>
+    </div>
+  );
+}
+
+const NewBrand = () => {
+  const previewSuppliers = supplierBrands.slice(0, PREVIEW_COUNT);
+  const previewBuyers = buyerBrands.slice(0, PREVIEW_COUNT);
+
+  return (
+    <div className="container mx-auto mt-15 sm:mt-10 sm:px-0">
+      <div className="flex flex-col gap-10 sm:gap-12">
+        <LogoGrid brands={previewSuppliers} label="Suppliers" />
+        <LogoGrid brands={previewBuyers} label="Buyers" />
+      </div>
 
       {/* See More Button */}
-      <div className="flex justify-center mt-10">
+      <div className="mt-10 flex justify-center">
         <Link
           href="/our-clients"
-          className="flex items-center gap-2 h6-medium text-primary"
+          className="flex h6-medium items-center gap-2 text-primary"
         >
           <motion.span
             className="flex items-center gap-2"

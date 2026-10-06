@@ -2,14 +2,14 @@ import GlobalOffices from "@/src/components/shared/GlobalOffices";
 // TODO: re-enable once real Smartlink testimonials/company story are provided
 // import OneCompanyFourProducts from "@/src/components/about-us/OneCompanyFourProducts";
 // import OurJourney from "@/src/components/about-us/OurJourney";
+import BusinessPolicy from "@/src/components/about-us/BusinessPolicy";
+import ManagingDirectorMessage from "@/src/components/about-us/ManagingDirectorMessage";
+import MissionVision from "@/src/components/about-us/MissionVision";
 import WhatWeDo from "@/src/components/about-us/WhatWeDo";
 import ContentHero from "@/src/components/shared/ContentHero";
 import { PAGE_CONTAINER } from "@/src/components/shared/pageContainer";
 import ReadyToBuildCTA from "@/src/components/shared/ReadyToBuildCTA";
-import SectionHeader from "@/src/components/shared/SectionHeader";
 import TalkToExperts from "@/src/components/shared/TalkToExperts";
-import PrimaryButton from "@/src/components/ui/PrimaryButton";
-import React from "react";
 
 export default function AboutUsPage() {
   return (
@@ -26,8 +26,9 @@ export default function AboutUsPage() {
       {/* TODO: re-enable once real Smartlink company story is provided — currently fabricated "AdsFixter" origin story */}
       {/* <OurJourney /> */}
       <WhatWeDo />
-      {/* TODO: re-enable once real Smartlink content is provided — currently showcases fake SyncBari/SiteBari/MetaBari/MailBari products */}
-      {/* <OneCompanyFourProducts/> */}
+      <ManagingDirectorMessage />
+      <MissionVision />
+      <BusinessPolicy />
       <GlobalOffices />
       <TalkToExperts/>
       <ReadyToBuildCTA/>

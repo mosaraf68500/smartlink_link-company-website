@@ -317,8 +317,7 @@ const productOptions = [
   "Gabbro Aggregate",
   "Coal",
   "Wheat",
-  "Lentils",
-  "Pulses",
+  "Lentils & Pulses",
   "Soyabean Seeds",
   "Canola Seeds",
   "Green Mung",
@@ -387,7 +386,7 @@ export default function TalkToExperts({
     return Object.keys(next).length === 0;
   };
 
-  // TODO: backend endpoint not yet finalized for Smartlink — confirm with client before going live.
+  // Sends via EmailJS — keys live in `.env.local` (see `.env.example`).
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
@@ -395,53 +394,27 @@ export default function TalkToExperts({
     setStatus("loading");
 
     try {
-      const baseUrl =
-        process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5000/api/v1";
+      const { sendContactInquiry } = await import("@/src/lib/emailjs");
 
-      // Extract country code and number if phone field formats like '+8801700000000'
-      let countryCode = "+880";
-      let phone = form.whatsapp.trim();
-
-      if (phone.startsWith("+")) {
-        // Assuming default 3-digit country code like +880
-        countryCode = phone.slice(0, 4);
-        phone = phone.slice(4);
-      }
-
-      const payload = {
+      await sendContactInquiry({
         fullName: form.fullName.trim(),
-        phone: phone,
-        countryCode: countryCode,
         email: form.email.trim(),
+        phone: form.whatsapp.trim(),
         message: form.message.trim(),
         productInterest: form.productInterest || undefined,
-      };
-
-      const response = await fetch(`${baseUrl}/inquiries`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
       });
 
-      const data = await response.json();
+      setStatus("success");
+      toast.success("Inquiry submitted successfully!");
 
-      if (response.ok && data.success) {
-        setStatus("success");
-        toast.success("Inquiry submitted successfully!");
-
-        setTimeout(() => {
-          setForm(initialState);
-          setStatus("idle");
-        }, 2000);
-      } else {
+      setTimeout(() => {
+        setForm(initialState);
         setStatus("idle");
-        toast.error(data.message || "Failed to submit inquiry.");
-      }
+      }, 2000);
     } catch (error) {
+      console.error("EmailJS contact error:", error);
       setStatus("idle");
-      toast.error("Something went wrong. Please check your connection.");
+      toast.error("Something went wrong. Please try again or contact us directly.");
     }
   };
 
@@ -475,7 +448,7 @@ export default function TalkToExperts({
             <div className="flex w-full flex-shrink-0 flex-col gap-3 sm:w-auto">
               <div className="relative h-[320px] w-full overflow-hidden rounded-[4px] sm:h-[250px] sm:w-[250px]">
                 <Image
-                  src="/images/work/fayshal.png"
+                  src="/images/work/fayshal.jpeg"
                   alt="Md Fayej Ahmed"
                   fill
                   className="object-cover"

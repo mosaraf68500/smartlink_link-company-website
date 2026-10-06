@@ -58,12 +58,18 @@ const HeroContent = () => {
       </p>
 
       <div className="mt-10 flex flex-col sm:flex-row flex-wrap items-center justify-center gap-3 w-full sm:w-auto">
-        <Link href='/contact'>       <PrimaryButton icon={ArrowIcon}>Talk To Our Experts</PrimaryButton></Link>
+        <Link href="/contact">
+          <PrimaryButton icon={ArrowIcon}>Talk To Our Experts</PrimaryButton>
+        </Link>
 
-
-        <PrimaryButton className="!bg-[#FEFAF9] !text-primary border border-[#FABEAA]" icon={CompanyIcon}>
-          Request a Quote
-        </PrimaryButton>
+        <Link href="/contact">
+          <PrimaryButton
+            className="!bg-[#FEFAF9] !text-primary border border-[#FABEAA]"
+            icon={CompanyIcon}
+          >
+            Request a Quote
+          </PrimaryButton>
+        </Link>
       </div>
     </div>
   );

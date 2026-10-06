@@ -2,44 +2,25 @@
 
 import Link from "next/link";
 import {
-  Anchor,
   ArrowUpRight,
   CheckCircle2,
-  Globe,
   MapPin,
-  Package,
-  Ship,
-  type LucideIcon,
 } from "lucide-react";
 import ContentHero from "../shared/ContentHero";
 import {
-  ClosingCTA,
   ImageTextRow,
   PAGE_CONTAINER,
   ProseParagraphs,
   Reveal,
   SectionHeading,
-  type PageCTA,
 } from "../shared/TemplatePageParts";
 
 /**
  * Template B — capability-based service page (SMARTLINK_PROJECT.md §5).
- * Hero → icon-marked sections, each pairing an image with heading + content
- * blocks, alternating sides → closing CTA. Shares hero alignment, container
- * width, 50/50 image split and CTA with CommodityPage via TemplatePageParts.
+ * Hero → sections pairing an image with heading + content blocks,
+ * alternating sides. Shares hero alignment, container width, and 50/50
+ * image split with CommodityPage via TemplatePageParts.
  */
-
-/** Icons are referenced by name because page data is plain, serializable data
- * passed from server pages into this client component. Add entries here to
- * make more icons available to service pages. */
-const SERVICE_ICONS = {
-  ship: Ship,
-  anchor: Anchor,
-  globe: Globe,
-  package: Package,
-} satisfies Record<string, LucideIcon>;
-
-export type ServiceIconName = keyof typeof SERVICE_ICONS;
 
 export interface ServiceChip {
   label: string;
@@ -53,7 +34,6 @@ export type ServiceBlock =
   | { type: "checklist"; items: string[] };
 
 export interface ServiceSection {
-  icon: ServiceIconName;
   heading: string;
   blocks: ServiceBlock[];
 }
@@ -65,13 +45,10 @@ export interface ServicePageData {
   /** H1 */
   name: string;
   tagline?: string;
-  /** Hero intro; separate paragraphs with a blank line. */
-  intro: string;
-  /** Gallery images cycled round-robin across the sections (hero is text-only). */
+  /** Gallery images — one unique image per section (no cycling/repeats). */
   images: string[];
-  /** Sections after the hero; the last one is treated as the closing section. */
+  /** Sections after the hero. */
   sections: ServiceSection[];
-  cta: PageCTA;
 }
 
 const chipBase =
@@ -141,10 +118,7 @@ function SectionBlock({ block }: { block: ServiceBlock }) {
 }
 
 export default function ServicePage({ data }: { data: ServicePageData }) {
-  const { sections, cta, images } = data;
-
-  const imageForSection = (index: number): string | undefined =>
-    images.length > 0 ? images[index % images.length] : undefined;
+  const { sections, images } = data;
 
   return (
     <div className="mt-20 md:mt-10">
@@ -155,37 +129,27 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           breadcrumb={data.category}
           title={data.name}
           subtitle={data.tagline}
-          description={data.intro}
         />
       </div>
 
       <div className={`${PAGE_CONTAINER} py-16 md:py-20`}>
         <div className="flex flex-col gap-16 md:gap-20">
-          {sections.map((section, index) => {
-            const Icon = SERVICE_ICONS[section.icon];
-
-            return (
-              <Reveal key={section.heading}>
-                <ImageTextRow
-                  image={imageForSection(index)}
-                  imageAlt={`${section.heading} — ${data.name}`}
-                  imagePosition={index % 2 === 0 ? "left" : "right"}
-                >
-                  <span className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                    <Icon className="h-6 w-6" strokeWidth={1.75} aria-hidden="true" />
-                  </span>
-                  <SectionHeading>{section.heading}</SectionHeading>
-                  {section.blocks.map((block, blockIndex) => (
-                    <SectionBlock key={blockIndex} block={block} />
-                  ))}
-                </ImageTextRow>
-              </Reveal>
-            );
-          })}
+          {sections.map((section, index) => (
+            <Reveal key={section.heading}>
+              <ImageTextRow
+                image={images[index]}
+                imageAlt={`${section.heading} — ${data.name}`}
+                imagePosition={index % 2 === 0 ? "left" : "right"}
+              >
+                <SectionHeading>{section.heading}</SectionHeading>
+                {section.blocks.map((block, blockIndex) => (
+                  <SectionBlock key={blockIndex} block={block} />
+                ))}
+              </ImageTextRow>
+            </Reveal>
+          ))}
         </div>
       </div>
-
-      <ClosingCTA cta={cta} />
     </div>
   );
 }

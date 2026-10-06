@@ -72,18 +72,18 @@ We are converting an **existing, already-built Next.js website repo** (originall
 | Home | — | Reusing existing repo content; owner will mark specific edits needed |
 | About | — | Reusing existing repo content; owner will mark specific edits needed |
 | Contact | — | Reusing existing repo content; owner will mark specific edits needed |
-| Cementious & RMC Raw Item | Clinker | pending |
+| Cementious & RMC Raw Item | Clinker | content ready |
 | | Limestone | content ready (§7) |
 | | Aggregates (Gabbro Aggregate) | content ready (§7) |
-| Grain Commodities | Wheat | pending correct content (a wrong duplicate-Gabbro body was sent once by mistake — do not use it; SEO title/slug/keywords already provided, see §7) |
-| | Lentils | pending |
-| | Pulses | pending |
-| | Soyabean Seeds | pending |
-| | Canola Seeds | pending |
-| | Green Mung | pending |
+| Grain Commodities | Wheat | content ready |
+| | Lentils & Pulses | content ready (combined page `/lentils-pulses`; `/lentils` & `/pulses` redirect) |
+| | ~~Lentils~~ / ~~Pulses~~ | Decision: single combined page — see Lentils & Pulses |
+| | Soyabean Seeds | content ready |
+| | Canola Seeds | content ready |
+| | Green Mung | content ready |
 | | ~~Corn/Maize~~ | Decision: NOT a separate page — covered only under Animal Feed Additives |
 | Animal Feed Additives (single page, multiple sub-items) | Poultry Meal, Wheat Bran, Corn/Maize, DDGS, Soybean Meal, Rapeseed Meal, Corn Gluten Feed (CGF), Corn Gluten Meal (CGM) | content ready (§7) |
-| Season Crops | Cotton | pending |
+| Season Crops | Cotton | content ready |
 | Shipping & Logistics (service page — confirmed addition beyond original list) | International Bulk Vessel Chartering | content ready (§7) |
 | Category placement TBD | Coal | content ready (§7), but final nav/URL category not yet decided — do not finalize its route until confirmed |
 
@@ -99,38 +99,42 @@ Gabbro Aggregate Supplier & Importer in Bangladesh. Sources from UAE and Oman. F
 Global Coal Sourcing, Trading & Supply. Sources Thermal/Steam/Industrial Coal from Indonesia, South Africa, Australia. Quality params: GCV/GAR, Total Moisture, Inherent Moisture, Ash Content, Total Sulphur, Volatile Matter, Fixed Carbon. Serves power generation, steel/re-rolling, brick manufacturing, cement/building materials, industrial boilers, manufacturing. Full supply chain incl. vessel chartering, ocean freight, import coordination, cargo handling, inland waterway + road transport.
 
 ### International Bulk Vessel Chartering (Template B)
-Connecting Global Cargo with the Right Vessel, Route & Freight Solution. Vessel types: Handysize, Handymax, Supramax, Ultramax, Panamax. Services: Voyage Charter, Time Charter, Vessel Nomination, Freight Negotiation, Laycan Planning, Fixture Coordination, Port & Agent Coordination, Loading/Discharging, Shipping Documentation, Voyage Monitoring. Routes: Middle East, South Asia, Southeast Asia, China, Africa, Europe, Black Sea Region, North & South America (focus: Bangladesh/South Asia). Commodities handled: Limestone, Gabbro Aggregate, Clinker, Gypsum, Coal, Wheat, Corn/Maize, Grains, Fertilizers, Minerals, Construction Materials, other dry bulk.
+International Bulk Chartering & Maritime Logistics. Dry bulk focus: Handysize, Handymax, Supramax/Ultramax, Panamax/Kamsarmax (+ larger as needed). Structures: Voyage Charter, Time Charter, COA. Commodities: agricultural (wheat, corn/maize, soybeans, pulses/grains, animal feed); construction/industrial (limestone, gabbro/aggregates, clinker, gypsum, slag, silica sand); energy/raw (coal, petcoke, minerals). Full chartering process support; routes across Asia, Middle East, Africa, Black Sea, Europe, North & South America. End-to-end: ocean freight → port handling → stevedoring → lighterage/IWT → truck → final delivery. Tagline: Connecting Cargo, Vessels & Global Markets.
 
 ### Animal Feed Additives (Template C)
 Sub-items, each with sourcing/spec:
-- Poultry Meal — Saudi Arabia, Egypt, China — Crude Protein 60-65% min, Moisture 8% max, Crude Fat 10-15%, Crude Ash 15-18% max, Pepsin Digestibility 85% min
+- Poultry Meal — Saudi Arabia, Nigeria, India, Egypt — Crude Protein 55%–65%+; Moisture/Fat/Ash per contract; portfolio includes High-Protein, Feed-Grade, Rendered, By-Product, Aquaculture & Pet Food grades. (### Global section still pending from client)
 - Wheat Bran — Protein 14% min, Moisture 14% max, Fat 4-5%, Ash 7% max
 - Corn/Maize (feed grade) — Moisture 14% max, Protein 8% min, Foreign Matter 2% max
-- DDGS — Crude Protein 26-30% min, Moisture 12% max, Crude Fat 7-10%, Crude Fiber 8-10% max
-- Soybean Meal (SBM) — Crude Protein 46-48% min, Moisture 12% max, Crude Fiber 3.5-6% max, Ash 6-7% max
-- Rapeseed Meal (RSM) — Crude Protein 34-38% min, Moisture 12% max, Crude Fiber 12-14% max
+- DDGS / Corn DDGS — India, Brazil, USA, Argentina, Tanzania — Crude Protein 26%–30%+; Moisture max 10%–12%; High-Protein / Golden DDGS grades; GMO/Non-GMO subject to origin; FOB/CFR/CIF container & bulk
+- Soybean Meal (SBM) — USA, Brazil, Argentina, Tanzania, Nigeria — Crude Protein 44%–48%+; Moisture max 11%–13%; Hi-Pro/Low-Pro/Dehulled/Solvent-Extracted grades; GMO/Non-GMO subject to origin; FOB/CFR/CIF bulk & container
+- Rapeseed Meal (RSM) — Global sourcing & trading; Crude Protein approx. 34%–38%+; Moisture/Fiber/Fat per contract; Glucosinolate, Erucic Acid, Mycotoxins as specified; portfolio includes Feed Grade, Solvent-Extracted, High-Protein, Canola Meal, Dairy/Cattle & Poultry grades; FOB/CFR/CIF bulk & container
 - Corn Gluten Feed (CGF) — Crude Protein 20-23% min, Moisture 12% max, Crude Fiber 8-10% max
 - Corn Gluten Meal (CGM) — Crude Protein 60% min, Moisture 10-12% max, Crude Fat 2-4%
 
-### Wheat — SEO metadata only (body content still pending, do not fabricate it)
-SEO Title: "Wheat Supplier & Importer in Bangladesh | Smartlink Systems". URL Slug: `/wheat-supplier-importer-bangladesh`. Target keywords: Wheat Supplier Bangladesh, Wheat Importer Bangladesh, Russian Wheat Bangladesh, Ukraine Wheat Supplier, Canadian Wheat Bangladesh, Milling Wheat Supplier, Bulk Wheat Import Bangladesh, Wheat Trading Company Bangladesh.
+### Wheat
+SEO Title: "Wheat Supplier & Importer in Bangladesh | Smartlink Systems". URL Slug: `/wheat-supplier-importer-bangladesh`. H1: "Wheat Trading & Supply". Origins: Brazil, Argentina, USA, Canada, Bulgaria, Romania, Ukraine, Russia, India. Specs: Protein 10.5%–14.0%, Moisture max 12.5%–14.0%, Test Weight 76–80 kg/HL, Foreign Matter max 1.0%–2.0%; Wet Gluten / Falling Number per contract; Bulk vessel or containerized; FOB/CFR/CIF. Target keywords: Wheat Supplier Bangladesh, Wheat Importer Bangladesh, Russian Wheat Bangladesh, Ukraine Wheat Supplier, Canadian Wheat Bangladesh, Milling Wheat Supplier, Bulk Wheat Import Bangladesh, Wheat Trading Company Bangladesh.
 
 ## 8. Open Questions (do not finalize related code until answered)
 
 1. Which category/section does **Coal** belong under? (Not part of the original planned nav.)
-2. Final Wheat page body content — pending from client.
 
 ## 9. Still Pending From Client
 
-Clinker, Wheat (correct body content), Lentils, Pulses, Soyabean Seeds, Canola Seeds, Green Mung, Cotton, plus specific edit instructions for Home/About/Contact pages, plus real Smartlink social media URLs (Facebook/LinkedIn/etc. — currently disabled to # after Adsfixter's old social links were removed), plus final marketing copy for testimonials/FAQ/company-story sections and Privacy/Terms/Return-policy pages (currently still written for a SaaS company, need a full trading-company rewrite, not a mechanical find-replace).
+Clinker content is done. Still pending: specific edit instructions for Home/About/Contact pages, plus real Smartlink social media URLs (Facebook/LinkedIn/etc. — currently disabled to # after Adsfixter's old social links were removed), plus final marketing copy for testimonials/FAQ/company-story sections and Privacy/Terms/Return-policy pages (currently still written for a SaaS company, need a full trading-company rewrite, not a mechanical find-replace).
 
 ## 11. Confirmed Company Info (use these, not TODO placeholders)
 
-- **Company/address:** DIVINE FLOX, HOUSE: 543, APT-B3, ROAD: 08, DOHS, MIRPUR-1216, BANGLADESH. This is the **only** office — do not add branch offices.
-- **Phones:** +8801677136584, +8801846216225, +8801737136022
-- **Emails:** info@smartlinksystemsbd.com, sales@smartlinksystemsbd.com
-- **WhatsApp:** +880 1677-136584 (same as first phone number)
+- **Bangladesh Corporate Office:** Divine Flox, House: 543, Apt: A-2, Avenue: 06, Road: 08, Mirpur DOHS, Dhaka-1216, Bangladesh.
+- **UAE Office:** The Binary Tower, 8th Floor, Unit-816, Business Bay, Dubai, UAE.
+- **Plant Office:** Lakkha Jatrabari, Baniyadi, Murapara Road, Rupganj, Narayanganj-1464, Bangladesh.
+- **Mobile:** +8801677136584, +8801737136022, +8801794000014, +8801846216225, +8801715349585
+- **Hotline:** +8801677136584, +8801715349585
+- **Phone (landline):** +8802-44806947
+- **Emails:** info@smartlinksystemsbd.com, sales@smartlinksystemsbd.com, sales.smartlinksystems@gmail.com
+- **WhatsApp:** +880 1677-136584 (same as first hotline/mobile)
 - **Logo:** `public/logo.png` (hex "S" mark + wordmark) — already wired into navbar, footer, favicon, app icon, apple-icon, and root metadata as of Module 2.
+- **Office card images:** only `public/offices/bangladesh.png` exists today — UAE and Plant cards temporarily reuse it until dedicated illustrations are provided.
 
 ## 12. Module Progress Log
 
