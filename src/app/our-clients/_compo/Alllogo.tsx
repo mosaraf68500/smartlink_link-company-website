@@ -58,12 +58,14 @@ const Alllogo = ({ brands = defaultBrandsData }: AlllogoProps) => {
               whileHover={{ scale: 1.04, y: -4 }}
               whileTap={{ scale: 0.98 }}
               transition={{ duration: 0.3, delay: index * 0.03 }}
-              className="flex h-[100px] w-full items-center justify-center rounded-[9px] border border-[#E5E7EB] bg-white p-4 sm:h-[120px]"
+              className="relative aspect-[2/1] w-full overflow-hidden rounded-[9px] border border-[#E5E7EB] bg-white"
             >
               <Image
                 src={brand.image}
                 alt={brand.name}
-                className="max-h-12 w-auto object-contain sm:max-h-16"
+                fill
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 180px"
+                className="object-contain"
               />
             </motion.div>
           ))}

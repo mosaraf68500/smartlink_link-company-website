@@ -33,16 +33,19 @@ function LogoGrid({ brands, label }: { brands: Brand[]; label: string }) {
               duration: 0.3,
               delay: index * 0.03,
             }}
-            className="flex h-[100px] w-full items-center justify-center rounded-[9px] border border-[#E5E7EB] bg-white p-4 sm:h-[120px]"
+            className="relative aspect-[2/1] w-full overflow-hidden rounded-[9px] border border-[#E5E7EB] bg-white"
           >
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.03 }}
               transition={{ duration: 0.2 }}
+              className="absolute inset-0"
             >
               <Image
                 src={brand.image}
                 alt={brand.name}
-                className="max-h-12 w-auto object-contain sm:max-h-16"
+                fill
+                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 180px"
+                className="object-contain"
               />
             </motion.div>
           </motion.div>

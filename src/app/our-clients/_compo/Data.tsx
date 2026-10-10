@@ -1,36 +1,55 @@
-import logo1 from "../../../../public/images/brand/Logo/Logo 01.png";
-import logo2 from "../../../../public/images/brand/Logo/Logo 02.png";
-import logo3 from "../../../../public/images/brand/Logo/Logo 03.png";
-import logo4 from "../../../../public/images/brand/Logo/Logo 04.png";
-import logo5 from "../../../../public/images/brand/Logo/Logo 05.png";
-import logo6 from "../../../../public/images/brand/Logo/Logo 06.png";
-import logo7 from "../../../../public/images/brand/Logo/Logo 07.png";
-import logo8 from "../../../../public/images/brand/Logo/Logo 08.png";
-import logo9 from "../../../../public/images/brand/Logo/Logo 09.png";
-import logo10 from "../../../../public/images/brand/Logo/Logo 10.png";
-import logo11 from "../../../../public/images/brand/Logo/Logo 11.png";
-import logo12 from "../../../../public/images/brand/Logo/Logo 12.png";
-import logo13 from "../../../../public/images/brand/Logo/Logo 13.png";
-import logo14 from "../../../../public/images/brand/Logo/Logo 14.png";
-import logo15 from "../../../../public/images/brand/Logo/Logo 15.png";
-import logo16 from "../../../../public/images/brand/Logo/Logo 16.png";
-import logo17 from "../../../../public/images/brand/Logo/Logo 17.png";
-import logo18 from "../../../../public/images/brand/Logo/Logo 18.png";
-import logo19 from "../../../../public/images/brand/Logo/Logo 19.png";
-import logo20 from "../../../../public/images/brand/Logo/Logo 20.png";
-import logo21 from "../../../../public/images/brand/Logo/Logo 21.png";
-import logo22 from "../../../../public/images/brand/Logo/Logo 22.png";
-import logo23 from "../../../../public/images/brand/Logo/Logo 23.png";
-import logo24 from "../../../../public/images/brand/Logo/Logo 24.png";
-import logo25 from "../../../../public/images/brand/Logo/Logo 25.png";
-import logo26 from "../../../../public/images/brand/Logo/Logo 26.png";
-import logo27 from "../../../../public/images/brand/Logo/Logo 27.png";
-import logo28 from "../../../../public/images/brand/Logo/Logo 28.png";
-import logo29 from "../../../../public/images/brand/Logo/Logo 29.png";
-import logo30 from "../../../../public/images/brand/Logo/Logo 30.png";
-import logo31 from "../../../../public/images/brand/Logo/Logo 31.png";
-import logo32 from "../../../../public/images/brand/Logo/Logo 32.png";
 import type { StaticImageData } from "next/image";
+
+import agrocorpInternational from "../../../../public/images/suppliers/agrocorp-international.png";
+import agrico from "../../../../public/images/suppliers/agrico.png";
+import orientExports from "../../../../public/images/suppliers/orient-exports.png";
+import bakhresaGroup from "../../../../public/images/suppliers/bakhresa-group.png";
+import universalTradeLink from "../../../../public/images/suppliers/universal-trade-link.png";
+import vkUdyog from "../../../../public/images/suppliers/vk-udyog.png";
+import fmn from "../../../../public/images/suppliers/fmn.png";
+import metlGroup from "../../../../public/images/suppliers/metl-group.png";
+import atakum from "../../../../public/images/suppliers/atakum.png";
+import azania from "../../../../public/images/suppliers/azania.png";
+import grainstarAst from "../../../../public/images/suppliers/grainstar-ast.png";
+import adaniWilmar from "../../../../public/images/suppliers/adani-wilmar.png";
+import cargill from "../../../../public/images/suppliers/cargill.png";
+import mmm from "../../../../public/images/suppliers/mmm.png";
+import everGlory from "../../../../public/images/suppliers/ever-glory.png";
+import unitedQuarries from "../../../../public/images/suppliers/united-quarries.png";
+import rakRock from "../../../../public/images/suppliers/rak-rock.png";
+import oryxMix from "../../../../public/images/suppliers/oryx-mix.png";
+import cofcoIntl from "../../../../public/images/suppliers/cofco-intl.png";
+import adm from "../../../../public/images/suppliers/adm.png";
+import masafiCrusher from "../../../../public/images/suppliers/masafi-crusher.png";
+import louisDreyfusCompany from "../../../../public/images/suppliers/louis-dreyfus-company.png";
+
+import cccc from "../../../../public/images/buyers/cccc.png";
+import crcc from "../../../../public/images/buyers/crcc.png";
+import crec from "../../../../public/images/buyers/crec.png";
+import maddhaparaGranite from "../../../../public/images/buyers/maddhapara-granite.png";
+import tokyuCorporation from "../../../../public/images/buyers/tokyu-corporation.png";
+import sinohydro from "../../../../public/images/buyers/sinohydro.png";
+import toaCorporation from "../../../../public/images/buyers/toa-corporation.png";
+import obayashi from "../../../../public/images/buyers/obayashi.png";
+import chinaShandongInternational from "../../../../public/images/buyers/china-shandong-international.png";
+import crfg from "../../../../public/images/buyers/crfg.png";
+import akijResource from "../../../../public/images/buyers/akij-resource.png";
+import mbec from "../../../../public/images/buyers/mbec.png";
+import bashundharaGroup from "../../../../public/images/buyers/bashundhara-group.png";
+import crownCement from "../../../../public/images/buyers/crown-cement.png";
+import senaKalyanSangstha from "../../../../public/images/buyers/sena-kalyan-sangstha.png";
+import nabilGroup from "../../../../public/images/buyers/nabil-group.png";
+import communityBank from "../../../../public/images/buyers/community-bank.png";
+import mercantileBank from "../../../../public/images/buyers/mercantile-bank.png";
+import qualityFeeds from "../../../../public/images/buyers/quality-feeds.png";
+import nourish from "../../../../public/images/buyers/nourish.png";
+import jteg from "../../../../public/images/buyers/jteg.png";
+import genertecCmc from "../../../../public/images/buyers/genertec-cmc.png";
+import ducorp from "../../../../public/images/buyers/ducorp.png";
+import fdee from "../../../../public/images/buyers/fdee.png";
+import faisalBrothers from "../../../../public/images/buyers/faisal-brothers.png";
+import mahbubGroup from "../../../../public/images/buyers/mahbub-group.png";
+import karimGroup from "../../../../public/images/buyers/karim-group.png";
 
 /** Home / Our Clients logo groups for Smartlink. */
 export type BrandCategory = "Buyer" | "Supplier";
@@ -42,46 +61,169 @@ export interface Brand {
   category: BrandCategory;
 }
 
-/**
- * Temporary logo assets (from the previous site). Reassign `category` or swap
- * `image` paths when real Smartlink buyer / supplier logos arrive.
- */
 export const brandsData: Brand[] = [
-  // —— Buyers ——
-  { id: 1, name: "Khatibari", image: logo1, category: "Buyer" },
-  { id: 2, name: "Organic Ghor BD", image: logo2, category: "Buyer" },
-  { id: 3, name: "eitrok", image: logo3, category: "Buyer" },
-  { id: 4, name: "Chotto Khati Bazar", image: logo4, category: "Buyer" },
-  { id: 5, name: "Follow", image: logo5, category: "Buyer" },
-  { id: 6, name: "Kids Palace", image: logo6, category: "Buyer" },
-  { id: 7, name: "Bijik", image: logo7, category: "Buyer" },
-  { id: 8, name: "Novital", image: logo8, category: "Buyer" },
-  { id: 9, name: "Jamima Mart", image: logo9, category: "Buyer" },
-  { id: 10, name: "Rayhan Shop", image: logo10, category: "Buyer" },
-  { id: 11, name: "Tongsa Bazar", image: logo11, category: "Buyer" },
-  { id: 12, name: "Babycare", image: logo12, category: "Buyer" },
-  { id: 13, name: "Tarunno Food", image: logo13, category: "Buyer" },
-  { id: 14, name: "Molla IT Firm", image: logo14, category: "Buyer" },
-  { id: 15, name: "Dighal", image: logo15, category: "Buyer" },
-  { id: 16, name: "Brand 16", image: logo16, category: "Buyer" },
-
   // —— Suppliers ——
-  { id: 17, name: "Brand 17", image: logo17, category: "Supplier" },
-  { id: 18, name: "Brand 18", image: logo18, category: "Supplier" },
-  { id: 19, name: "Brand 19", image: logo19, category: "Supplier" },
-  { id: 20, name: "Brand 20", image: logo20, category: "Supplier" },
-  { id: 21, name: "Brand 21", image: logo21, category: "Supplier" },
-  { id: 22, name: "Brand 22", image: logo22, category: "Supplier" },
-  { id: 23, name: "Brand 23", image: logo23, category: "Supplier" },
-  { id: 24, name: "Brand 24", image: logo24, category: "Supplier" },
-  { id: 25, name: "Brand 25", image: logo25, category: "Supplier" },
-  { id: 26, name: "Brand 26", image: logo26, category: "Supplier" },
-  { id: 27, name: "Brand 27", image: logo27, category: "Supplier" },
-  { id: 28, name: "Brand 28", image: logo28, category: "Supplier" },
-  { id: 29, name: "Brand 29", image: logo29, category: "Supplier" },
-  { id: 30, name: "Brand 30", image: logo30, category: "Supplier" },
-  { id: 31, name: "Brand 31", image: logo31, category: "Supplier" },
-  { id: 32, name: "Brand 32", image: logo32, category: "Supplier" },
+  {
+    id: 1,
+    name: "Agrocorp International",
+    image: agrocorpInternational,
+    category: "Supplier",
+  },
+  { id: 2, name: "Agrico", image: agrico, category: "Supplier" },
+  { id: 3, name: "Orient Exports", image: orientExports, category: "Supplier" },
+  {
+    id: 4,
+    name: "Bakhresa Group",
+    image: bakhresaGroup,
+    category: "Supplier",
+  },
+  {
+    id: 5,
+    name: "Universal Trade Link",
+    image: universalTradeLink,
+    category: "Supplier",
+  },
+  { id: 6, name: "V.K. Udyog Ltd", image: vkUdyog, category: "Supplier" },
+  { id: 7, name: "FMN", image: fmn, category: "Supplier" },
+  { id: 8, name: "METL Group", image: metlGroup, category: "Supplier" },
+  { id: 9, name: "Atakum", image: atakum, category: "Supplier" },
+  { id: 10, name: "Azania", image: azania, category: "Supplier" },
+  {
+    id: 11,
+    name: "Grainstar AST",
+    image: grainstarAst,
+    category: "Supplier",
+  },
+  { id: 12, name: "Adani Wilmar", image: adaniWilmar, category: "Supplier" },
+  { id: 13, name: "Cargill", image: cargill, category: "Supplier" },
+  { id: 14, name: "MMM", image: mmm, category: "Supplier" },
+  {
+    id: 15,
+    name: "Ever Glory General Trading",
+    image: everGlory,
+    category: "Supplier",
+  },
+  {
+    id: 16,
+    name: "United Quarries",
+    image: unitedQuarries,
+    category: "Supplier",
+  },
+  { id: 17, name: "RAK Rock", image: rakRock, category: "Supplier" },
+  { id: 18, name: "Oryx Mix", image: oryxMix, category: "Supplier" },
+  {
+    id: 19,
+    name: "COFCO International",
+    image: cofcoIntl,
+    category: "Supplier",
+  },
+  { id: 20, name: "ADM", image: adm, category: "Supplier" },
+  {
+    id: 21,
+    name: "Masafi Crusher",
+    image: masafiCrusher,
+    category: "Supplier",
+  },
+  {
+    id: 22,
+    name: "Louis Dreyfus Company",
+    image: louisDreyfusCompany,
+    category: "Supplier",
+  },
+
+  // —— Buyers ——
+  { id: 23, name: "CCCC", image: cccc, category: "Buyer" },
+  { id: 24, name: "CRCC", image: crcc, category: "Buyer" },
+  { id: 25, name: "CREC", image: crec, category: "Buyer" },
+  {
+    id: 26,
+    name: "Maddhapara Granite Mining",
+    image: maddhaparaGranite,
+    category: "Buyer",
+  },
+  {
+    id: 27,
+    name: "Tokyu Corporation",
+    image: tokyuCorporation,
+    category: "Buyer",
+  },
+  { id: 28, name: "Sinohydro", image: sinohydro, category: "Buyer" },
+  {
+    id: 29,
+    name: "TOA Corporation",
+    image: toaCorporation,
+    category: "Buyer",
+  },
+  { id: 30, name: "Obayashi", image: obayashi, category: "Buyer" },
+  {
+    id: 31,
+    name: "China Shandong International",
+    image: chinaShandongInternational,
+    category: "Buyer",
+  },
+  { id: 32, name: "CRFG", image: crfg, category: "Buyer" },
+  { id: 33, name: "Akij Resource", image: akijResource, category: "Buyer" },
+  { id: 34, name: "MBEC", image: mbec, category: "Buyer" },
+  {
+    id: 35,
+    name: "Bashundhara Group",
+    image: bashundharaGroup,
+    category: "Buyer",
+  },
+  { id: 36, name: "Crown Cement", image: crownCement, category: "Buyer" },
+  {
+    id: 37,
+    name: "Sena Kalyan Sangstha",
+    image: senaKalyanSangstha,
+    category: "Buyer",
+  },
+  {
+    id: 38,
+    name: "Nabil Group of Industries",
+    image: nabilGroup,
+    category: "Buyer",
+  },
+  {
+    id: 39,
+    name: "Community Bank",
+    image: communityBank,
+    category: "Buyer",
+  },
+  {
+    id: 40,
+    name: "Mercantile Bank Limited",
+    image: mercantileBank,
+    category: "Buyer",
+  },
+  {
+    id: 41,
+    name: "Quality Feeds Limited",
+    image: qualityFeeds,
+    category: "Buyer",
+  },
+  { id: 42, name: "Nourish", image: nourish, category: "Buyer" },
+  { id: 43, name: "JTEG", image: jteg, category: "Buyer" },
+  { id: 44, name: "GENERTEC CMC", image: genertecCmc, category: "Buyer" },
+  { id: 45, name: "DuCorp", image: ducorp, category: "Buyer" },
+  {
+    id: 46,
+    name: "First Dhaka Elevated Expressway",
+    image: fdee,
+    category: "Buyer",
+  },
+  {
+    id: 47,
+    name: "Faisal Brothers",
+    image: faisalBrothers,
+    category: "Buyer",
+  },
+  {
+    id: 48,
+    name: "Mahbub Group of Industries",
+    image: mahbubGroup,
+    category: "Buyer",
+  },
+  { id: 49, name: "Karim Group", image: karimGroup, category: "Buyer" },
 ];
 
 export const buyerBrands = brandsData.filter((b) => b.category === "Buyer");
