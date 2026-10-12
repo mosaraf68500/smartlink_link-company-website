@@ -9,7 +9,7 @@ const Brand = () => {
       <div className="">
         <SectionHeader
           title="Trusted by Leading Businesses"
-          description="Buyers who trust us with their supply needs, and suppliers who help us deliver — across RMC, cement, trading, and logistics."
+          description="Buyers who trust us with their supply needs, and suppliers who help us deliver — from clinker, limestone, and gabbro aggregate to wheat, soyabean, feed ingredients, and cotton."
         />
       </div>
 

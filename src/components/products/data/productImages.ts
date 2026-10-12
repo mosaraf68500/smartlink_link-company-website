@@ -1,11 +1,8 @@
 /**
  * Centralized gallery-image registry, one entry per product/service slug.
  *
- * Real photos live under `public/images/<slug>/`. Pages read from this
- * single file — swap paths here when new assets arrive.
- *
- * Still on Unsplash placeholders: clinker, coal, wheat, lentils, pulses,
- * canola-seeds, green-mung, soyabean-meal, poultry-meal, rapeseed-meal, cotton.
+ * Real photos live under `public/images/<slug>/` (copied from heroimg where needed).
+ * Still partly on Unsplash: canola-seeds; green-mung (except last local photo).
  */
 export const productImages: Record<string, string[]> = {
   limestone: [
@@ -22,35 +19,30 @@ export const productImages: Record<string, string[]> = {
     "/images/gabbro-aggregate/gabbro-5.jpeg",
   ],
   clinker: [
-    "https://images.unsplash.com/photo-1666219462105-2909c2d72d01?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1636747423727-2d39d0aa9796?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1624484582400-3b947099da49?q=80&w=1200&auto=format&fit=crop",
+    "/images/clinker/clinker-1.png",
+    "/images/clinker/clinker-2.png",
+    "/images/clinker/clinker-3.png",
+    "/images/clinker/clinker-4.png",
   ],
   coal: [
-    "https://images.unsplash.com/photo-1593539568552-88c7fcbb06b6?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1654461339694-128902c5c075?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1572454450295-69d0c63a6db2?q=80&w=1200&auto=format&fit=crop",
+    "/images/coal/coal-1.png",
+    "/images/coal/coal-2.png",
+    "/images/coal/coal-3.png",
+    "/images/coal/coal-4.png",
   ],
   "wheat-supplier-importer-bangladesh": [
-    "https://images.unsplash.com/photo-1561978248-bffcdd0457ad?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1723809356803-bfbc0dfe5f22?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1663025293688-322e16b6cb66?q=80&w=1200&auto=format&fit=crop",
+    "/images/wheat-supplier-importer-bangladesh/wheat-1.png",
+    "/images/wheat-supplier-importer-bangladesh/wheat-2.png",
+    "/images/wheat-supplier-importer-bangladesh/wheat-3.png",
   ],
-  lentils: [
-    "https://images.unsplash.com/photo-1730591857303-0fa44be3f677?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1770617476260-1addeea7c826?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1672660589379-891ab59588a8?q=80&w=1200&auto=format&fit=crop",
-  ],
-  pulses: [
-    "https://images.unsplash.com/photo-1564894809611-1742fc40ed80?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1614494837966-f43d6c869d72?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1786994060314-eccbdd13066d?q=80&w=1200&auto=format&fit=crop",
-  ],
-  // Combined Lentils & Pulses page — unique images only (no repeats).
+  lentils: ["/images/lentils/lentils-1.png"],
+  pulses: ["/images/pulses/pulses-1.png"],
+  // Combined Lentils & Pulses page
   "lentils-pulses": [
-    "https://images.unsplash.com/photo-1730591857303-0fa44be3f677?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1564894809611-1742fc40ed80?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1614494837966-f43d6c869d72?q=80&w=1200&auto=format&fit=crop",
+    "/images/lentils-pulses/lentils-pulses-1.jpg",
+    "/images/lentils-pulses/lentils-pulses-2.jpg",
+    "/images/lentils-pulses/lentils-pulses-3.jpg",
+    "/images/lentils-pulses/lentils-pulses-4.jpg",
   ],
   "soyabean-seeds": [
     "/images/soyabean-seeds/soyabean-seeds-1.jpeg",
@@ -66,7 +58,7 @@ export const productImages: Record<string, string[]> = {
     "https://images.unsplash.com/photo-1788629531534-0a69edec70f7?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1758701925687-1449ab265c2e?q=80&w=1200&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1788629531508-c0d971473c37?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1515542622106-78bda8ba0e5b?q=80&w=1200&auto=format&fit=crop",
+    "/images/green-mung/green-mung-4.png",
   ],
   "wheat-bran": [
     "/images/wheat-bran/wheat-bran-1.jpeg",
@@ -80,41 +72,58 @@ export const productImages: Record<string, string[]> = {
     "/images/corn-ddgs/corn-ddgs-4.jpeg",
   ],
   "soyabean-meal": [
-    "https://images.unsplash.com/photo-1572457224112-06d191bb6d01?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1630095829721-5179c495f1cf?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1758158329346-bed873fb6d9a?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop",
+    "/images/soyabean-meal/soyabean-meal-1.png",
+    "/images/soyabean-meal/soyabean-meal-2.png",
+    "/images/soyabean-meal/soyabean-meal-3.png",
+    "/images/soyabean-meal/soyabean-meal-4.png",
   ],
   "poultry-meal": [
-    "https://images.unsplash.com/photo-1538170989343-ce003278e1a3?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1620136717591-841a4da27e23?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1694854038360-56b29a16fb0c?q=80&w=1200&auto=format&fit=crop",
+    "/images/poultry-meal/poultry-meal-1.png",
+    "/images/poultry-meal/poultry-meal-2.png",
   ],
   "rapeseed-meal": [
-    "https://images.unsplash.com/photo-1587973367556-9237e51df783?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1666016169475-abb98ae6ff82?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1778350514204-9079b1a955a9?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=1200&auto=format&fit=crop",
+    "/images/rapeseed-meal/rapeseed-meal-1.jpg",
+    "/images/rapeseed-meal/rapeseed-meal-2.jpg",
+    "/images/rapeseed-meal/rapeseed-meal-3.jpg",
+    "/images/rapeseed-meal/rapeseed-meal-4.jpg",
   ],
-  // Unique images — one per content section (no repeats within a product).
   cotton: [
-    "https://images.unsplash.com/photo-1633527992904-53f86f81a23a?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1634337781106-4c6a12b820a1?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1648908833245-86fe424f47a0?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1615485290382-441e4d049cb5?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1464226184884-fa280b87c399?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1200&auto=format&fit=crop",
+    "/images/cotton/cotton-1.png",
+    "/images/cotton/cotton-2.png",
+    "/images/cotton/cotton-3.png",
+    "/images/cotton/cotton-4.png",
+    "/images/cotton/cotton-5.png",
+    "/images/cotton/cotton-6.jpg",
+    "/images/cotton/cotton-7.jpg",
+    "/images/cotton/cotton-8.jpg",
   ],
-  // One unique image per service section — no repeats.
+  // Unique images only — no repeats across sections.
   "vessel-chartering": [
-    "/images/bulk_chartering/bulk-chartering-1.jpeg",
-    "/images/bulk_chartering/bulk-chartering-2.jpeg",
-    "/images/bulk_chartering/bulk-chartering-3.jpeg",
-    "/images/work/ship-01.png",
-    "/images/work/ship-02.png",
-    "/images/work/ship-03.png",
-    "/images/cta/ship-01.png",
+    "/images/vessel-chartering/vessel-chartering-1.jpeg",
+    "/images/vessel-chartering/vessel-chartering-2.jpeg",
+    "/images/vessel-chartering/vessel-chartering-3.jpeg",
+    "/images/vessel-chartering/vessel-chartering-4.jpeg",
+    "/images/vessel-chartering/vessel-chartering-5.jpeg",
+    "/images/vessel-chartering/vessel-chartering-6.jpg",
+  ],
+  "port-handling": [
+    "/images/port-handling/port-handling-1.jpeg",
+    "/images/port-handling/port-handling-2.jpeg",
+    "/images/port-handling/port-handling-3.jpeg",
+    "/images/port-handling/port-handling-4.webp",
+  ],
+  "inland-water-transport": [
+    "/images/inland-water-transport/inland-water-transport-1.jpeg",
+    "/images/inland-water-transport/inland-water-transport-2.jpeg",
+    "/images/inland-water-transport/inland-water-transport-3.webp",
+    "/images/inland-water-transport/inland-water-transport-4.webp",
+  ],
+  "truck-transportation": [
+    "/images/truck-transportation/truck-transportation-1.jpg",
+    "/images/truck-transportation/truck-transportation-2.jpg",
+    "/images/truck-transportation/truck-transportation-3.jpg",
+    "/images/truck-transportation/truck-transportation-4.jpg",
+    "/images/truck-transportation/truck-transportation-5.jpg",
+    "/images/truck-transportation/truck-transportation-6.jpg",
   ],
 };

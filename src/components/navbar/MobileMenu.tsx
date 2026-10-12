@@ -145,10 +145,15 @@ export default function MobileMenu({
                           ? serviceGroups
                           : productGroups
                         ).map((group) => (
-                          <div key={group.title} className="flex flex-col gap-1">
-                            <p className="px-2 text-[11px] font-semibold uppercase tracking-wide text-gray-400">
-                              {group.title}
-                            </p>
+                          <div
+                            key={group.title || group.items[0]?.href}
+                            className="flex flex-col gap-1"
+                          >
+                            {item.type !== "service" && group.title ? (
+                              <p className="px-2 text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                                {group.title}
+                              </p>
+                            ) : null}
                             {group.items.map((sub) => {
                               const subActive = isPathActive(sub.href);
                               return (

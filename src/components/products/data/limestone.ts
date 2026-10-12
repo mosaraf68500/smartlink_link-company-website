@@ -8,13 +8,13 @@ export const limestoneData: CommodityPageData = {
   images: productImages.limestone,
   sections: [
     {
+      countries: ["UAE", "Oman", "Thailand", "China", "India"],
       paragraphs: [
         "Smartlink Systems is a professional limestone supplier, importer, exporter, and bulk trading company in Bangladesh, supplying high-quality limestone to Ready-Mix Concrete (RMC) plants, cement industries, construction companies, industrial users, and major infrastructure and mega projects throughout Bangladesh.",
       ],
     },
     {
       heading: "Limestone Import from UAE, Oman, Thailand, China & India",
-      countries: ["UAE", "Oman", "Thailand", "China", "India"],
       paragraphs: [
         "Smartlink Systems sources and supplies limestone from established quarries, manufacturers, and exporters in the UAE, Oman, Thailand, China, and India. Our diversified international sourcing network enables us to offer customers different limestone grades, sizes, chemical compositions, and commercial options according to their project requirements.",
         "We manage the complete international and domestic supply chain, including sourcing, import and export documentation, shipment coordination, port handling, customs-related logistics, warehousing, inland waterway transportation, road transportation, and final delivery to the customer's RMC plant, factory, project site, yard, or jetty.",

@@ -47,26 +47,47 @@ const Alllogo = ({ brands = defaultBrandsData }: AlllogoProps) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.25 }}
           className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4 md:gap-4 lg:grid-cols-5"
         >
           {filteredBrands.map((brand, index) => (
             <motion.div
               key={brand.id}
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              whileHover={{ scale: 1.04, y: -4 }}
+              initial={{ opacity: 0, y: 20, scale: 0.96 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              whileHover={{
+                y: -6,
+                scale: 1.03,
+                boxShadow: "0 12px 28px rgba(17, 36, 32, 0.1)",
+                borderColor: "rgba(17, 36, 32, 0.18)",
+              }}
               whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.3, delay: index * 0.03 }}
+              transition={{
+                type: "spring",
+                stiffness: 280,
+                damping: 22,
+                delay: Math.min(index * 0.04, 0.4),
+              }}
               className="relative aspect-[2/1] w-full overflow-hidden rounded-[9px] border border-[#E5E7EB] bg-white"
             >
-              <Image
-                src={brand.image}
-                alt={brand.name}
-                fill
-                sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 180px"
-                className="object-contain"
-              />
+              <motion.div
+                className="absolute inset-0"
+                animate={{ y: [0, -3, 0] }}
+                transition={{
+                  duration: 3.2 + (index % 4) * 0.35,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: index * 0.1,
+                }}
+              >
+                <Image
+                  src={brand.image}
+                  alt={brand.name}
+                  fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 180px"
+                  className="object-contain"
+                />
+              </motion.div>
             </motion.div>
           ))}
         </motion.div>

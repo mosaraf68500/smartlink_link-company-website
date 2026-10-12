@@ -15,6 +15,7 @@ export const rapeseedMealData: CommodityPageData = {
   images: productImages["rapeseed-meal"],
   sections: [
     {
+      countries: ["Canada", "Australia", "India", "Europe"],
       paragraphs: [
         "Expanding our portfolio of plant-based protein ingredients, Smartlink Systems specializes in the international sourcing, trading, and supply of quality Rapeseed Meal (RSM) for the animal-feed industry. We connect reliable producers and exporters with feed mills, dairy farms, livestock producers, poultry-feed manufacturers, commodity importers, and bulk buyers across international markets.",
         "Rapeseed Meal is a valuable protein-rich co-product of the rapeseed oil extraction process and is widely utilized in balanced animal-feed formulations. Our sourcing programs can be tailored according to required protein level, nutritional parameters, origin, shipment volume, and commercial terms.",

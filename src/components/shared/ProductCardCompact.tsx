@@ -65,10 +65,10 @@ export default function ProductCardCompact({
         />
       </div>
 
-      {/* Header */}
-      <div className="relative flex flex-1 flex-col gap-2">
+      {/* Header — fixed rhythm so side-by-side cards share the same text lines */}
+      <div className="relative flex flex-1 flex-col">
         <span
-          className="body-small-medium mb-2 inline-block w-fit rounded-full border px-4 py-1.5"
+          className="body-small-medium mb-3 inline-flex h-8 items-center rounded-full border px-4"
           style={{
             borderColor: hexToRgba(accentColor, 0.16),
             color: accentColor,
@@ -77,10 +77,11 @@ export default function ProductCardCompact({
           {badgeLabel}
         </span>
 
-        <div className="flex items-center gap-3">
+        <div className="mb-3 flex min-h-[3.25rem] items-center gap-3 sm:min-h-[3.5rem]">
           <span className="flex-shrink-0">{icon}</span>
-          <h3 className="title-large-medium text-secondary">{title}</h3>
-          {/* Arrow icon: same icon on every card, shown on hover */}
+          <h3 className="title-large-medium line-clamp-2 text-secondary">
+            {title}
+          </h3>
           <span
             className="flex-shrink-0 -translate-x-1 opacity-0 transition-all duration-200 ease-out group-hover:translate-x-0 group-hover:opacity-100"
             style={{ color: accentColor }}
@@ -89,11 +90,13 @@ export default function ProductCardCompact({
           </span>
         </div>
 
-        <p className="body-regular text-gray">{description}</p>
+        <p className="body-regular mb-3 line-clamp-3 min-h-[4.5rem] text-gray sm:min-h-[4.75rem]">
+          {description}
+        </p>
 
         <a
           href={linkHref}
-          className="body-regular font-medium"
+          className="body-regular mt-auto inline-flex min-h-[1.5rem] items-center font-medium"
           style={{ color: accentColor }}
         >
           {linkText}

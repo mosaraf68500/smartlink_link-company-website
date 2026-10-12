@@ -56,7 +56,12 @@ export function ProseParagraphs({
       className={`flex flex-col gap-4 body-regular text-gray ${className ?? "mt-5"}`}
     >
       {paragraphs.map((paragraph, index) => (
-        <p key={index}>{paragraph}</p>
+        <p
+          key={index}
+          className="text-left [text-wrap:pretty] md:text-justify md:[text-align-last:left]"
+        >
+          {paragraph}
+        </p>
       ))}
     </div>
   );
@@ -68,11 +73,14 @@ export function ImageTextRow({
   image,
   imageAlt,
   imagePosition,
+  imageClassName,
   children,
 }: {
   image?: string;
   imageAlt: string;
   imagePosition: "left" | "right";
+  /** Extra classes on the filled image (e.g. object-top). */
+  imageClassName?: string;
   children: ReactNode;
 }) {
   const prefersReducedMotion = useReducedMotion();
@@ -114,7 +122,7 @@ export function ImageTextRow({
           alt={imageAlt}
           fill
           sizes="(max-width: 768px) 100vw, 50vw"
-          className="object-cover"
+          className={`object-cover ${imageClassName ?? ""}`}
         />
       </motion.div>
       <motion.div

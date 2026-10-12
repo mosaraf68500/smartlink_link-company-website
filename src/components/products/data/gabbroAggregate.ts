@@ -8,13 +8,13 @@ export const gabbroAggregateData: CommodityPageData = {
   images: productImages["gabbro-aggregate"],
   sections: [
     {
+      countries: ["UAE", "Oman"],
       paragraphs: [
         "Smartlink Systems is a professional Gabbro Aggregate supplier, importer, exporter, and bulk construction materials trading company in Bangladesh, supplying high-quality crushed Gabbro stone and aggregates to Ready-Mix Concrete (RMC) plants, construction companies, infrastructure contractors, and major mega projects across Bangladesh.",
       ],
     },
     {
       heading: "UAE & Oman Gabbro Aggregate Supply",
-      countries: ["UAE", "Oman"],
       paragraphs: [
         "Smartlink Systems sources and supplies premium-quality Gabbro Aggregate from the UAE and Oman, working with established quarries, crushing plants, manufacturers, and exporters. Our international sourcing network enables us to arrange bulk quantities of Gabbro Aggregate according to the required size, gradation, physical properties, and project specifications.",
         "We manage the complete supply chain, including international sourcing, import and export documentation, vessel and shipment coordination, port handling, customs-related logistics, jetty operations, warehousing, inland waterway transportation, road transportation, and final delivery to RMC plants, batching plants, project sites, yards, and jetties throughout Bangladesh.",

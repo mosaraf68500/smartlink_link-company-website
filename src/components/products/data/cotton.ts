@@ -19,6 +19,15 @@ export const cottonData: CommodityPageData = {
   images: productImages.cotton,
   sections: [
     {
+      countries: [
+        "India",
+        "USA",
+        "Brazil",
+        "Africa",
+        "Afghanistan",
+        "Argentina",
+        "Kazakhstan",
+      ],
       paragraphs: [
         "Connecting the textile industry with established cotton-producing regions worldwide, Smartlink Systems specializes in the international sourcing, trading, and supply of Raw Cotton for spinning mills, textile manufacturers, importers, and large-volume industrial buyers.",
         "Our sourcing network extends across India, USA, Africa, Afghanistan, Brazil, Argentina, and Kazakhstan, allowing us to offer buyers a diversified choice of origins, grades, staple lengths, and quality parameters according to individual spinning and production requirements.",

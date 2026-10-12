@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PAGE_CONTAINER } from "../shared/pageContainer";
 
 const paragraphs = [
@@ -115,7 +116,7 @@ export default function ManagingDirectorMessage() {
         </h2>
 
         <div
-          className="mt-10 rounded-xl border p-6 sm:p-8 md:p-10"
+          className="mt-10 rounded-xl border px-5 py-6 sm:px-8 sm:py-8 md:px-10 md:py-10"
           style={{
             backgroundColor: "#09382F",
             borderColor: "#0B483C",
@@ -129,44 +130,37 @@ export default function ManagingDirectorMessage() {
             {paragraphs.map((paragraph, index) => (
               <p
                 key={index}
-                className="body-regular"
-                style={{ color: "rgba(255,255,255,0.75)" }}
+                className="body-regular text-left text-white md:text-justify md:[text-align-last:left]"
               >
                 {paragraph.text}
               </p>
             ))}
           </div>
 
-          <p
-            className="body-regular mt-6"
-            style={{ color: "rgba(255,255,255,0.75)" }}
-          >
+          <p className="body-regular mt-6 text-white">
             <strong className="font-medium text-white">
               Together, we look forward to building stronger connections and
               creating new opportunities across global markets.
             </strong>
           </p>
 
-          <div className="mt-8 border-t border-[#0B483C] pt-6">
-            <p className="title-large-medium text-white">Md. Fayej Ahmed</p>
-            <p
-              className="title-regular mt-1"
-              style={{ color: "rgba(255,255,255,0.55)" }}
-            >
-              Managing Director
-            </p>
-            <p
-              className="title-regular"
-              style={{ color: "rgba(255,255,255,0.55)" }}
-            >
-              Smartlink Systems
-            </p>
-            <p
-              className="body-regular mt-4 italic"
-              style={{ color: "rgba(255,255,255,0.55)" }}
-            >
-              Connecting Commodities. Connecting Markets. Creating Value.
-            </p>
+          {/* Image + designation — always one row; larger photo on desktop */}
+          <div className="mt-8 flex flex-row items-center gap-4 border-t border-[#0B483C] pt-6 sm:gap-5 md:gap-6">
+            <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-xl sm:h-36 sm:w-36 md:h-44 md:w-44">
+              <Image
+                src="/images/about-us/managing-director.png"
+                alt="Md. Fayej Ahmed, Managing Director of Smartlink Systems"
+                fill
+                className="object-cover object-top"
+                sizes="(max-width: 640px) 112px, (max-width: 768px) 144px, 176px"
+              />
+            </div>
+
+            <div className="min-w-0 text-left">
+              <p className="title-large-medium text-white">Md. Fayej Ahmed</p>
+              <p className="title-regular mt-1 text-white">Managing Director</p>
+              <p className="title-regular text-white">Smartlink Systems</p>
+            </div>
           </div>
         </div>
       </div>

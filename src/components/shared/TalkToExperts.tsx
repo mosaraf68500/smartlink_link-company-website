@@ -457,7 +457,13 @@ export default function TalkToExperts({
               </div>
 
               <div>
-                <p className="h6-medium text-dark">Md Fayej Ahmed</p> <p className="body-regular text-gray">Assistant Manager</p>
+                <p className="body-regular text-gray">Hotline</p>
+                <a
+                  href="tel:+8801677136584"
+                  className="h6-medium text-dark transition-colors hover:text-primary"
+                >
+                  +8801677136584
+                </a>
               </div>
             </div>
 

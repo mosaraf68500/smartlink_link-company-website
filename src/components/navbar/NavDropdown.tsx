@@ -348,10 +348,16 @@ export default function NavDropdown({
             style={{ border: `1px solid ${HAIRLINE}` }}
           >
             {groups.map((group) => (
-              <div key={group.title} className="flex min-w-[170px] flex-col gap-2">
-                <p className="px-2 text-[11px] font-semibold uppercase tracking-wide text-gray-400">
-                  {group.title}
-                </p>
+              <div
+                key={group.title || group.items[0]?.href}
+                className="flex min-w-[170px] flex-col gap-2"
+              >
+                {/* Service dropdown: links only — no group heading */}
+                {item.type !== "service" && group.title ? (
+                  <p className="px-2 text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                    {group.title}
+                  </p>
+                ) : null}
                 <div className="flex flex-col gap-0.5">
                   {group.items.map((link) => {
                     const linkActive = isPathActive(link.href);

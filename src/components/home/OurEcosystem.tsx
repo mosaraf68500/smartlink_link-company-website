@@ -45,14 +45,13 @@ const compactProducts = [
   {
     badgeLabel: "Port Operations",
     icon: <Warehouse size={32} color="#5B4FCF" />,
-    title: "Port Handling & Cargo Management",
+    title: "Port Handling (ZD Service)",
     description:
-      "We manage loading, discharging, and inland transport, moving your cargo efficiently from port to final destination.",
-    linkText: "Talk to our logistics team",
-    linkHref: "/contact",
-    image:
-      "https://images.unsplash.com/photo-1597334948330-38795f25d05d?q=80&w=1400&auto=format&fit=crop",
-    imageAlt: "Container ship being loaded at a busy port with cranes",
+      "We manage ship discharge, stevedoring, and inland transport — moving your cargo efficiently from vessel to final destination.",
+    linkText: "See port handling service",
+    linkHref: "/port-handling",
+    image: "/images/port-handling/port-handling-2.jpeg",
+    imageAlt: "Bulk cargo being discharged from ship at port",
     accentColor: "#5B4FCF",
     panelColor: "#D9D3FF",
     imageBorderColor: "#F0EDFF",
@@ -169,23 +168,23 @@ export default function OurEcosystem() {
         {/* Compact 2-up row: Port Handling & Cargo Management, Quality Assurance & Documentation */}
         <StackCard index={fullWidthProducts.length}>
           <div className=" sm:gap-8 lg:gap-10 md:px-14 ">
-            <div className="grid grid-cols-1  gap-6 sm:grid-cols-2 bg-white" >
+            <div className="grid grid-cols-1 items-stretch gap-6 bg-white sm:grid-cols-2">
               {compactProducts.map((product) => (
-              <ProductCardCompact
-                key={product.title}
-                badgeLabel={product.badgeLabel}
-                icon={product.icon}
-                title={product.title}
-                description={product.description}
-                linkText={product.linkText}
-                linkHref={product.linkHref}
-                image={product.image}
-                imageAlt={product.imageAlt}
-                accentColor={product.accentColor}
-                panelColor={product.panelColor}
-                imageBorderColor={product.imageBorderColor}
-              />
-            ))}
+                <ProductCardCompact
+                  key={product.title}
+                  badgeLabel={product.badgeLabel}
+                  icon={product.icon}
+                  title={product.title}
+                  description={product.description}
+                  linkText={product.linkText}
+                  linkHref={product.linkHref}
+                  image={product.image}
+                  imageAlt={product.imageAlt}
+                  accentColor={product.accentColor}
+                  panelColor={product.panelColor}
+                  imageBorderColor={product.imageBorderColor}
+                />
+              ))}
             </div>
           </div>
         </StackCard>

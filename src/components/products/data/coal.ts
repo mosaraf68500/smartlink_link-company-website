@@ -8,13 +8,13 @@ export const coalData: CommodityPageData = {
   images: productImages.coal,
   sections: [
     {
+      countries: ["Indonesia", "South Africa", "Australia"],
       paragraphs: [
         "Powering industries through global resources and dependable supply chains, Smartlink Systems connects Bangladesh's energy and industrial sectors with established international coal markets. As an experienced coal sourcing partner, trader and supplier in Bangladesh, we provide integrated procurement and supply solutions tailored to the requirements of large-scale industrial consumers.",
       ],
     },
     {
       heading: "Sourcing & Specifications",
-      countries: ["Indonesia", "South Africa", "Australia"],
       paragraphs: [
         "Our international sourcing network extends across major coal-producing origins, including Indonesia, South Africa and Australia, enabling us to offer a diverse range of Thermal Coal, Steam Coal and Industrial Coal with specifications aligned to customers' operational requirements. Key quality parameters can include Gross Calorific Value (GCV/GAR), Total Moisture, Inherent Moisture, Ash Content, Total Sulphur, Volatile Matter and Fixed Carbon, subject to origin and contractual specifications.",
       ],

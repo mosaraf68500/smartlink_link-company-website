@@ -50,6 +50,9 @@ const serviceGroups: NavLinkGroup[] = [
     title: "Shipping & Logistics",
     items: [
       { label: "International Bulk Chartering & Maritime Logistics", href: "/vessel-chartering" },
+      { label: "Port Handling (ZD Service)", href: "/port-handling" },
+      { label: "Inland Water Transport", href: "/inland-water-transport" },
+      { label: "Truck Transportation Service", href: "/truck-transportation" },
     ],
   },
 ];

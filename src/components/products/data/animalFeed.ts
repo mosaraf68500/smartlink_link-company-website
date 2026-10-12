@@ -15,6 +15,7 @@ export const wheatBranData: CommodityPageData = {
   sections: [
     {
       heading: "Overview",
+      countries: ["India", "Ukraine", "Russia", "Australia", "Argentina"],
       paragraphs: [
         "Smartlink Systems supplies quality Wheat Bran sourced from major international grain-producing markets. It is widely used as a nutritious and economical ingredient in poultry, dairy, cattle, and livestock feed.",
       ],

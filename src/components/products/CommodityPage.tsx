@@ -98,7 +98,9 @@ function BulletList({ items }: { items: string[] }) {
             className="mt-0.5 h-5 w-5 shrink-0 text-primary"
             strokeWidth={2}
           />
-          <span className="body-regular text-dark">{item}</span>
+          <span className="body-regular text-justify text-dark [text-align-last:left]">
+            {item}
+          </span>
         </div>
       ))}
     </div>
@@ -157,7 +159,10 @@ function SectionContent({ section }: { section: CommoditySection }) {
               );
             case "note":
               return (
-                <p key={key} className="mt-4 body-small-regular text-gray">
+                <p
+                  key={key}
+                  className="mt-4 body-small-regular text-justify text-gray [text-align-last:left]"
+                >
                   {block.note}
                 </p>
               );
@@ -202,7 +207,9 @@ function SectionContent({ section }: { section: CommoditySection }) {
       {section.bullets && <BulletList items={section.bullets} />}
 
       {section.note && (
-        <p className="mt-4 body-small-regular text-gray">{section.note}</p>
+        <p className="mt-4 body-small-regular text-justify text-gray [text-align-last:left]">
+          {section.note}
+        </p>
       )}
     </>
   );
@@ -232,6 +239,9 @@ export default function CommodityPage({ data }: { data: CommodityPageData }) {
                 image={image}
                 imageAlt={`${altLabel} — ${name}`}
                 imagePosition={imagePosition}
+                imageClassName={
+                  image?.includes("wheat-bran-3") ? "object-top" : undefined
+                }
               >
                 <SectionContent section={section} />
               </ImageTextRow>

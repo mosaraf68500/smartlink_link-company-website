@@ -9,7 +9,7 @@ const page = () => {
       <ContentHero
         breadcrumb="Our Network"
         title={`Trusted by Leading\nBusinesses`}
-        description={`Our buyers and suppliers across trading, construction materials, and logistics — the network that keeps Smartlink shipments moving.`}
+        description={`Our buyers and suppliers across clinker, limestone, gabbro aggregate, grains, feed ingredients, and cotton — the network that keeps Smartlink shipments moving.`}
       />
       <div>
         <Alllogo brands={brandsData} />

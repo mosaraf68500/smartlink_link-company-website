@@ -3,208 +3,196 @@ import React from "react";
 import Image, { StaticImageData } from "next/image";
 import { motion } from "framer-motion";
 
-// ================== Image Imports ==================
-import hero01 from "../../../../public/images/heroimg/hero-01.png";
-import hero02 from "../../../../public/images/heroimg/hero-02.png";
-import hero03 from "../../../../public/images/heroimg/hero-03.png";
-import hero04 from "../../../../public/images/heroimg/hero-04.png";
-import hero05 from "../../../../public/images/heroimg/hero-05.png";
+/* —— Aggregate / ভুদার (stone, gabbro, limestone) —— */
 import hero06 from "../../../../public/images/heroimg/hero-06.png";
-import hero07 from "../../../../public/images/heroimg/hero-07.png";
-import hero08 from "../../../../public/images/heroimg/hero-08.png";
-
 import hero09 from "../../../../public/images/heroimg/hero-09.png";
-import hero10 from "../../../../public/images/heroimg/hero-10.png";
-import hero11 from "../../../../public/images/heroimg/hero-11.png";
 import hero12 from "../../../../public/images/heroimg/hero-12.png";
-import hero13 from "../../../../public/images/heroimg/hero-13.png";
-import hero14 from "../../../../public/images/heroimg/hero-14.png";
-import hero15 from "../../../../public/images/heroimg/hero-15.png";
-import hero16 from "../../../../public/images/heroimg/hero-16.png";
-
-import hero17 from "../../../../public/images/heroimg/hero-17.png";
 import hero18 from "../../../../public/images/heroimg/hero-18.png";
-import hero19 from "../../../../public/images/heroimg/hero-19.png";
+import gabbro1 from "../../../../public/images/gabbro-aggregate/gabbro-1.jpeg";
+import gabbro2 from "../../../../public/images/gabbro-aggregate/gabbro-2.jpeg";
+import gabbro3 from "../../../../public/images/gabbro-aggregate/gabbro-3.jpeg";
+import gabbro4 from "../../../../public/images/gabbro-aggregate/gabbro-4.jpeg";
+import gabbro5 from "../../../../public/images/gabbro-aggregate/gabbro-5.jpeg";
+import limestone1 from "../../../../public/images/limestone/limestone-1.jpeg";
+import limestone2 from "../../../../public/images/limestone/limestone-2.jpeg";
+import limestone3 from "../../../../public/images/limestone/limestone-3.jpeg";
+import limestone4 from "../../../../public/images/limestone/limestone-4.jpeg";
+
+/* —— Cotton —— */
+import hero01 from "../../../../public/images/heroimg/hero-01.png";
+import hero04 from "../../../../public/images/heroimg/hero-04.png";
 import hero20 from "../../../../public/images/heroimg/hero-20.png";
+
+/* —— Soyabean —— */
+import hero05 from "../../../../public/images/heroimg/hero-05.png";
+import hero07 from "../../../../public/images/heroimg/hero-07.png";
+import hero10 from "../../../../public/images/heroimg/hero-10.png";
+import soy1 from "../../../../public/images/soyabean-seeds/soyabean-seeds-1.jpeg";
+import soy2 from "../../../../public/images/soyabean-seeds/soyabean-seeds-2.jpeg";
+import soy3 from "../../../../public/images/soyabean-seeds/soyabean-seeds-3.jpeg";
+
+/* —— Corn / DDGS —— */
+import hero17 from "../../../../public/images/heroimg/hero-17.png";
 import hero21 from "../../../../public/images/heroimg/hero-21.png";
-import hero22 from "../../../../public/images/heroimg/hero-22.png";
 import hero23 from "../../../../public/images/heroimg/hero-23.png";
+import corn1 from "../../../../public/images/corn-ddgs/corn-ddgs-1.jpeg";
+import corn2 from "../../../../public/images/corn-ddgs/corn-ddgs-2.jpeg";
+import corn3 from "../../../../public/images/corn-ddgs/corn-ddgs-3.jpeg";
+import corn4 from "../../../../public/images/corn-ddgs/corn-ddgs-4.jpeg";
+
+/* —— Wheat —— */
+import hero15 from "../../../../public/images/heroimg/hero-15.png";
+import wheatBran1 from "../../../../public/images/wheat-bran/wheat-bran-1.jpeg";
+import wheatBran2 from "../../../../public/images/wheat-bran/wheat-bran-2.jpeg";
+import wheatBran3 from "../../../../public/images/wheat-bran/wheat-bran-3.jpeg";
+
+/* —— Coal —— */
+import hero22 from "../../../../public/images/heroimg/hero-22.png";
 import hero24 from "../../../../public/images/heroimg/hero-24.png";
 
-type GroupImages = {
-  img1: StaticImageData; // Column 1, top-left (145px)
-  img2: StaticImageData; // Column 1, top-right (flex-1)
-  img3: StaticImageData; // Column 1, bottom row (full width, 150px)
-  img4: StaticImageData; // Column 2, single tall tile
-  img5: StaticImageData; // Column 3, single tall tile
-  img6: StaticImageData; // Column 4, top row (150px)
-  img7: StaticImageData; // Column 4, bottom-left (flex-1)
-  img8: StaticImageData; // Column 4, bottom-right (flex-1)
+/* —— Shipping / vessels —— */
+import hero03 from "../../../../public/images/heroimg/hero-03.png";
+import hero11 from "../../../../public/images/heroimg/hero-11.png";
+import hero13 from "../../../../public/images/heroimg/hero-13.png";
+import hero14 from "../../../../public/images/heroimg/hero-14.png";
+import hero19 from "../../../../public/images/heroimg/hero-19.png";
+import ship1 from "../../../../public/images/bulk_chartering/bulk-chartering-1.jpeg";
+import ship2 from "../../../../public/images/bulk_chartering/bulk-chartering-2.jpeg";
+import ship3 from "../../../../public/images/bulk_chartering/bulk-chartering-3.jpeg";
+
+type Slide = {
+  src: StaticImageData;
+  alt: string;
 };
 
-const setOne: GroupImages = {
-  img1: hero01,
-  img2: hero02,
-  img3: hero03,
-  img4: hero04,
-  img5: hero05,
-  img6: hero06,
-  img7: hero07,
-  img8: hero08,
-};
+/**
+ * Product groups stay consecutive in the marquee — never mixed.
+ * Aggregate (ভুদার) first, then other products one after another.
+ */
+const productGroups: { label: string; slides: Slide[] }[] = [
+  {
+    label: "Aggregate",
+    slides: [
+      { src: gabbro1, alt: "Gabbro aggregate" },
+      { src: gabbro2, alt: "Gabbro aggregate stockpile" },
+      { src: gabbro3, alt: "Crushed gabbro" },
+      { src: gabbro4, alt: "Gabbro aggregate close-up" },
+      { src: gabbro5, alt: "Gabbro aggregate pile" },
+      { src: limestone1, alt: "Limestone aggregate" },
+      { src: limestone2, alt: "Crushed limestone" },
+      { src: limestone3, alt: "Limestone stockpile" },
+      { src: limestone4, alt: "Limestone close-up" },
+      { src: hero06, alt: "Aggregate quarry stockpiles" },
+      { src: hero09, alt: "Aggregate conveyor and piles" },
+      { src: hero12, alt: "Aggregate quarry aerial" },
+      { src: hero18, alt: "Aggregate processing site" },
+    ],
+  },
+  {
+    label: "Cotton",
+    slides: [
+      { src: hero04, alt: "Raw cotton in field" },
+      { src: hero20, alt: "Cotton bolls" },
+      { src: hero01, alt: "Cotton fiber" },
+    ],
+  },
+  {
+    label: "Soyabean",
+    slides: [
+      { src: hero05, alt: "Green soyabean pods" },
+      { src: soy1, alt: "Soyabean seeds" },
+      { src: soy2, alt: "Soyabean seeds close-up" },
+      { src: soy3, alt: "Soyabean seeds bulk" },
+      { src: hero07, alt: "Dried soyabeans" },
+      { src: hero10, alt: "Soyabean seeds" },
+    ],
+  },
+  {
+    label: "Corn DDGS",
+    slides: [
+      { src: corn1, alt: "Corn DDGS" },
+      { src: corn2, alt: "Corn kernels" },
+      { src: corn3, alt: "Corn DDGS feed" },
+      { src: corn4, alt: "Corn product" },
+      { src: hero17, alt: "Corn kernels" },
+      { src: hero23, alt: "Corn handling" },
+      { src: hero21, alt: "Feed meal" },
+    ],
+  },
+  {
+    label: "Wheat",
+    slides: [
+      { src: hero15, alt: "Wheat crop" },
+      { src: wheatBran1, alt: "Wheat bran" },
+      { src: wheatBran2, alt: "Wheat bran close-up" },
+      { src: wheatBran3, alt: "Wheat bran bulk" },
+    ],
+  },
+  {
+    label: "Coal",
+    slides: [
+      { src: hero24, alt: "Coal" },
+      { src: hero22, alt: "Coal chunks" },
+    ],
+  },
+  {
+    label: "Shipping",
+    slides: [
+      { src: ship1, alt: "Bulk vessel chartering" },
+      { src: ship2, alt: "Ocean freight" },
+      { src: ship3, alt: "Bulk carrier" },
+      { src: hero11, alt: "Bulk carrier at sea" },
+      { src: hero14, alt: "Vessel aerial view" },
+      { src: hero19, alt: "Bulk carrier sunrise" },
+      { src: hero13, alt: "Bulk carrier" },
+      { src: hero03, alt: "Port cargo handling" },
+    ],
+  },
+];
 
-const setTwo: GroupImages = {
-  img1: hero09,
-  img2: hero10,
-  img3: hero11,
-  img4: hero12,
-  img5: hero13,
-  img6: hero14,
-  img7: hero15,
-  img8: hero16,
-};
+const slides: Slide[] = productGroups.flatMap((group) => group.slides);
 
-const setThree: GroupImages = {
-  img1: hero17,
-  img2: hero18,
-  img3: hero19,
-  img4: hero20,
-  img5: hero21,
-  img6: hero22,
-  img7: hero23,
-  img8: hero24,
-};
+/** Same width & height for every tile — no uneven collage sizing. */
+const TILE_CLASS =
+  "relative h-[280px] w-[220px] shrink-0 overflow-hidden rounded-md sm:h-[320px] sm:w-[250px] md:h-[360px] md:w-[280px]";
 
-function ImageGroup({ images }: { images: GroupImages }) {
+function SlideTile({ slide }: { slide: Slide }) {
   return (
-    // কলামগুলোর মধ্যকার গ্যাপ 16px (gap-4)
-    <div className="flex shrink-0 items-stretch gap-4">
-
-      {/* Column 1: total height 410px (244px + 150px + 16px gap = 410px) */}
-      <div className="flex h-[410px] w-[352px] shrink-0 flex-col gap-4">
-        {/* Top row: 244px */}
-        <div className="flex h-[244px] gap-4 shrink-0">
-          <div className="relative h-full w-[145px] overflow-hidden">
-            <Image
-              src={images.img1}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="145px"
-            />
-          </div>
-          <div className="relative h-full flex-1 overflow-hidden">
-            <Image
-              src={images.img2}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="191px"
-            />
-          </div>
-        </div>
-        {/* Bottom row: 150px */}
-        <div className="relative h-[150px] w-full overflow-hidden shrink-0">
-          <Image
-            src={images.img3}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="352px"
-          />
-        </div>
-      </div>
-
-      {/* Column 2: single tall tile (410px) */}
-      <div className="relative h-[410px] w-[260px] shrink-0 overflow-hidden">
-        <Image
-          src={images.img4}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="260px"
-        />
-      </div>
-
-      {/* Column 3: single tall tile (410px) */}
-      <div className="relative h-[410px] w-[260px] shrink-0 overflow-hidden">
-        <Image
-          src={images.img5}
-          alt=""
-          fill
-          className="object-cover"
-          sizes="260px"
-        />
-      </div>
-
-      {/* Column 4: total height 410px (150px + 244px + 16px gap = 410px) */}
-      <div className="flex h-[410px] w-[398px] shrink-0 flex-col gap-4">
-        {/* Top row: 150px */}
-        <div className="relative h-[150px] w-full overflow-hidden shrink-0">
-          <Image
-            src={images.img6}
-            alt=""
-            fill
-            className="object-cover"
-            sizes="398px"
-          />
-        </div>
-        {/* Bottom row: 244px */}
-        <div className="flex h-[244px] gap-4 shrink-0">
-          <div className="relative h-full flex-1 overflow-hidden">
-            <Image
-              src={images.img7}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="191px"
-            />
-          </div>
-          <div className="relative h-full flex-1 overflow-hidden">
-            <Image
-              src={images.img8}
-              alt=""
-              fill
-              className="object-cover"
-              sizes="191px"
-            />
-          </div>
-        </div>
-      </div>
+    <div className={TILE_CLASS}>
+      <Image
+        src={slide.src}
+        alt={slide.alt}
+        fill
+        className="object-cover object-center"
+        sizes="(max-width: 640px) 220px, (max-width: 768px) 250px, 280px"
+      />
     </div>
   );
 }
-
-/* ---------------------------------- */
-/* Hero image marquee                 */
-/* ---------------------------------- */
 
 const HeroImage = () => {
   return (
     <div className="relative w-full overflow-hidden pt-[75px]">
       <div className="relative z-10 w-full overflow-hidden">
-        {/* প্রতিটি ImageGroup সেটের মাঝেও 16px (gap-4) রাখা হয়েছে */}
         <motion.div
           className="flex w-max gap-4"
           animate={{ x: ["0%", "-50%"] }}
           transition={{
-            duration: 40,
+            duration: 100,
             repeat: Infinity,
             ease: "linear",
           }}
         >
-          {/* First pass through all 3 sets... */}
-          <ImageGroup images={setOne} />
-          <ImageGroup images={setTwo} />
-          <ImageGroup images={setThree} />
-          {/* ...duplicated exactly once more so the -50% loop is seamless */}
-          <ImageGroup images={setOne} />
-          <ImageGroup images={setTwo} />
-          <ImageGroup images={setThree} />
+          {/* Duplicate once for seamless -50% loop */}
+          {slides.map((slide, i) => (
+            <SlideTile key={`a-${i}`} slide={slide} />
+          ))}
+          {slides.map((slide, i) => (
+            <SlideTile key={`b-${i}`} slide={slide} />
+          ))}
         </motion.div>
       </div>
 
-      {/* Top-to-bottom overlay */}
       <div className="pointer-events-none absolute inset-0 z-30" />
     </div>
   );
