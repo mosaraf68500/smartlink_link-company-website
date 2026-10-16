@@ -1,5 +1,6 @@
 import React from "react";
 import Brand from "../components/home/Brand/Brand";
+import SisterConcern from "../components/home/Brand/SisterConcern";
 import Hero from "../components/home/hero/Hero";
 import Work from "../components/home/work/Work";
 import FAQ from "../components/shared/FAQ";
@@ -12,6 +13,7 @@ function home() {
     <div className="">
       <Hero></Hero>
       <Brand></Brand>
+      <SisterConcern />
       <Work></Work>
       
 
