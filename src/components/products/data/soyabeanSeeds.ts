@@ -1,12 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Product Portfolio (Food & Industrial Soybeans → Typical Quality Parameters)
- * 3. Global Supply Solutions
- */
 export const soyabeanSeedsData: CommodityPageData = {
   slug: "soyabean-seeds",
   category: "Products",
@@ -23,7 +17,7 @@ export const soyabeanSeedsData: CommodityPageData = {
     {
       heading: "Product Portfolio",
       blocks: [
-        { type: "paragraphs", paragraphs: ["Food & Industrial Soybeans"] },
+        { type: "subheading", text: "Food & Industrial Soybeans" },
         {
           type: "bullets",
           bullets: [
@@ -33,17 +27,17 @@ export const soyabeanSeedsData: CommodityPageData = {
             "Crushing-Grade Soybeans",
           ],
         },
+        { type: "subheading", text: "Typical Quality Parameters" },
         {
-          type: "specs",
-          label: "Typical Quality Parameters",
-          specs: [
-            { label: "Protein", value: "As per origin & contract" },
-            { label: "Oil Content", value: "As per contractual specification" },
-            { label: "Moisture", value: "Controlled to agreed specification" },
-            { label: "Foreign Matter", value: "As per contract" },
-            { label: "Damaged / Split Beans", value: "Within agreed tolerance" },
-            { label: "GMO / Non-GMO", value: "Subject to origin and certification" },
-            { label: "Crop", value: "Current / Latest Crop" },
+          type: "bullets",
+          bullets: [
+            "Protein — As per origin & contract",
+            "Oil Content — As per contractual specification",
+            "Moisture — Controlled to agreed specification",
+            "Foreign Matter — As per contract",
+            "Damaged / Split Beans — Within agreed tolerance",
+            "GMO / Non-GMO — Subject to origin and certification",
+            "Crop — Current / Latest Crop",
           ],
         },
       ],
@@ -52,12 +46,12 @@ export const soyabeanSeedsData: CommodityPageData = {
       heading: "Global Supply Solutions",
       paragraphs: [
         "We facilitate bulk vessel and containerized shipments, depending on volume, origin, and destination, under international trade terms including FOB, CFR, and CIF.",
-        "Smartlink Systems — Connecting Global Soybean Origins with Reliable Markets.",
+        "Our supply approach combines origin matching, quality-parameter alignment, competitive commercial terms, and coordinated logistics — enabling oilseed crushers, edible oil processors, feed manufacturers, commodity importers, and industrial buyers to receive soybeans according to their required specification and delivery schedule.",
       ],
     },
   ],
   cta: {
-    text: "Looking for soybeans for crushing, food processing, or feed use? Contact Smartlink Systems for origins, specifications, and shipment arrangements.",
+    text: "Smartlink Systems — Connecting Global Soybean Origins with Reliable Markets.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

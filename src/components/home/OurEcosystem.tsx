@@ -45,13 +45,13 @@ const compactProducts = [
   {
     badgeLabel: "Port Operations",
     icon: <Warehouse size={32} color="#5B4FCF" />,
-    title: "Port Handling (ZD Service)",
+    title: "Port & Jetty Material Handling",
     description:
-      "We manage ship discharge, stevedoring, and inland transport — moving your cargo efficiently from vessel to final destination.",
-    linkText: "See port handling service",
+      "BIWTA-licensed jetty in Rupganj — bulk cargo handling, inland waterway logistics, and integrated road delivery.",
+    linkText: "See jetty handling service",
     linkHref: "/port-handling",
     image: "/images/port-handling/port-handling-2.jpeg",
-    imageAlt: "Bulk cargo being discharged from ship at port",
+    imageAlt: "Bulk cargo handling at Smartlink jetty facility",
     accentColor: "#5B4FCF",
     panelColor: "#D9D3FF",
     imageBorderColor: "#F0EDFF",

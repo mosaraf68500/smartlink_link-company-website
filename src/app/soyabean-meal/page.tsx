@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
 import { soyabeanMealData } from "@/src/components/products/data/soyabeanMeal";
 
-const title = "Soybean Meal (SBM) – Global Sourcing & Trading | Smartlink Systems";
+const title =
+  "Soybean Meal (SBM) – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies Soybean Meal (SBM) from USA, Brazil, Argentina, Tanzania and Nigeria — 44%–48%+ crude protein — for poultry, dairy, livestock and aquaculture feed under FOB, CFR and CIF terms.";
+  "Delivering dependable plant-based protein solutions to the international animal-feed industry, Smartlink Systems specializes in the sourcing, trading, and supply of quality Soybean Meal (SBM) from major producing origins including USA, Brazil, Argentina, Tanzania, and Nigeria.";
 
 export const metadata: Metadata = {
   title,

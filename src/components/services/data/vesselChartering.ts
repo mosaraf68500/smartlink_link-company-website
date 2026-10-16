@@ -59,7 +59,7 @@ export const vesselCharteringData: ServicePageData = {
           type: "chips",
           items: [
             { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
-            { label: "Corn / Maize" },
+            { label: "Corn / Maize", href: "/corn-maize" },
             { label: "Soybeans", href: "/soyabean-seeds" },
             { label: "Pulses & other grains", href: "/lentils-pulses" },
             { label: "Animal Feed Ingredients", href: "/wheat-bran" },
@@ -161,10 +161,10 @@ export const vesselCharteringData: ServicePageData = {
           type: "checklist",
           items: [
             "Ocean Freight",
-            "Port Handling",
-            "Stevedoring",
-            "Lighterage / Inland Water Transport",
-            "Truck Transportation",
+            "Stevedoring & Vessel Discharge",
+            "Port & Jetty Material Handling",
+            "Inland Transportation & Logistics",
+            "Land Logistics & Heavy Transportation",
             "Final Delivery",
           ],
         },

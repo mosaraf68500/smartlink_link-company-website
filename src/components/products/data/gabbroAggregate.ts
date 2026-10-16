@@ -22,37 +22,38 @@ export const gabbroAggregateData: CommodityPageData = {
     },
     {
       heading: "Gabbro Aggregate Specifications & Available Sizes",
-      paragraphs: [
-        "Gabbro is a dense and durable igneous rock widely used as a construction aggregate where strength, durability, abrasion resistance, and consistent grading are important. Depending on the quarry and project specifications, Smartlink Systems can arrange Gabbro Aggregate in various sizes, including:",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Gabbro is a dense and durable igneous rock widely used as a construction aggregate where strength, durability, abrasion resistance, and consistent grading are important. Depending on the quarry and project specifications, Smartlink Systems can arrange Gabbro Aggregate in various sizes, including:",
+          ],
+        },
+        {
+          type: "bullets",
+          bullets: [
+            "0–5 mm – Gabbro Dust / Fine Aggregate",
+            "5–10 mm – Small Aggregate",
+            "10–20 mm – Coarse Aggregate",
+            "5–20 mm – Mixed / Graded Aggregate",
+            "20–40 mm – Large Aggregate",
+            "40–60 mm – Heavy Construction Aggregate",
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Customized sizes and gradations can also be arranged according to the buyer's technical requirements.",
+            "Typical quality parameters may include Specific Gravity, Water Absorption, Aggregate Crushing Value (ACV), Aggregate Impact Value (AIV), Los Angeles Abrasion (LAA), Flakiness Index, Elongation Index, and Sieve Analysis / Gradation. Actual values depend on the quarry and shipment and can be supported by relevant laboratory test reports, Certificates of Analysis (COA), or quality certificates where applicable.",
+          ],
+        },
       ],
-      bullets: [
-        "0–5 mm – Gabbro Dust / Fine Aggregate",
-        "5–10 mm – Small Aggregate",
-        "10–20 mm – Coarse Aggregate",
-        "5–20 mm – Mixed / Graded Aggregate",
-        "20–40 mm – Large Aggregate",
-        "40–60 mm – Heavy Construction Aggregate",
-      ],
-      note: "Typical quality parameters may include Specific Gravity, Water Absorption, Aggregate Crushing Value (ACV), Aggregate Impact Value (AIV), Los Angeles Abrasion (LAA), Flakiness Index, Elongation Index, and Sieve Analysis / Gradation. Actual values depend on the quarry and shipment and can be supported by relevant laboratory test reports, Certificates of Analysis (COA), or quality certificates where applicable. Customized sizes and gradations can also be arranged according to the buyer's technical requirements.",
     },
     {
       heading: "Gabbro Aggregate for RMC Plants & Mega Projects",
       paragraphs: [
         "Smartlink Systems supplies bulk Gabbro Aggregate in Bangladesh for a wide range of construction and infrastructure applications, including Ready-Mix Concrete (RMC), high-strength concrete, roads and highways, bridges, elevated expressways, airports, railway infrastructure, power plants, industrial facilities, commercial developments, and other mega projects.",
         "Our ability to coordinate international sourcing and local logistics enables us to support both regular monthly requirements and large-volume project-based supply contracts.",
-      ],
-      bullets: [
-        "Ready-Mix Concrete (RMC)",
-        "high-strength concrete",
-        "roads and highways",
-        "bridges",
-        "elevated expressways",
-        "airports",
-        "railway infrastructure",
-        "power plants",
-        "industrial facilities",
-        "commercial developments",
-        "other mega projects",
       ],
     },
     {

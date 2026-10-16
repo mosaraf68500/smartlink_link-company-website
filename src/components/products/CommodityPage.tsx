@@ -125,7 +125,7 @@ function SectionContent({ section }: { section: CommoditySection }) {
               return (
                 <div
                   key={key}
-                  className={`flex flex-wrap gap-2 ${hasHeading || index > 0 ? "mt-5" : ""}`}
+                  className={`flex flex-wrap justify-end gap-2 ${hasHeading || index > 0 ? "mt-5" : ""}`}
                 >
                   {block.countries.map((country) => (
                     <span
@@ -179,7 +179,9 @@ function SectionContent({ section }: { section: CommoditySection }) {
       {section.heading && <SectionHeading>{section.heading}</SectionHeading>}
 
       {section.countries && section.countries.length > 0 && (
-        <div className={`flex flex-wrap gap-2 ${hasHeading ? "mt-5" : ""}`}>
+        <div
+          className={`flex flex-wrap justify-end gap-2 ${hasHeading ? "mt-5" : ""}`}
+        >
           {section.countries.map((country) => (
             <span
               key={country}

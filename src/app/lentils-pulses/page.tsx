@@ -4,7 +4,7 @@ import { lentilsAndPulsesData } from "@/src/components/products/data/lentilsAndP
 
 const title = "Lentils & Pulses Trading & Supply | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies lentils, chickpeas, peas, beans and specialty pulses from Australia, India, Africa, Myanmar and Pakistan under FOB, CFR and CIF terms.";
+  "Connecting reliable origins with growing global food markets, Smartlink Systems specializes in the sourcing, trading, and supply of lentils, pulses, beans, and specialty crops from Australia, India, Africa, Myanmar, and Pakistan.";
 
 export const metadata: Metadata = {
   title,

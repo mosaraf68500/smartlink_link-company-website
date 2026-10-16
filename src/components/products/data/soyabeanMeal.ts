@@ -1,13 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Premium Soybean Meal Portfolio
- * 3. Typical Quality Parameters
- * 4. Global Supply Solutions
- */
 export const soyabeanMealData: CommodityPageData = {
   slug: "soyabean-meal",
   category: "Products",
@@ -43,24 +36,35 @@ export const soyabeanMealData: CommodityPageData = {
         { label: "Crude Fat", value: "As per contractual specification" },
         { label: "Ash", value: "Within agreed limits" },
         { label: "Urease Activity", value: "As per buyer requirement" },
-        { label: "Protein Solubility (KOH)", value: "As per contractual specification" },
-        { label: "Aflatoxin / Mycotoxins", value: "As per destination requirements" },
-        { label: "Packing", value: "Bulk / Jumbo Bags / PP Bags, subject to availability" },
-        { label: "Inspection", value: "SGS / Intertek / Bureau Veritas or as mutually agreed" },
+        {
+          label: "Protein Solubility (KOH)",
+          value: "As per contractual specification",
+        },
+        {
+          label: "Aflatoxin / Mycotoxins",
+          value: "As per destination requirements",
+        },
+        {
+          label: "Packing",
+          value: "Bulk / Jumbo Bags / PP Bags, subject to availability",
+        },
+        {
+          label: "Inspection",
+          value: "SGS / Intertek / Bureau Veritas or as mutually agreed",
+        },
       ],
     },
     {
       heading: "Global Supply Solutions",
-      countries: ["USA", "Brazil", "Argentina", "Tanzania", "Nigeria"],
       paragraphs: [
         "Sourcing Origins: USA • Brazil • Argentina • Tanzania • Nigeria",
         "Smartlink Systems facilitates bulk vessel and containerized shipments under FOB, CFR, and CIF terms, with a strong focus on quality consistency, competitive sourcing, reliable documentation, and efficient international supply.",
-        "Smartlink Systems — Quality Protein Ingredients. Global Origins. Reliable Feed Solutions.",
+        "From protein-grade selection and origin matching to inspection arrangements and shipment planning, we support poultry, dairy, livestock, aquaculture, and compound-feed buyers with Soybean Meal supply solutions structured around nutritional requirements, commercial terms, and delivery schedules.",
       ],
     },
   ],
   cta: {
-    text: "Looking for Soybean Meal (SBM) for poultry, dairy, livestock, or aquaculture feed? Contact Smartlink Systems for specifications, pricing, and bulk or bagged supply arrangements.",
+    text: "Smartlink Systems — Quality Protein Ingredients. Global Origins. Reliable Feed Solutions.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

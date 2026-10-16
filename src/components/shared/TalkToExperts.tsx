@@ -318,6 +318,7 @@ const productOptions = [
   "Coal",
   "Wheat",
   "Lentils & Pulses",
+  "Corn / Maize",
   "Soyabean Seeds",
   "Canola Seeds",
   "Green Mung",

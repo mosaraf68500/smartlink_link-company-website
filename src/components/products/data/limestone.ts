@@ -22,43 +22,36 @@ export const limestoneData: CommodityPageData = {
     },
     {
       heading: "Limestone Specifications",
-      paragraphs: [
-        "Depending on the country of origin, quarry, and buyer's technical requirements, we can arrange limestone with typical specifications including:",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Depending on the country of origin, quarry, and buyer's technical requirements, we can arrange limestone with typical specifications including:",
+          ],
+        },
+        {
+          type: "specs",
+          specs: [
+            { label: "Calcium Carbonate (CaCO₃)", value: "90–98%" },
+            { label: "Calcium Oxide (CaO)", value: "50–55%" },
+            { label: "Magnesium Oxide (MgO)", value: "typically below 3%" },
+            { label: "Silica (SiO₂)", value: "typically below 5%" },
+          ],
+        },
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Moisture, impurities, abrasion characteristics, gradation, and other technical parameters can be supplied according to the requirements of individual projects. Quality can be supported by a Certificate of Analysis (COA), laboratory test report, or other applicable quality documentation.",
+            "Available limestone sizes include 0–5 mm, 5–10 mm, 10–20 mm, 20–40 mm, 40–80 mm, limestone chips, limestone aggregates, and limestone lumps. Customized sizing and grading can also be arranged based on RMC plant, construction, cement, and infrastructure project specifications.",
+          ],
+        },
       ],
-      specs: [
-        { label: "Calcium Carbonate (CaCO₃)", value: "90–98%" },
-        { label: "Calcium Oxide (CaO)", value: "50–55%" },
-        { label: "Magnesium Oxide (MgO)", value: "typically below 3%" },
-        { label: "Silica (SiO₂)", value: "typically below 5%" },
-      ],
-      bullets: [
-        "0–5 mm",
-        "5–10 mm",
-        "10–20 mm",
-        "20–40 mm",
-        "40–80 mm",
-        "limestone chips",
-        "limestone aggregates",
-        "limestone lumps",
-      ],
-      note: "Moisture, impurities, abrasion characteristics, gradation, and other technical parameters can be supplied according to the requirements of individual projects. Quality can be supported by a Certificate of Analysis (COA), laboratory test report, or other applicable quality documentation. Customized sizing and grading can also be arranged based on RMC plant, construction, cement, and infrastructure project specifications.",
     },
     {
       heading: "Bulk Limestone Supply for RMC Plants & Mega Projects",
       paragraphs: [
         "Smartlink Systems has the capability to arrange bulk limestone supply in Bangladesh for both regular industrial consumption and large-volume project requirements. We serve customers involved in Ready-Mix Concrete production, roads and highways, bridges, elevated expressways, airports, power plants, industrial facilities, cement production, and other major infrastructure developments.",
         "Our international sourcing network and local logistics capabilities allow us to provide customers with consistent quality, competitive pricing, dependable supply volumes, and scheduled delivery.",
-      ],
-      bullets: [
-        "Ready-Mix Concrete production",
-        "roads and highways",
-        "bridges",
-        "elevated expressways",
-        "airports",
-        "power plants",
-        "industrial facilities",
-        "cement production",
-        "other major infrastructure developments",
       ],
     },
     {

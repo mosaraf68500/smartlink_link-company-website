@@ -28,14 +28,26 @@ export interface ServiceChip {
   href?: string;
 }
 
+export interface ServiceFeature {
+  title: string;
+  description: string;
+}
+
 export type ServiceBlock =
   | { type: "paragraphs"; paragraphs: string[] }
   | { type: "chips"; items: ServiceChip[]; variant?: "region" | "plain" }
-  | { type: "checklist"; items: string[] };
+  | { type: "checklist"; items: string[] }
+  | { type: "features"; items: ServiceFeature[] }
+  | { type: "subheading"; text: string };
 
 export interface ServiceSection {
   heading: string;
   blocks: ServiceBlock[];
+  /**
+   * Full-width body (no side image). Use for dense value-prop / feature
+   * sections that need room to read.
+   */
+  layout?: "split" | "full";
 }
 
 export interface ServicePageData {
@@ -45,6 +57,8 @@ export interface ServicePageData {
   /** H1 */
   name: string;
   tagline?: string;
+  /** Optional support line under the tagline in the hero. */
+  description?: string;
   /** Gallery images — one unique image per section (no cycling/repeats). */
   images: string[];
   /** Sections after the hero. */
@@ -114,6 +128,27 @@ function SectionBlock({ block }: { block: ServiceBlock }) {
           ))}
         </div>
       );
+    case "features":
+      return (
+        <div className="mt-6 flex flex-col gap-5">
+          {block.items.map((item) => (
+            <div key={item.title} className="flex items-start gap-3">
+              <CheckCircle2
+                className="mt-0.5 h-5 w-5 shrink-0 text-primary"
+                strokeWidth={2}
+              />
+              <div className="min-w-0">
+                <p className="body-small-medium text-dark">{item.title}</p>
+                <p className="mt-1 body-regular text-gray [text-wrap:pretty]">
+                  {item.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    case "subheading":
+      return <p className="mt-8 title-large-medium text-dark">{block.text}</p>;
   }
 }
 
@@ -129,6 +164,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           breadcrumb={data.category}
           title={data.name}
           subtitle={data.tagline}
+          description={data.description}
         />
       </div>
 
@@ -137,7 +173,7 @@ export default function ServicePage({ data }: { data: ServicePageData }) {
           {sections.map((section, index) => (
             <Reveal key={section.heading}>
               <ImageTextRow
-                image={images[index]}
+                image={section.layout === "full" ? undefined : images[index]}
                 imageAlt={`${section.heading} — ${data.name}`}
                 imagePosition={index % 2 === 0 ? "left" : "right"}
               >

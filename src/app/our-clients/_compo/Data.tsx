@@ -1,27 +1,29 @@
 import type { StaticImageData } from "next/image";
 
-import agrocorpInternational from "../../../../public/images/suppliers/agrocorp-international.png";
-import agrico from "../../../../public/images/suppliers/agrico.png";
-import orientExports from "../../../../public/images/suppliers/orient-exports.png";
-import bakhresaGroup from "../../../../public/images/suppliers/bakhresa-group.png";
-import universalTradeLink from "../../../../public/images/suppliers/universal-trade-link.png";
-import vkUdyog from "../../../../public/images/suppliers/vk-udyog.png";
-import fmn from "../../../../public/images/suppliers/fmn.png";
-import metlGroup from "../../../../public/images/suppliers/metl-group.png";
-import atakum from "../../../../public/images/suppliers/atakum.png";
-import azania from "../../../../public/images/suppliers/azania.png";
-import grainstarAst from "../../../../public/images/suppliers/grainstar-ast.png";
-import adaniWilmar from "../../../../public/images/suppliers/adani-wilmar.png";
-import cargill from "../../../../public/images/suppliers/cargill.png";
-import mmm from "../../../../public/images/suppliers/mmm.png";
-import everGlory from "../../../../public/images/suppliers/ever-glory.png";
-import unitedQuarries from "../../../../public/images/suppliers/united-quarries.png";
-import rakRock from "../../../../public/images/suppliers/rak-rock.png";
-import oryxMix from "../../../../public/images/suppliers/oryx-mix.png";
-import cofcoIntl from "../../../../public/images/suppliers/cofco-intl.png";
-import adm from "../../../../public/images/suppliers/adm.png";
-import masafiCrusher from "../../../../public/images/suppliers/masafi-crusher.png";
-import louisDreyfusCompany from "../../../../public/images/suppliers/louis-dreyfus-company.png";
+import agrocorpInternational from "../../../../public/images/suppliers-logo/agrocorp-international.webp";
+import agrico from "../../../../public/images/suppliers-logo/images.jpg";
+import orientExports from "../../../../public/images/suppliers-logo/images-1.jpg";
+import bakhresaGroup from "../../../../public/images/suppliers-logo/images.png";
+import universalTradeLink from "../../../../public/images/suppliers-logo/images-1.png";
+import vkUdyog from "../../../../public/images/suppliers-logo/vk-udyog.webp";
+import fmn from "../../../../public/images/suppliers-logo/images-2.jpg";
+import metlGroup from "../../../../public/images/suppliers-logo/metl-group.webp";
+import atakum from "../../../../public/images/suppliers-logo/atakum.webp";
+import azania from "../../../../public/images/suppliers-logo/azania.webp";
+import grainstarAst from "../../../../public/images/suppliers-logo/images-2.png";
+import adaniWilmar from "../../../../public/images/suppliers-logo/adani-wilmar.webp";
+import cargill from "../../../../public/images/suppliers-logo/cargill.webp";
+import mmm from "../../../../public/images/suppliers-logo/images-6.jpg";
+import everGlory from "../../../../public/images/suppliers-logo/ever-glory.webp";
+import unitedQuarries from "../../../../public/images/suppliers-logo/images-3.png";
+import rakRock from "../../../../public/images/suppliers-logo/images-3.jpg";
+import oryxMix from "../../../../public/images/suppliers-logo/oryx-mix.webp";
+import cofcoIntl from "../../../../public/images/suppliers-logo/cofco-intl.webp";
+import adm from "../../../../public/images/suppliers-logo/adm.webp";
+import louisDreyfusCompany from "../../../../public/images/suppliers-logo/images-4.png";
+import ducorp from "../../../../public/images/suppliers-logo/images-4.jpg";
+import olamAgri from "../../../../public/images/suppliers-logo/images-5.jpg";
+import bunge from "../../../../public/images/suppliers-logo/images-5.png";
 
 import cccc from "../../../../public/images/buyers/cccc.png";
 import crcc from "../../../../public/images/buyers/crcc.png";
@@ -45,7 +47,6 @@ import qualityFeeds from "../../../../public/images/buyers/quality-feeds.png";
 import nourish from "../../../../public/images/buyers/nourish.png";
 import jteg from "../../../../public/images/buyers/jteg.png";
 import genertecCmc from "../../../../public/images/buyers/genertec-cmc.png";
-import ducorp from "../../../../public/images/buyers/ducorp.png";
 import fdee from "../../../../public/images/buyers/fdee.png";
 import faisalBrothers from "../../../../public/images/buyers/faisal-brothers.png";
 import mahbubGroup from "../../../../public/images/buyers/mahbub-group.png";
@@ -62,7 +63,7 @@ export interface Brand {
 }
 
 export const brandsData: Brand[] = [
-  // —— Suppliers ——
+  // —— Suppliers (from public/images/suppliers-logo/) ——
   {
     id: 1,
     name: "Agrocorp International",
@@ -119,17 +120,14 @@ export const brandsData: Brand[] = [
   },
   { id: 20, name: "ADM", image: adm, category: "Supplier" },
   {
-    id: 21,
-    name: "Masafi Crusher",
-    image: masafiCrusher,
-    category: "Supplier",
-  },
-  {
     id: 22,
     name: "Louis Dreyfus Company",
     image: louisDreyfusCompany,
     category: "Supplier",
   },
+  { id: 45, name: "DuCorp", image: ducorp, category: "Supplier" },
+  { id: 50, name: "Olam Agri", image: olamAgri, category: "Supplier" },
+  { id: 51, name: "Bunge", image: bunge, category: "Supplier" },
 
   // —— Buyers ——
   { id: 23, name: "CCCC", image: cccc, category: "Buyer" },
@@ -204,7 +202,6 @@ export const brandsData: Brand[] = [
   { id: 42, name: "Nourish", image: nourish, category: "Buyer" },
   { id: 43, name: "JTEG", image: jteg, category: "Buyer" },
   { id: 44, name: "GENERTEC CMC", image: genertecCmc, category: "Buyer" },
-  { id: 45, name: "DuCorp", image: ducorp, category: "Buyer" },
   {
     id: 46,
     name: "First Dhaka Elevated Expressway",

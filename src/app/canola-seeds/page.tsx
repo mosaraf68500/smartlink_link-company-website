@@ -4,7 +4,7 @@ import { canolaSeedsData } from "@/src/components/products/data/canolaSeeds";
 
 const title = "Canola Seeds – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies Canola Seeds from Australia, Pakistan, India and Africa for oilseed crushers, edible oil processors and feed manufacturers under FOB, CFR and CIF terms.";
+  "Leveraging a diversified international oilseed sourcing network, Smartlink Systems specializes in the sourcing, trading, and supply of quality Canola Seeds from selected origins across Australia, Pakistan, India, and Africa.";
 
 export const metadata: Metadata = {
   title,

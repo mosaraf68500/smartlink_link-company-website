@@ -28,9 +28,9 @@ export const services = [
     bg: "#D9D3FF",
     border: "#B3A9F3",
     icon: <Warehouse size={28} color="#5B4FCF" />,
-    title: "Port Handling & Logistics",
+    title: "Port & Jetty Material Handling",
     description:
-      "From port to final delivery — we manage the full in-country logistics chain.",
+      "BIWTA-licensed jetty operations connecting waterborne cargo with road logistics.",
   },
 ];
 export interface CustomActiveDotProps extends DotProps {

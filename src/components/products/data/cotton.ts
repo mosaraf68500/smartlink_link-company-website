@@ -1,17 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order — every ### heading kept, nothing merged:
- * 1. Opening intro (no heading)
- * 2. Our Cotton Portfolio
- * 3. Major Sourcing Origins
- * 4. Typical Quality Parameters
- * 5. Quality Assurance & Inspection
- * 6. Packing & Shipment
- * 7. International Trade Terms
- * 8. Why Source Cotton Through Smartlink Systems?
- */
 export const cottonData: CommodityPageData = {
   slug: "cotton",
   category: "Products",
@@ -22,9 +11,9 @@ export const cottonData: CommodityPageData = {
       countries: [
         "India",
         "USA",
-        "Brazil",
         "Africa",
         "Afghanistan",
+        "Brazil",
         "Argentina",
         "Kazakhstan",
       ],
@@ -36,30 +25,26 @@ export const cottonData: CommodityPageData = {
     },
     {
       heading: "Our Cotton Portfolio",
-      paragraphs: ["Raw Cotton / Cotton Lint"],
-      bullets: [
-        "Medium Staple Cotton",
-        "Long Staple Cotton",
-        "Extra-Long Staple Cotton – subject to origin & availability",
-        "Machine-Picked Cotton",
-        "Hand-Picked Cotton",
-        "Roller-Ginned Cotton",
-        "Saw-Ginned Cotton",
-        "Spinning-Grade Cotton",
-        "Current / Latest Crop Cotton",
+      blocks: [
+        { type: "subheading", text: "Raw Cotton / Cotton Lint" },
+        {
+          type: "bullets",
+          bullets: [
+            "Medium Staple Cotton",
+            "Long Staple Cotton",
+            "Extra-Long Staple Cotton – subject to origin & availability",
+            "Machine-Picked Cotton",
+            "Hand-Picked Cotton",
+            "Roller-Ginned Cotton",
+            "Saw-Ginned Cotton",
+            "Spinning-Grade Cotton",
+            "Current / Latest Crop Cotton",
+          ],
+        },
       ],
     },
     {
       heading: "Major Sourcing Origins",
-      countries: [
-        "India",
-        "USA",
-        "Brazil",
-        "Africa",
-        "Afghanistan",
-        "Argentina",
-        "Kazakhstan",
-      ],
       paragraphs: [
         "India — Broad selection of spinning-grade cotton with different staple lengths and micronaire ranges.",
         "USA — Machine-picked cotton with internationally recognized classification and quality parameters.",
@@ -72,24 +57,47 @@ export const cottonData: CommodityPageData = {
     },
     {
       heading: "Typical Quality Parameters",
-      paragraphs: [
-        "Cotton can be sourced against buyer-specific requirements covering:",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Cotton can be sourced against buyer-specific requirements covering:",
+          ],
+        },
+        {
+          type: "specs",
+          specs: [
+            { label: "Staple Length", value: "Approx. 26–32+ mm" },
+            { label: "Micronaire", value: "Typically 3.5–4.9" },
+            { label: "Strength", value: "As per buyer requirement" },
+            {
+              label: "Uniformity Index",
+              value: "As per contractual specification",
+            },
+            {
+              label: "Color Grade",
+              value: "As per origin and classification",
+            },
+            { label: "Trash / Leaf Grade", value: "Within agreed tolerance" },
+            { label: "Moisture", value: "As per contractual requirements" },
+            { label: "Short Fiber Content", value: "As specified" },
+            {
+              label: "Contamination",
+              value: "Controlled according to grade and origin",
+            },
+            { label: "Ginning", value: "Roller Ginned / Saw Ginned" },
+            { label: "Crop Year", value: "Current / Latest Crop" },
+            {
+              label: "HVI Parameters",
+              value: "Available subject to origin, supplier & contract",
+            },
+          ],
+        },
+        {
+          type: "note",
+          note: "Specifications are indicative and can be customized according to buyer requirements and origin availability.",
+        },
       ],
-      specs: [
-        { label: "Staple Length", value: "Approx. 26–32+ mm" },
-        { label: "Micronaire", value: "Typically 3.5–4.9" },
-        { label: "Strength", value: "As per buyer requirement" },
-        { label: "Uniformity Index", value: "As per contractual specification" },
-        { label: "Color Grade", value: "As per origin and classification" },
-        { label: "Trash / Leaf Grade", value: "Within agreed tolerance" },
-        { label: "Moisture", value: "As per contractual requirements" },
-        { label: "Short Fiber Content", value: "As specified" },
-        { label: "Contamination", value: "Controlled according to grade and origin" },
-        { label: "Ginning", value: "Roller Ginned / Saw Ginned" },
-        { label: "Crop Year", value: "Current / Latest Crop" },
-        { label: "HVI Parameters", value: "Available subject to origin, supplier & contract" },
-      ],
-      note: "Specifications are indicative and can be customized according to buyer requirements and origin availability.",
     },
     {
       heading: "Quality Assurance & Inspection",
@@ -100,16 +108,24 @@ export const cottonData: CommodityPageData = {
     },
     {
       heading: "Packing & Shipment",
-      paragraphs: [
-        "Cotton can be offered in standard export-pressed bales with bale weight, covering, strapping, marking, and container loading arranged according to origin and contractual requirements.",
-        "Supply options may include:",
-      ],
-      bullets: [
-        "Containerized Shipments",
-        "Full Container Load (FCL)",
-        "Large-Volume / Contract Supply",
-        "Seasonal Supply Programs",
-        "Spot & Forward Shipment – subject to availability",
+      blocks: [
+        {
+          type: "paragraphs",
+          paragraphs: [
+            "Cotton can be offered in standard export-pressed bales with bale weight, covering, strapping, marking, and container loading arranged according to origin and contractual requirements.",
+            "Supply options may include:",
+          ],
+        },
+        {
+          type: "bullets",
+          bullets: [
+            "Containerized Shipments",
+            "Full Container Load (FCL)",
+            "Large-Volume / Contract Supply",
+            "Seasonal Supply Programs",
+            "Spot & Forward Shipment – subject to availability",
+          ],
+        },
       ],
     },
     {
@@ -128,11 +144,10 @@ export const cottonData: CommodityPageData = {
         "Quality-Focused Trading — Specifications and inspection requirements are agreed before shipment to help maintain transparency between supplier and buyer.",
         "International Logistics Support — Coordination from origin through shipment and delivery documentation.",
       ],
-      note: "Smartlink Systems — Connecting Global Cotton Origins with the Textile Industry.",
     },
   ],
   cta: {
-    text: "Looking for raw cotton for your spinning mill or textile operation? Contact Smartlink Systems for origin options, specifications, inspection arrangements, and supply programs.",
+    text: "Smartlink Systems — Connecting Global Cotton Origins with the Textile Industry.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

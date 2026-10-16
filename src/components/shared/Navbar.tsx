@@ -24,6 +24,7 @@ const productGroups: NavLinkGroup[] = [
     items: [
       { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
       { label: "Lentils & Pulses", href: "/lentils-pulses" },
+      { label: "Corn / Maize", href: "/corn-maize" },
       { label: "Soyabean Seeds", href: "/soyabean-seeds" },
       { label: "Canola Seeds", href: "/canola-seeds" },
       { label: "Green Mung", href: "/green-mung" },
@@ -50,9 +51,11 @@ const serviceGroups: NavLinkGroup[] = [
     title: "Shipping & Logistics",
     items: [
       { label: "International Bulk Chartering & Maritime Logistics", href: "/vessel-chartering" },
-      { label: "Port Handling (ZD Service)", href: "/port-handling" },
-      { label: "Inland Water Transport", href: "/inland-water-transport" },
-      { label: "Truck Transportation Service", href: "/truck-transportation" },
+      { label: "Stevedoring & Vessel Discharge Services", href: "/stevedoring" },
+      { label: "Port & Jetty Material Handling", href: "/port-handling" },
+      { label: "Inland Transportation & Logistics", href: "/inland-water-transport" },
+      { label: "Land Logistics & Heavy Transportation", href: "/truck-transportation" },
+      { label: "Heavy Equipment Rental Solutions", href: "/heavy-equipment-rental" },
     ],
   },
 ];

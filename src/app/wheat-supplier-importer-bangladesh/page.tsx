@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
 import { wheatData } from "@/src/components/products/data/wheat";
 
-const title = "Wheat Supplier & Importer in Bangladesh | Smartlink Systems";
+const title = "Wheat Trading & Supply | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies milling and feed-grade wheat from Brazil, Argentina, USA, Canada, Bulgaria, Romania, Ukraine, Russia and India under FOB, CFR and CIF terms.";
+  "With access to some of the world's leading wheat-producing regions, Smartlink Systems provides reliable international sourcing and trading solutions for milling and feed-grade wheat from Brazil, Argentina, USA, Canada, Bulgaria, Romania, Ukraine, Russia, and India.";
 
 export const metadata: Metadata = {
   title,

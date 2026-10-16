@@ -2,21 +2,20 @@ import type { Metadata } from "next";
 import ServicePage from "@/src/components/services/ServicePage";
 import { portHandlingData } from "@/src/components/services/data/portHandling";
 
-const title = "Port Handling (ZD Service) | Smartlink Systems";
+const title = "Port & Jetty Material Handling | Smartlink Systems";
 const description =
-  "Smartlink Systems Port Handling (ZD Service) — ship discharge, stevedoring, jetty operations, and cargo handling from vessel to shore, with coordination through to inland delivery.";
+  "Smartlink Systems provides port and jetty material handling through its BIWTA-licensed jetty in Rupganj — bulk cargo handling, inland waterway logistics, and integrated road transportation across Bangladesh.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords: [
-    "port handling Bangladesh",
-    "ZD service",
-    "ship discharge",
-    "stevedoring",
-    "bulk cargo unloading",
-    "jetty operations",
-    "port logistics",
+    "port jetty material handling",
+    "BIWTA jetty Rupganj",
+    "bulk cargo handling Bangladesh",
+    "inland waterway jetty",
+    "aggregates sand clinker handling",
+    "jetty logistics Bangladesh",
   ],
   alternates: { canonical: "/port-handling" },
   openGraph: { title, description, url: "/port-handling", type: "website" },

@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
 import { clinkerData } from "@/src/components/products/data/clinker";
 
-const title = "Cement Clinker Supplier & Trader | Smartlink Systems";
+const title =
+  "Connecting Global Clinker Supply with Growing Markets | Smartlink Systems";
 const description =
-  "Smartlink Systems supplies Cement Clinker from Thailand, Vietnam, China, UAE, Oman, Egypt, Pakistan and Indonesia — competitive procurement, bulk vessel supply and end-to-end logistics.";
+  "Smartlink Systems is an international supplier, exporter, and trader of Cement Clinker, connecting established producers with cement manufacturers and bulk buyers across global markets.";
 
 export const metadata: Metadata = {
   title,

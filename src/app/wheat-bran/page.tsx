@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import CommodityPage from "@/src/components/products/CommodityPage";
 import { wheatBranData } from "@/src/components/products/data/animalFeed";
 
-const title = "Feed Grade Wheat Bran Supplier | Smartlink Systems";
+const title = "Wheat Bran – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems supplies feed grade wheat bran (protein 14% min, moisture 14% max) for poultry, dairy, cattle and livestock feed. Contact us for pricing and bulk supply.";
+  "With an established sourcing network across major wheat-processing markets, Smartlink Systems specializes in the international sourcing, trading, and supply of quality Wheat Bran for Animal Feed from Tanzania, Angola, Uganda, Mozambique, Nigeria, Kenya, and India.";
 
 export const metadata: Metadata = {
   title,

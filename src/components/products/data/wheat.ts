@@ -2,11 +2,8 @@ import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
 /**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Typical Wheat Specifications (+ closing tagline)
- *
  * URL slug kept as `/wheat-supplier-importer-bangladesh` (client SEO brief).
+ * Images from `public/images/Wheat/`.
  */
 export const wheatData: CommodityPageData = {
   slug: "wheat-supplier-importer-bangladesh",
@@ -33,25 +30,30 @@ export const wheatData: CommodityPageData = {
     },
     {
       heading: "Typical Wheat Specifications",
-      paragraphs: [
-        "Final specifications are subject to origin, crop, and contractual requirements.",
+      blocks: [
+        {
+          type: "note",
+          note: "Final specifications are subject to origin, crop, and contractual requirements.",
+        },
+        {
+          type: "specs",
+          specs: [
+            { label: "Protein", value: "10.5%–14.0%" },
+            { label: "Moisture", value: "Max. 12.5%–14.0%" },
+            { label: "Test Weight", value: "76–80 kg/HL" },
+            { label: "Foreign Matter", value: "Max. 1.0%–2.0%" },
+            { label: "Wet Gluten", value: "As per buyer requirement" },
+            { label: "Falling Number", value: "As per contractual specification" },
+            { label: "Crop", value: "Current / Latest Crop" },
+            { label: "Shipment", value: "Bulk Vessel or Containerized" },
+            { label: "Trade Terms", value: "FOB / CFR / CIF" },
+          ],
+        },
       ],
-      specs: [
-        { label: "Protein", value: "10.5%–14.0%" },
-        { label: "Moisture", value: "Max. 12.5%–14.0%" },
-        { label: "Test Weight", value: "76–80 kg/HL" },
-        { label: "Foreign Matter", value: "Max. 1.0%–2.0%" },
-        { label: "Wet Gluten", value: "As per buyer requirement" },
-        { label: "Falling Number", value: "As per contractual specification" },
-        { label: "Crop", value: "Current / Latest Crop" },
-        { label: "Shipment", value: "Bulk Vessel or Containerized" },
-        { label: "Trade Terms", value: "FOB / CFR / CIF" },
-      ],
-      note: "Smartlink Systems — Global Origins. Reliable Sourcing. Efficient Supply.",
     },
   ],
   cta: {
-    text: "Looking for milling or feed-grade wheat? Contact Smartlink Systems for origins, specifications, and bulk or containerized shipment arrangements.",
+    text: "Smartlink Systems — Global Origins. Reliable Sourcing. Efficient Supply.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

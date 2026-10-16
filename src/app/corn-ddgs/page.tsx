@@ -4,7 +4,7 @@ import { cornDdgsData } from "@/src/components/products/data/cornDdgs";
 
 const title = "Corn DDGS – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies Corn DDGS from India, Brazil, USA, Argentina and Tanzania — 26%–30%+ crude protein — for poultry, dairy, cattle and aquaculture feed under FOB, CFR and CIF terms.";
+  "Supporting the global animal-feed industry with dependable protein and energy ingredients, Smartlink Systems specializes in the international sourcing, trading, and supply of quality Corn DDGS from established producers across India, Brazil, USA, Argentina, and Tanzania.";
 
 export const metadata: Metadata = {
   title,

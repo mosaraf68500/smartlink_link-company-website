@@ -4,7 +4,7 @@ import { greenMungData } from "@/src/components/products/data/greenMung";
 
 const title = "Green Mung Beans – Global Sourcing & Trading | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies Green Mung Beans (Green Gram) from Tanzania, India, Nigeria and Mozambique — up to 99%+ purity — for importers, food processors and bulk buyers under FOB, CFR and CIF terms.";
+  "Connecting quality pulse-producing regions with international food markets, Smartlink Systems specializes in the sourcing, trading, and supply of Green Mung Beans (Green Gram) from established origins including Tanzania, India, Nigeria, and Mozambique.";
 
 export const metadata: Metadata = {
   title,

@@ -1,13 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Combined Lentils + Pulses page (client decision: one product page).
- * Exact section order:
- * 1. Opening intro (no heading)
- * 2. Premium Product Portfolio (Lentils → Chickpeas → Peas → Beans & Specialty)
- * 3. Global Supply Solutions
- */
 export const lentilsAndPulsesData: CommodityPageData = {
   slug: "lentils-pulses",
   category: "Products",
@@ -70,12 +63,12 @@ export const lentilsAndPulsesData: CommodityPageData = {
       heading: "Global Supply Solutions",
       paragraphs: [
         "Depending on origin and commodity, products are available in bulk or bagged shipments, supported by flexible international trade terms including FOB, CFR, and CIF.",
-        "Smartlink Systems — Global Origins. Quality Commodities. Reliable Supply.",
+        "From grade selection and packaging requirements to shipment size and destination-market planning, Smartlink Systems coordinates competitive sourcing, consistent quality, reliable export documentation, and timely delivery — helping importers, wholesalers, food processors, distributors, and institutional buyers secure lentils, pulses, beans, and specialty crops with confidence.",
       ],
     },
   ],
   cta: {
-    text: "Looking for lentils, chickpeas, peas, or specialty pulses? Contact Smartlink Systems for grades, origins, and shipment arrangements.",
+    text: "Smartlink Systems — Global Origins. Quality Commodities. Reliable Supply.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

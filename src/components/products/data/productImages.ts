@@ -2,7 +2,7 @@
  * Centralized gallery-image registry, one entry per product/service slug.
  *
  * Real photos live under `public/images/<slug>/` (copied from heroimg where needed).
- * Still partly on Unsplash: canola-seeds; green-mung (except last local photo).
+ * Still partly on Unsplash: green-mung (except last local photo).
  */
 export const productImages: Record<string, string[]> = {
   limestone: [
@@ -31,9 +31,10 @@ export const productImages: Record<string, string[]> = {
     "/images/coal/coal-4.png",
   ],
   "wheat-supplier-importer-bangladesh": [
-    "/images/wheat-supplier-importer-bangladesh/wheat-1.png",
-    "/images/wheat-supplier-importer-bangladesh/wheat-2.png",
-    "/images/wheat-supplier-importer-bangladesh/wheat-3.png",
+    "/images/Wheat/wheat-1.png",
+    "/images/Wheat/wheat-3.png",
+    "/images/Wheat/images.jpg",
+    "/images/Wheat/images-1.jpg",
   ],
   lentils: ["/images/lentils/lentils-1.png"],
   pulses: ["/images/pulses/pulses-1.png"],
@@ -50,9 +51,10 @@ export const productImages: Record<string, string[]> = {
     "/images/soyabean-seeds/soyabean-seeds-3.jpeg",
   ],
   "canola-seeds": [
-    "https://images.unsplash.com/photo-1776285760757-c1dc3faaf49a?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1599652087006-e7318231a70f?q=80&w=1200&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1589715246045-e881ef9f5c16?q=80&w=1200&auto=format&fit=crop",
+    "/images/canola-seeds/images.jpg",
+    "/images/canola-seeds/images-1.jpg",
+    "/images/canola-seeds/images-2.jpg",
+    "/images/canola-seeds/images-3.jpg",
   ],
   "green-mung": [
     "https://images.unsplash.com/photo-1788629531534-0a69edec70f7?q=80&w=1200&auto=format&fit=crop",
@@ -64,6 +66,11 @@ export const productImages: Record<string, string[]> = {
     "/images/wheat-bran/wheat-bran-1.jpeg",
     "/images/wheat-bran/wheat-bran-2.jpeg",
     "/images/wheat-bran/wheat-bran-3.jpeg",
+  ],
+  "corn-maize": [
+    "/images/corn-maize/images.jpg",
+    "/images/corn-maize/images-1.jpg",
+    "/images/corn-maize/images-2.jpg",
   ],
   "corn-ddgs": [
     "/images/corn-ddgs/corn-ddgs-1.jpeg",
@@ -80,6 +87,8 @@ export const productImages: Record<string, string[]> = {
   "poultry-meal": [
     "/images/poultry-meal/poultry-meal-1.png",
     "/images/poultry-meal/poultry-meal-2.png",
+    "/images/poultry-meal/images.jpg",
+    "/images/poultry-meal/images-1.jpg",
   ],
   "rapeseed-meal": [
     "/images/rapeseed-meal/rapeseed-meal-1.jpg",
@@ -112,6 +121,12 @@ export const productImages: Record<string, string[]> = {
     "/images/port-handling/port-handling-3.jpeg",
     "/images/port-handling/port-handling-4.webp",
   ],
+  stevedoring: [
+    "/images/stevedoring/stevedoring-1.jpg",
+    "/images/stevedoring/stevedoring-2.jpg",
+    "/images/stevedoring/stevedoring-3.jpg",
+    "/images/stevedoring/stevedoring-4.jpg",
+  ],
   "inland-water-transport": [
     "/images/inland-water-transport/inland-water-transport-1.jpeg",
     "/images/inland-water-transport/inland-water-transport-2.jpeg",
@@ -125,5 +140,11 @@ export const productImages: Record<string, string[]> = {
     "/images/truck-transportation/truck-transportation-4.jpg",
     "/images/truck-transportation/truck-transportation-5.jpg",
     "/images/truck-transportation/truck-transportation-6.jpg",
+  ],
+  "heavy-equipment-rental": [
+    "/images/heavy-equipment-rental/he-rental-1.jpg",
+    "/images/heavy-equipment-rental/he-rental-2.jpg",
+    "/images/heavy-equipment-rental/he-rental-3.jpg",
+    "/images/heavy-equipment-rental/he-rental-4.jpg",
   ],
 };

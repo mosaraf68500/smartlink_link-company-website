@@ -1,13 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Premium Corn DDGS Portfolio
- * 3. Typical Quality Parameters
- * 4. Global Supply Solutions
- */
 export const cornDdgsData: CommodityPageData = {
   slug: "corn-ddgs",
   category: "Products",
@@ -41,25 +34,39 @@ export const cornDdgsData: CommodityPageData = {
         { label: "Crude Fat", value: "As per origin & specification" },
         { label: "Crude Fiber", value: "As per contractual specification" },
         { label: "Ash", value: "Within agreed specification" },
-        { label: "Color", value: "Golden Yellow to Light Brown, subject to origin" },
-        { label: "Aflatoxin / Mycotoxins", value: "As per contractual and destination requirements" },
-        { label: "GMO / Non-GMO", value: "Subject to origin and certification" },
-        { label: "Packing", value: "Bulk / Jumbo Bags / PP Bags, subject to availability" },
-        { label: "Inspection", value: "SGS / Intertek / Bureau Veritas or as mutually agreed" },
+        {
+          label: "Color",
+          value: "Golden Yellow to Light Brown, subject to origin",
+        },
+        {
+          label: "Aflatoxin / Mycotoxins",
+          value: "As per contractual and destination requirements",
+        },
+        {
+          label: "GMO / Non-GMO",
+          value: "Subject to origin and certification",
+        },
+        {
+          label: "Packing",
+          value: "Bulk / Jumbo Bags / PP Bags, subject to availability",
+        },
+        {
+          label: "Inspection",
+          value: "SGS / Intertek / Bureau Veritas or as mutually agreed",
+        },
       ],
     },
     {
       heading: "Global Supply Solutions",
-      countries: ["India", "Brazil", "USA", "Argentina", "Tanzania"],
       paragraphs: [
         "Sourcing Origins: India • Brazil • USA • Argentina • Tanzania",
         "Smartlink Systems facilitates containerized and bulk shipments under FOB, CFR, and CIF terms, focusing on dependable sourcing, consistent feed quality, competitive commercial terms, and efficient international shipment coordination.",
-        "Smartlink Systems — Global Feed Ingredients. Reliable Origins. Consistent Supply.",
+        "Our team works with feed mills, importers, distributors, and bulk buyers to align nutritional specifications, packing options, inspection requirements, and shipment volumes — supporting poultry, dairy, cattle, aquaculture, and compound-feed applications with reliable Corn DDGS supply.",
       ],
     },
   ],
   cta: {
-    text: "Looking for Corn DDGS for poultry, dairy, cattle, or aquaculture feed? Contact Smartlink Systems for specifications, pricing, and bulk or bagged supply arrangements.",
+    text: "Smartlink Systems — Global Feed Ingredients. Reliable Origins. Consistent Supply.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

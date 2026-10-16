@@ -49,7 +49,7 @@ export const clinkerData: CommodityPageData = {
     },
   ],
   cta: {
-    text: "Looking for Cement Clinker supply? Contact Smartlink Systems for origins, specifications, vessel arrangements, and commercial terms.",
+    text: "Product specifications and commercial terms can be structured according to buyer requirements, destination, and selected origin.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

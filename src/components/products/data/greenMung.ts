@@ -1,13 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Premium Product Portfolio
- * 3. Typical Quality Parameters
- * 4. Global Supply Solutions
- */
 export const greenMungData: CommodityPageData = {
   slug: "green-mung",
   category: "Products",
@@ -23,14 +16,19 @@ export const greenMungData: CommodityPageData = {
     },
     {
       heading: "Premium Product Portfolio",
-      paragraphs: ["Green Mung Beans / Green Gram"],
-      bullets: [
-        "Machine-Cleaned Green Mung Beans",
-        "Sortex-Cleaned Green Mung Beans",
-        "Premium Food-Grade Mung Beans",
-        "Processing-Grade Mung Beans",
-        "Whole Green Mung Beans",
-        "Current / Latest Crop",
+      blocks: [
+        { type: "subheading", text: "Green Mung Beans / Green Gram" },
+        {
+          type: "bullets",
+          bullets: [
+            "Machine-Cleaned Green Mung Beans",
+            "Sortex-Cleaned Green Mung Beans",
+            "Premium Food-Grade Mung Beans",
+            "Processing-Grade Mung Beans",
+            "Whole Green Mung Beans",
+            "Current / Latest Crop",
+          ],
+        },
       ],
     },
     {
@@ -49,12 +47,12 @@ export const greenMungData: CommodityPageData = {
       heading: "Global Supply Solutions",
       paragraphs: [
         "Smartlink Systems facilitates containerized and bulk commercial shipments, subject to origin and volume, with international trade terms including FOB, CFR, and CIF.",
-        "Smartlink Systems — Quality Pulses. Trusted Origins. Reliable Global Supply.",
+        "We support buyers with grade and size selection, purity requirements, packing arrangements, quality coordination, and efficient shipment planning — helping importers, food processors, wholesalers, distributors, and bulk commodity buyers source Green Mung Beans with consistent quality and dependable delivery.",
       ],
     },
   ],
   cta: {
-    text: "Looking for Green Mung Beans for food processing or wholesale supply? Contact Smartlink Systems for grades, specifications, and shipment arrangements.",
+    text: "Smartlink Systems — Quality Pulses. Trusted Origins. Reliable Global Supply.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

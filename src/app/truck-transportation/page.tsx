@@ -2,20 +2,20 @@ import type { Metadata } from "next";
 import ServicePage from "@/src/components/services/ServicePage";
 import { truckTransportationData } from "@/src/components/services/data/truckTransportation";
 
-const title = "Truck Transportation Service | Smartlink Systems";
+const title = "Land Logistics & Heavy Transportation | Smartlink Systems";
 const description =
-  "Smartlink Systems Truck Transportation Service — drum truck and trailer truck road delivery across Bangladesh, connecting ports, jetties, and inland destinations to plants, warehouses, and project sites.";
+  "Smartlink Systems provides land logistics and heavy transportation — dump trucks, tippers, trailers, and heavy-duty solutions for construction, infrastructure, and industrial projects across Bangladesh.";
 
 export const metadata: Metadata = {
   title,
   description,
   keywords: [
-    "truck transportation Bangladesh",
-    "drum truck",
-    "trailer truck",
-    "road logistics Bangladesh",
-    "bulk cargo trucking",
-    "plant delivery truck",
+    "land logistics Bangladesh",
+    "heavy transportation Bangladesh",
+    "dump truck tipper",
+    "construction material transport",
+    "heavy cargo trailer",
+    "project logistics Bangladesh",
   ],
   alternates: { canonical: "/truck-transportation" },
   openGraph: {

@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
@@ -14,6 +14,90 @@ import { PAGE_CONTAINER } from "./pageContainer";
 
 export { PAGE_CONTAINER };
 
+const FADE_OFFSET = 32;
+const EASE = [0.22, 1, 0.36, 1] as const;
+
+/** Shared across all product/service reveal blocks. */
+const scrollDirection = { current: "down" as "up" | "down" };
+let scrollListenerCount = 0;
+let lastScrollY = 0;
+
+function onWindowScroll() {
+  const y = window.scrollY;
+  if (y > lastScrollY + 2) scrollDirection.current = "down";
+  else if (y < lastScrollY - 2) scrollDirection.current = "up";
+  lastScrollY = y;
+}
+
+function useScrollDirectionTracking() {
+  useEffect(() => {
+    if (scrollListenerCount === 0) {
+      lastScrollY = window.scrollY;
+      window.addEventListener("scroll", onWindowScroll, { passive: true });
+    }
+    scrollListenerCount += 1;
+    return () => {
+      scrollListenerCount -= 1;
+      if (scrollListenerCount === 0) {
+        window.removeEventListener("scroll", onWindowScroll);
+      }
+    };
+  }, []);
+}
+
+/**
+ * Fade in from below when scrolling down, from above when scrolling up.
+ * Replays each time the block re-enters the viewport.
+ */
+function ScrollReveal({
+  children,
+  className,
+  delay = 0,
+  duration = 0.5,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+  duration?: number;
+}) {
+  const prefersReducedMotion = useReducedMotion();
+  useScrollDirectionTracking();
+  const [visible, setVisible] = useState(false);
+  const [offsetY, setOffsetY] = useState(FADE_OFFSET);
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>;
+  }
+
+  return (
+    <motion.div
+      className={className}
+      initial={false}
+      animate={
+        visible ? { opacity: 1, y: 0 } : { opacity: 0, y: offsetY }
+      }
+      transition={{ duration, delay, ease: EASE }}
+      onViewportEnter={() => {
+        // Scroll down → rise from below; scroll up → drop from above.
+        setOffsetY(
+          scrollDirection.current === "down" ? FADE_OFFSET : -FADE_OFFSET,
+        );
+        setVisible(true);
+      }}
+      onViewportLeave={() => {
+        // Exit in the direction of travel.
+        setOffsetY(
+          scrollDirection.current === "down" ? -FADE_OFFSET : FADE_OFFSET,
+        );
+        setVisible(false);
+      }}
+      viewport={{ once: false, amount: 0.2, margin: "-40px 0px -40px 0px" }}
+    >
+      {children}
+    </motion.div>
+  );
+}
+
 export function Reveal({
   children,
   className,
@@ -21,19 +105,7 @@ export function Reveal({
   children: ReactNode;
   className?: string;
 }) {
-  const prefersReducedMotion = useReducedMotion();
-
-  return (
-    <motion.div
-      className={className}
-      initial={prefersReducedMotion ? undefined : { opacity: 0, y: 14 }}
-      whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px 0px -60px 0px" }}
-      transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
-    >
-      {children}
-    </motion.div>
-  );
+  return <ScrollReveal className={className}>{children}</ScrollReveal>;
 }
 
 export function SectionHeading({ children }: { children: ReactNode }) {
@@ -83,22 +155,9 @@ export function ImageTextRow({
   imageClassName?: string;
   children: ReactNode;
 }) {
-  const prefersReducedMotion = useReducedMotion();
-
   if (!image) {
-    return (
-      <motion.div
-        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
-        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </motion.div>
-    );
+    return <ScrollReveal>{children}</ScrollReveal>;
   }
-
-  const fromX = imagePosition === "left" ? -28 : 28;
 
   return (
     <div
@@ -106,16 +165,9 @@ export function ImageTextRow({
         imagePosition === "right" ? "md:flex-row-reverse" : ""
       }`}
     >
-      <motion.div
+      <ScrollReveal
         className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F7F7F5] md:w-1/2"
-        initial={
-          prefersReducedMotion ? undefined : { opacity: 0, x: fromX, scale: 0.98 }
-        }
-        whileInView={
-          prefersReducedMotion ? undefined : { opacity: 1, x: 0, scale: 1 }
-        }
-        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
-        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        duration={0.55}
       >
         <Image
           src={image}
@@ -124,16 +176,10 @@ export function ImageTextRow({
           sizes="(max-width: 768px) 100vw, 50vw"
           className={`object-cover ${imageClassName ?? ""}`}
         />
-      </motion.div>
-      <motion.div
-        className="min-w-0 w-full md:w-1/2"
-        initial={prefersReducedMotion ? undefined : { opacity: 0, y: 16 }}
-        whileInView={prefersReducedMotion ? undefined : { opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px 0px -40px 0px" }}
-        transition={{ duration: 0.5, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
-      >
+      </ScrollReveal>
+      <ScrollReveal className="min-w-0 w-full md:w-1/2" delay={0.08}>
         {children}
-      </motion.div>
+      </ScrollReveal>
     </div>
   );
 }

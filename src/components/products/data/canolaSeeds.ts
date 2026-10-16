@@ -1,12 +1,6 @@
 import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
-/**
- * Exact client section order:
- * 1. Opening intro (no heading)
- * 2. Product & Quality Profile (Canola/Rapeseed portfolio → Typical Quality Parameters)
- * 3. Global Supply Solutions
- */
 export const canolaSeedsData: CommodityPageData = {
   slug: "canola-seeds",
   category: "Products",
@@ -23,7 +17,7 @@ export const canolaSeedsData: CommodityPageData = {
     {
       heading: "Product & Quality Profile",
       blocks: [
-        { type: "paragraphs", paragraphs: ["Canola / Rapeseed"] },
+        { type: "subheading", text: "Canola / Rapeseed" },
         {
           type: "bullets",
           bullets: [
@@ -37,13 +31,19 @@ export const canolaSeedsData: CommodityPageData = {
           type: "specs",
           label: "Typical Quality Parameters",
           specs: [
-            { label: "Oil Content", value: "As per origin & contractual specification" },
+            {
+              label: "Oil Content",
+              value: "As per origin & contractual specification",
+            },
             { label: "Moisture", value: "Within agreed tolerance" },
             { label: "Foreign Matter", value: "As per contract" },
             { label: "Impurities", value: "Within agreed specification" },
             { label: "Damaged Seeds", value: "As per contractual tolerance" },
             { label: "Erucic Acid", value: "As per grade and specification" },
-            { label: "Glucosinolate", value: "As per grade and buyer requirement" },
+            {
+              label: "Glucosinolate",
+              value: "As per grade and buyer requirement",
+            },
           ],
         },
       ],
@@ -52,12 +52,12 @@ export const canolaSeedsData: CommodityPageData = {
       heading: "Global Supply Solutions",
       paragraphs: [
         "Smartlink Systems facilitates bulk and containerized shipments with flexible commercial terms including FOB, CFR, and CIF, subject to origin, volume, and destination.",
-        "Smartlink Systems — Reliable Oilseed Sourcing. Global Reach. Consistent Supply.",
+        "Our supply coordination covers competitive sourcing, consistent quality parameters, reliable export documentation, and efficient shipment planning — helping oilseed crushers, edible oil processors, feed manufacturers, and industrial buyers receive Canola Seeds according to their required specification and delivery schedule.",
       ],
     },
   ],
   cta: {
-    text: "Looking for Canola Seeds for crushing or industrial use? Contact Smartlink Systems for origins, specifications, and shipment arrangements.",
+    text: "Smartlink Systems — Reliable Oilseed Sourcing. Global Reach. Consistent Supply.",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

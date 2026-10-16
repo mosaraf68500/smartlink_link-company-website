@@ -2,10 +2,8 @@ import type { CommodityPageData } from "../CommodityPage";
 import { productImages } from "./productImages";
 
 /**
- * Exact client section order (### Global still pending — paste when ready):
- * 1. Opening intro (no heading)
- * 2. Premium Poultry Meal Portfolio
- * 3. Typical Quality Parameters
+ * Global Supply Solutions + closing tagline still pending —
+ * user message cut off at "### Global". Paste remainder when ready.
  */
 export const poultryMealData: CommodityPageData = {
   slug: "poultry-meal",
@@ -41,15 +39,27 @@ export const poultryMealData: CommodityPageData = {
         { label: "Ash", value: "Within agreed specification" },
         { label: "Calcium & Phosphorus", value: "As per buyer requirement" },
         { label: "Digestibility", value: "Subject to product grade" },
-        { label: "Microbiological Parameters", value: "As per destination requirements" },
-        { label: "Salmonella", value: "As per contractual and regulatory requirements" },
-        { label: "Packing", value: "PP Bags / Jumbo Bags / Bulk, subject to availability" },
-        { label: "Inspection", value: "SGS / Intertek / Bureau Veritas or as mutually agreed" },
+        {
+          label: "Microbiological Parameters",
+          value: "As per destination requirements",
+        },
+        {
+          label: "Salmonella",
+          value: "As per contractual and regulatory requirements",
+        },
+        {
+          label: "Packing",
+          value: "PP Bags / Jumbo Bags / Bulk, subject to availability",
+        },
+        {
+          label: "Inspection",
+          value: "SGS / Intertek / Bureau Veritas or as mutually agreed",
+        },
       ],
     },
   ],
   cta: {
-    text: "Looking for Poultry Meal for aquaculture, pet food, or livestock feed? Contact Smartlink Systems for specifications, pricing, and supply arrangements.",
+    text: "Contact Smartlink Systems",
     buttonLabel: "Contact Us",
     buttonHref: "/contact",
   },

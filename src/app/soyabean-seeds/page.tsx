@@ -4,7 +4,7 @@ import { soyabeanSeedsData } from "@/src/components/products/data/soyabeanSeeds"
 
 const title = "Soybean Trading & Global Sourcing | Smartlink Systems";
 const description =
-  "Smartlink Systems sources and supplies soybeans from USA, Canada, Brazil and Argentina for oilseed crushers, edible oil processors and feed manufacturers under FOB, CFR and CIF terms.";
+  "Building dependable supply channels across the world's major oilseed-producing regions, Smartlink Systems specializes in the sourcing, trading, and supply of quality soybeans from USA, Canada, Brazil, and Argentina.";
 
 export const metadata: Metadata = {
   title,

@@ -4,164 +4,132 @@ import { productImages } from "../../products/data/productImages";
 export const portHandlingData: ServicePageData = {
   slug: "port-handling",
   category: "Services",
-  name: "Port Handling (ZD Service)",
-  tagline: "From Ship to Shore — Reliable Discharge & Cargo Handling",
+  name: "Port & Jetty Material Handling",
+  tagline: "Strategic Access. Efficient Handling. Seamless Cargo Movement.",
+  description: "Integrated Jetty Operations & Bulk Cargo Logistics in Bangladesh.",
   images: productImages["port-handling"],
 
   sections: [
     {
-      heading: "Ship Discharge & Port Operations",
+      heading: "BIWTA-Licensed Jetty Operations in Rupganj",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "Smartlink Systems provides Port Handling (ZD Service) for dry bulk and break-bulk cargoes arriving at Bangladesh ports and jetties. Once a vessel reaches the discharge berth, our focus is clear: unload cargo safely, efficiently, and with full coordination between ship, terminal, stevedores, surveyors, and inland logistics partners.",
-            "Whether the shipment involves construction materials, agricultural commodities, energy cargoes, or industrial raw materials, we manage the critical ship-to-shore interface so that discharge productivity, documentation, and onward movement stay aligned with commercial timelines.",
+            "Smartlink Systems provides port and jetty material handling solutions through its BIWTA-licensed jetty facility in Rupganj, Bangladesh. Strategically positioned to support inland waterway transportation and regional industrial connectivity, our facility offers a practical logistics point for cargo handling, material transfer, and the distribution of bulk commodities to industrial and commercial destinations.",
+            "We support the movement of construction materials, aggregates, sand, stone chips, clinker, cement-related materials, and other suitable bulk commodities through coordinated jetty operations and inland transportation arrangements. By connecting waterborne cargo movement with road logistics, we aim to simplify material handling, improve supply chain coordination, and support the operational requirements of our clients.",
           ],
         },
         {
           type: "chips",
           items: [
-            { label: "Ship Discharge" },
-            { label: "Stevedoring Coordination" },
-            { label: "Jetty & Berth Operations" },
-            { label: "Cargo Handling" },
-            { label: "ZD Port Service" },
+            { label: "BIWTA-Licensed Jetty" },
+            { label: "Rupganj" },
+            { label: "Bulk Commodities" },
+            { label: "Construction Materials" },
+            { label: "Aggregates" },
           ],
         },
       ],
     },
     {
-      heading: "What We Coordinate at the Port",
+      heading: "Our Core Capabilities",
       blocks: [
         {
-          type: "paragraphs",
-          paragraphs: [
-            "Port handling is more than crane work. It is a sequence of operational steps that must stay synchronized from arrival notice through final cargo release. Smartlink Systems coordinates the practical activities that determine how quickly and cleanly cargo leaves the vessel.",
-          ],
-        },
-        {
-          type: "checklist",
+          type: "features",
           items: [
-            "Vessel arrival and berth coordination support",
-            "Ship-to-shore discharge planning",
-            "Stevedoring and labour arrangement coordination",
-            "Grab, conveyor, and equipment utilisation planning",
-            "Cargo tally, draft survey, and inspection liaison",
-            "Shore receiving, stacking, and temporary storage",
-            "Jetty and terminal communication",
-            "Documentation and port paperwork follow-up",
-            "Lighterage / barge transfer where required",
-            "Truck loading and inland dispatch planning",
+            {
+              title: "Jetty Infrastructure & Cargo Access",
+              description:
+                "A BIWTA-licensed jetty facility in Rupganj, providing a designated point for eligible cargo-handling and inland waterway logistics operations.",
+            },
+            {
+              title: "Bulk Material Handling",
+              description:
+                "Facilitating the handling and transfer of suitable bulk commodities, including construction materials, aggregates, and industrial raw materials, subject to cargo characteristics and available handling facilities.",
+            },
+            {
+              title: "Inland Waterway Logistics",
+              description:
+                "Supporting cargo movement through Bangladesh's inland waterways by coordinating suitable vessel access, cargo transfer, and onward transportation arrangements.",
+            },
+            {
+              title: "Integrated Road Transportation",
+              description:
+                "Connecting jetty operations with dump trucks, tippers, trailers, and other suitable transport options to facilitate cargo delivery to construction sites, industrial facilities, warehouses, and commercial destinations.",
+            },
+            {
+              title: "Supply Chain Coordination",
+              description:
+                "Helping clients coordinate cargo discharge, material transfer, storage arrangements where available, and onward distribution to support smoother logistics operations.",
+            },
           ],
         },
       ],
     },
     {
-      heading: "Cargoes We Handle",
+      heading: "Creating Value for Our Clients",
       blocks: [
         {
-          type: "paragraphs",
-          paragraphs: [
-            "Our Port Handling (ZD Service) supports the same commodity families we source and charter worldwide — so discharge operations remain connected to the full Smartlink supply chain.",
-          ],
-        },
-        {
-          type: "paragraphs",
-          paragraphs: ["Construction & Industrial Materials"],
-        },
-        {
-          type: "chips",
+          type: "features",
           items: [
-            { label: "Clinker", href: "/clinker" },
-            { label: "Limestone", href: "/limestone" },
-            { label: "Gabbro / Aggregates", href: "/gabbro-aggregate" },
-            { label: "Gypsum & Slag" },
-          ],
-        },
-        {
-          type: "paragraphs",
-          paragraphs: ["Agricultural & Feed Commodities"],
-        },
-        {
-          type: "chips",
-          items: [
-            { label: "Wheat", href: "/wheat-supplier-importer-bangladesh" },
-            { label: "Pulses & Grains", href: "/lentils-pulses" },
-            { label: "Oilseeds", href: "/soyabean-seeds" },
-            { label: "Animal Feed Ingredients", href: "/wheat-bran" },
-          ],
-        },
-        {
-          type: "paragraphs",
-          paragraphs: ["Energy & Bulk Raw Materials"],
-        },
-        {
-          type: "chips",
-          items: [
-            { label: "Coal", href: "/coal" },
-            { label: "Petcoke" },
-            { label: "Minerals & other dry bulk" },
+            {
+              title: "Strategic Location",
+              description:
+                "A Rupganj-based jetty facility serving relevant industrial, commercial, and construction supply chains.",
+            },
+            {
+              title: "Multimodal Connectivity",
+              description:
+                "Integration of inland waterway cargo movement with road transportation arrangements.",
+            },
+            {
+              title: "Operational Coordination",
+              description:
+                "A coordinated approach to cargo handling and onward delivery planning.",
+            },
+            {
+              title: "Flexible Logistics Solutions",
+              description:
+                "Transportation and handling arrangements tailored to cargo type, volume, destination, and project requirements.",
+            },
+            {
+              title: "Business-Focused Service",
+              description:
+                "Solutions designed to support efficient material flow, improve logistics coordination, and help clients manage transportation complexity.",
+            },
           ],
         },
       ],
     },
     {
-      heading: "Discharge Productivity & Cost Control",
+      heading: "An Integrated Logistics Partner",
       blocks: [
         {
           type: "paragraphs",
           paragraphs: [
-            "At the discharge port, productivity directly affects demurrage exposure, landed cost, and delivery schedules. We work to keep operations commercially disciplined by aligning vessel capability, shore receiving rate, equipment availability, and cargo characteristics before and during discharge.",
-            "Key factors we monitor throughout the operation include:",
-          ],
-        },
-        {
-          type: "checklist",
-          items: [
-            "Agreed discharge rate vs. actual productivity",
-            "Berth congestion and weather exposure",
-            "Cargo condition and handling method",
-            "Shore space, conveyor, and truck turnaround",
-            "Draft survey and quantity reconciliation",
-            "Demurrage / despatch implications",
-            "Safety, spill control, and cargo care",
-            "Handover readiness for inland transport",
-          ],
-        },
-      ],
-    },
-    {
-      heading: "From Port to Final Destination",
-      blocks: [
-        {
-          type: "paragraphs",
-          paragraphs: [
-            "Port handling does not end when cargo leaves the ship. Where required, Smartlink Systems continues coordination beyond the berth — connecting discharge with lighterage, inland water transport, trucking, warehousing, and delivery to project sites, factories, RMC plants, or buyer yards.",
-            "This end-to-end approach is especially valuable for bulk commodities, where every hour at berth and every transfer step can influence total cost and delivery reliability.",
+            "At Smartlink Systems, we understand that effective material handling requires more than a jetty facility. It requires coordination between cargo access, handling operations, transportation, and final delivery.",
+            "Our Rupganj jetty strengthens our ability to support customers seeking practical logistics solutions for bulk commodities, construction materials, and industrial cargo. By bringing jetty-based operations and inland transportation together, we aim to provide a more coordinated logistics experience for businesses operating across Bangladesh.",
+            "Smartlink Systems — Connecting Waterways, Infrastructure & Industry.",
           ],
         },
         {
           type: "chips",
           items: [
             { label: "Ocean Freight", href: "/vessel-chartering" },
-            { label: "Port Handling (ZD)" },
-            { label: "Stevedoring" },
-            { label: "Lighterage / IWT", href: "/inland-water-transport" },
-            { label: "Truck Transport" },
-            { label: "Final Delivery" },
-          ],
-        },
-      ],
-    },
-    {
-      heading: "Our Approach",
-      blocks: [
-        {
-          type: "paragraphs",
-          paragraphs: [
-            "Smartlink Systems treats Port Handling (ZD Service) as an operational extension of commodity trading and vessel chartering — not as an isolated activity. Clear communication among shipowners, agents, stevedores, surveyors, receivers, and inland partners remains central to every discharge.",
-            "Whether you need support for a single vessel call or a recurring import program, our focus stays on safe unloading, commercial discipline, transparent coordination, and dependable movement of cargo from ship to shore — and onward to destination.",
+            {
+              label: "Stevedoring & Vessel Discharge",
+              href: "/stevedoring",
+            },
+            { label: "Port & Jetty Material Handling" },
+            {
+              label: "Inland Transportation & Logistics",
+              href: "/inland-water-transport",
+            },
+            {
+              label: "Land Logistics & Heavy Transportation",
+              href: "/truck-transportation",
+            },
           ],
         },
       ],
