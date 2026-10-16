@@ -14,6 +14,7 @@ const sharedEmails = [
   "info@smartlinksystemsbd.com",
   "sales@smartlinksystemsbd.com",
   "sales.smartlinksystems@gmail.com",
+  "startradeandlogistics@gmail.com",
 ];
 
 const sharedPhones = [
@@ -50,7 +51,7 @@ export const offices: Office[] = [
     image: "/offices/uae.png",
     address: "The Binary Tower, 8th Floor, Unit-816, Business Bay, Dubai, UAE",
     emails: [],
-    // UAE / Plant cards: location only
+    phones: ["+971523800913"],
   },
   {
     country: "Bangladesh",
@@ -60,5 +61,6 @@ export const offices: Office[] = [
     address:
       "Lakkha Jatrabari, Baniyadi, Murapara Road, Rupganj, Narayanganj-1464, Bangladesh",
     emails: [],
+    phones: ["+8801830657008", "+8801715349585"],
   },
 ];

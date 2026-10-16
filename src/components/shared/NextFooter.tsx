@@ -31,78 +31,6 @@ const FacebookIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const Youtube = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <rect
-      x="0.4"
-      y="0.4"
-      width="31.2"
-      height="31.2"
-      rx="15.6"
-      stroke="#E5E7EB"
-      strokeWidth="0.8"
-    />
-    <path
-      fillRule="evenodd"
-      clipRule="evenodd"
-      d="M21.1934 11.6096C21.7668 11.7636 22.2204 12.2172 22.3744 12.7906C22.6568 13.8346 22.6654 15.9998 22.6654 15.9998C22.6654 15.9998 22.6654 18.1735 22.383 19.209C22.2289 19.7824 21.7753 20.236 21.202 20.3901C20.1664 20.6725 15.9987 20.6725 15.9987 20.6725C15.9987 20.6725 11.831 20.6725 10.7954 20.3901C10.2221 20.236 9.76849 19.7824 9.61444 19.209C9.33203 18.165 9.33203 15.9998 9.33203 15.9998C9.33203 15.9998 9.33203 13.8346 9.60589 12.7991C9.75993 12.2257 10.2135 11.7722 10.7869 11.6181C11.8224 11.3357 15.9901 11.3271 15.9901 11.3271C15.9901 11.3271 20.1579 11.3271 21.1934 11.6096ZM18.1211 15.9998L14.6637 18.0024V13.9972L18.1211 15.9998Z"
-      fill="black"
-    />
-  </svg>
-);
-
-const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    {...props}
-  >
-    <rect
-      x="0.4"
-      y="0.4"
-      width="31.2"
-      height="31.2"
-      rx="15.6"
-      stroke="#E5E7EB"
-      strokeWidth="0.8"
-    />
-    <g clipPath="url(#clip0_footer_linkedin)">
-      <path
-        d="M11.5328 13.1318H8.41406V24.0004H11.5328V13.1318Z"
-        fill="black"
-      />
-      <path
-        d="M9.90625 8.00098C8.75625 8.00098 8 8.81085 8 9.88613C8 10.941 8.73125 11.7713 9.8625 11.7713H9.8875C11.0625 11.7713 11.7938 10.9342 11.7875 9.88613C11.7625 8.81085 11.0562 8.00098 9.90625 8.00098Z"
-        fill="black"
-      />
-      <path
-        d="M20.0484 13.0293C18.2609 13.0293 17.1422 14.091 16.9359 14.8396V13.1314H13.4297C13.4734 14.0365 13.4297 23.9999 13.4297 23.9999H16.9359V18.1267C16.9359 17.7932 16.9234 17.4666 17.0109 17.2352C17.2484 16.5818 17.7672 15.9013 18.6984 15.9013C19.9172 15.9013 20.4672 16.9085 20.4672 18.3785V23.9999H24.0047V17.9566C24.0047 14.5946 22.2672 13.0293 20.0484 13.0293Z"
-        fill="black"
-      />
-    </g>
-    <defs>
-      <clipPath id="clip0_footer_linkedin">
-        <rect
-          width="16"
-          height="16"
-          fill="white"
-          transform="translate(8 8.00098)"
-        />
-      </clipPath>
-    </defs>
-  </svg>
-);
-
 const companyLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
@@ -121,12 +49,11 @@ const legalLinks = [
   { label: "Terms & Conditions", href: "/terms-conditions" },
 ];
 
-// TODO: no confirmed Smartlink Systems social media accounts yet — links
-// disabled (href="#") rather than pointing at the old AdsFixter accounts.
 const socials = [
-  { icon: FacebookIcon, href: "#" },
-  { icon: LinkedinIcon, href: "#" },
-  { icon: Youtube, href: "#" },
+  {
+    icon: FacebookIcon,
+    href: "https://www.facebook.com/smartlinkfan",
+  },
 ];
 
 function FooterLinkColumn({
@@ -206,6 +133,11 @@ const NextFooter = () => {
                   <p className="body-small-regular text-[#112420]">
                     {office.address}
                   </p>
+                  {office.phones && office.phones.length > 0 ? (
+                    <p className="body-small-regular mt-1.5 text-[#112420]">
+                      Phone: {office.phones.join(", ")}
+                    </p>
+                  ) : null}
                   {office.hotlines && office.hotlines.length > 0 ? (
                     <p className="body-small-regular mt-1.5 text-[#112420]">
                       Hotline: {office.hotlines.join(", ")}
@@ -213,7 +145,7 @@ const NextFooter = () => {
                   ) : null}
                   {office.landline ? (
                     <p className="body-small-regular mt-1.5 text-[#112420]">
-                      Phone: {office.landline}
+                      Landline: {office.landline}
                     </p>
                   ) : null}
                   {office.emails[0] ? (
@@ -242,9 +174,10 @@ const NextFooter = () => {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex h-9 w-9 items-center justify-center rounded-full text-gray-700 transition-colors"
+                aria-label="Facebook"
+                className="flex h-11 w-11 items-center justify-center rounded-full transition-opacity hover:opacity-80"
               >
-                <Icon width={16} height={16} />
+                <Icon width={40} height={40} />
               </Link>
             ))}
           </div>

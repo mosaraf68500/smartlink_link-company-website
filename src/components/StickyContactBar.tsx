@@ -45,7 +45,7 @@ function GmailAppIcon({ size = 20 }) {
 
   );
 }
-const GMAIL_ADDRESS = "info@smartlinksystemsbd.com";
+const GMAIL_ADDRESS = "startradeandlogistics@gmail.com";
 const GMAIL_COMPOSE_URL = `https://mail.google.com/mail/?view=cm&fs=1&to=${GMAIL_ADDRESS}`;
 
 const contactButtons = [
@@ -68,7 +68,7 @@ const contactButtons = [
   {
     label: "Send Message",
     // Opens Gmail's compose window directly in a new tab, with the
-    // "to" field already filled in with info@smartlinksystemsbd.com.
+    // "to" field already filled in with startradeandlogistics@gmail.com.
     href: GMAIL_COMPOSE_URL,
     icon: GmailAppIcon,
     bg: "bg-white",
