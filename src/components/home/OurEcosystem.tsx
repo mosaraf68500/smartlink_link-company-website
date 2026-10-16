@@ -3,7 +3,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Globe2, Anchor, Warehouse, ShieldCheck } from "lucide-react";
+import { Globe2, Anchor, Ship, Route } from "lucide-react";
 import ProductCard from "../shared/ProductCard";
 import ProductCardCompact from "../shared/ProductCardCompact";
 import SectionHeader from "../shared/SectionHeader";
@@ -43,33 +43,32 @@ const fullWidthProducts = [
 
 const compactProducts = [
   {
-    badgeLabel: "Port Operations",
-    icon: <Warehouse size={32} color="#5B4FCF" />,
-    title: "Port & Jetty Material Handling",
+    badgeLabel: "Stevedoring",
+    icon: <Ship size={32} color="#0F766E" />,
+    title: "Stevedoring & Vessel Discharge Services",
     description:
-      "BIWTA-licensed jetty in Rupganj — bulk cargo handling, inland waterway logistics, and integrated road delivery.",
-    linkText: "See jetty handling service",
-    linkHref: "/port-handling",
-    image: "/images/port-handling/port-handling-2.jpeg",
-    imageAlt: "Bulk cargo handling at Smartlink jetty facility",
-    accentColor: "#5B4FCF",
-    panelColor: "#D9D3FF",
-    imageBorderColor: "#F0EDFF",
+      "High-speed stevedoring and mother-to-lighter cargo transfer — focused on faster discharge, safety, and optimized vessel turnaround.",
+    linkText: "See stevedoring services",
+    linkHref: "/stevedoring",
+    image: "/images/stevedoring/stevedoring-1.jpg",
+    imageAlt: "Stevedoring and vessel discharge operations",
+    accentColor: "#0F766E",
+    panelColor: "#CCFBF1",
+    imageBorderColor: "#F0FDFA",
   },
   {
-    badgeLabel: "Certified Quality",
-    icon: <ShieldCheck size={32} color="#A67C23" />,
-    title: "Quality Assurance & Documentation",
+    badgeLabel: "Inland Logistics",
+    icon: <Route size={32} color="#C2410C" />,
+    title: "Inland Transportation & Logistics",
     description:
-      "Every shipment can be backed by a Certificate of Analysis (COA) and full documentation, so you know exactly what you're getting.",
-    linkText: "Request a sample COA",
-    linkHref: "/contact",
-    image:
-      "https://images.unsplash.com/photo-1754039985008-a15410211b67?q=80&w=1400&auto=format&fit=crop",
-    imageAlt: "Close-up of a hand marking a quality checklist on a notebook",
-    accentColor: "#A67C23",
-    panelColor: "#FDF0D5",
-    imageBorderColor: "#FDF5E4",
+      "End-to-end inland transportation connecting Chittagong Port with industrial and commercial destinations across Bangladesh.",
+    linkText: "See inland logistics",
+    linkHref: "/inland-water-transport",
+    image: "/images/inland-water-transport/inland-water-transport-1.jpeg",
+    imageAlt: "Inland transportation and logistics operations",
+    accentColor: "#C2410C",
+    panelColor: "#FFEDD5",
+    imageBorderColor: "#FFF7ED",
   },
 ];
 
@@ -165,9 +164,9 @@ export default function OurEcosystem() {
           </StackCard>
         ))}
 
-        {/* Compact 2-up row: Port Handling & Cargo Management, Quality Assurance & Documentation */}
+        {/* Compact 2-up grid: Port, Quality, Stevedoring, Inland Transportation */}
         <StackCard index={fullWidthProducts.length}>
-          <div className=" sm:gap-8 lg:gap-10 md:px-14 ">
+          <div className="sm:gap-8 lg:gap-10 md:px-14">
             <div className="grid grid-cols-1 items-stretch gap-6 bg-white sm:grid-cols-2">
               {compactProducts.map((product) => (
                 <ProductCardCompact

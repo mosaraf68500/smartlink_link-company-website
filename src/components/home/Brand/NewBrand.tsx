@@ -71,8 +71,8 @@ function LogoGrid({ brands, label }: { brands: Brand[]; label: string }) {
             className="relative aspect-[2/1] w-full overflow-hidden rounded-[9px] border border-[#E5E7EB] bg-white"
           >
             <motion.div
-              className="absolute inset-0"
-              animate={{ y: [0, -3, 0] }}
+              className="absolute inset-3 sm:inset-4"
+              animate={{ y: [0, -2, 0] }}
               transition={{
                 duration: 3.2 + (index % 4) * 0.35,
                 repeat: Infinity,
@@ -85,7 +85,7 @@ function LogoGrid({ brands, label }: { brands: Brand[]; label: string }) {
                 alt={brand.name}
                 fill
                 sizes="(max-width: 640px) 45vw, (max-width: 1024px) 22vw, 180px"
-                className="object-contain"
+                className="object-contain object-center"
               />
             </motion.div>
           </motion.div>
